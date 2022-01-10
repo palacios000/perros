@@ -1,0 +1,14 @@
+/* *** modifiche ed aggiunte da apportare a tailwind *** */
+/* questo file viene importato da tailwind.css, che si trova nel root del progetto */
+
+h2.nuova{
+	@apply text-red-300 font-bold;
+	text-decoration: underline;
+}
+
+.mamma{
+	color: green;
+	p.papa{
+		color: pink;
+	}
+}

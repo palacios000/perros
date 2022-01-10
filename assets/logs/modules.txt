@@ -1,0 +1,20 @@
+2022-01-10 10:42:28	?	?	Saved module info caches
+2022-01-10 10:42:28	?	?	Found 2 module(s) missing file: FieldtypeNumber => /var/www/html/perros2/public/site/modules/FieldtypeNumber/FieldtypeNumber.module, ProcessPage => /var/www/html/perros2/public/site/modules/ProcessPage/ProcessPage.module
+2022-01-10 10:42:28	admin	http://localhost/perros2/public/http404/	Saved module info caches
+2022-01-10 10:42:28	admin	http://localhost/perros2/public/http404/	Found 2 module(s) missing file: FieldtypeNumber => /var/www/html/perros2/public/site/modules/FieldtypeNumber/FieldtypeNumber.module, ProcessPage => /var/www/html/perros2/public/site/modules/ProcessPage/ProcessPage.module
+2022-01-10 10:42:28	admin	http://localhost/perros2/public/http404/	Installed module 'ProcessRecentPages'
+2022-01-10 10:42:28	admin	http://localhost/perros2/public/http404/	Saved module info caches
+2022-01-10 10:42:28	admin	http://localhost/perros2/public/http404/	Found 2 module(s) missing file: FieldtypeNumber => /var/www/html/perros2/public/site/modules/FieldtypeNumber/FieldtypeNumber.module, ProcessPage => /var/www/html/perros2/public/site/modules/ProcessPage/ProcessPage.module
+2022-01-10 10:42:28	admin	http://localhost/perros2/public/http404/	Saved module info caches
+2022-01-10 10:42:28	admin	http://localhost/perros2/public/http404/	Found 2 module(s) missing file: FieldtypeNumber => /var/www/html/perros2/public/site/modules/FieldtypeNumber/FieldtypeNumber.module, ProcessPage => /var/www/html/perros2/public/site/modules/ProcessPage/ProcessPage.module
+2022-01-10 10:42:28	admin	http://localhost/perros2/public/http404/	Installed module 'AdminThemeUikit'
+2022-01-10 10:42:28	admin	http://localhost/perros2/public/http404/	Saved module info caches
+2022-01-10 10:42:28	admin	http://localhost/perros2/public/http404/	Found 2 module(s) missing file: FieldtypeNumber => /var/www/html/perros2/public/site/modules/FieldtypeNumber/FieldtypeNumber.module, ProcessPage => /var/www/html/perros2/public/site/modules/ProcessPage/ProcessPage.module
+2022-01-10 10:42:30	giulio	http://localhost/perros2/public/	Saved module info caches
+2022-01-10 10:42:30	giulio	http://localhost/perros2/public/	Found 2 module(s) missing file: FieldtypeNumber => /var/www/html/perros2/public/site/modules/FieldtypeNumber/FieldtypeNumber.module, ProcessPage => /var/www/html/perros2/public/site/modules/ProcessPage/ProcessPage.module
+2022-01-10 10:42:30	giulio	http://localhost/perros2/public/	Installed module 'ProcessLogger'
+2022-01-10 10:42:30	giulio	http://localhost/perros2/public/	Saved module info caches
+2022-01-10 10:42:30	giulio	http://localhost/perros2/public/	Found 2 module(s) missing file: FieldtypeNumber => /var/www/html/perros2/public/site/modules/FieldtypeNumber/FieldtypeNumber.module, ProcessPage => /var/www/html/perros2/public/site/modules/ProcessPage/ProcessPage.module
+2022-01-10 10:42:30	giulio	http://localhost/perros2/public/	Installed module 'InputfieldIcon'
+2022-01-10 10:42:30	giulio	http://localhost/perros2/public/	Saved module info caches
+2022-01-10 10:42:30	giulio	http://localhost/perros2/public/	Found 2 module(s) missing file: FieldtypeNumber => /var/www/html/perros2/public/site/modules/FieldtypeNumber/FieldtypeNumber.module, ProcessPage => /var/www/html/perros2/public/site/modules/ProcessPage/ProcessPage.module
