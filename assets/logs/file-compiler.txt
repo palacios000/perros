@@ -4,3 +4,5 @@
 2022-01-10 17:05:27	guest	http://localhost/perros2/public/snipcart-shop/big-schlemel-stout/	Compiled file: /site/templates/snipcart-product.php
 2022-01-10 17:07:05	guest	http://localhost/perros2/public/snipcart-shop/big-schlemel-stout/	Compiled file: /site/templates/snipcart-product.php
 2022-01-11 09:36:36	guest	http://localhost/perros2/public/snipcart-shop/big-schlemel-stout/	Compiled file: /site/templates/snipcart-product.php
+2022-01-11 09:45:25	guest	http://localhost/perros2/public/	Compiled file: /site/templates/basic-page.php
+2022-01-11 10:02:16	giulio	http://localhost/perros2/public/snipcart-shop/big-schlemel-stout/	Compiled file: /site/templates/snipcart-product.php

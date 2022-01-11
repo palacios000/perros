@@ -32,3 +32,22 @@
 2022-01-10 11:01:41	giulio	http://localhost/perros2/public/edit/module/	Installed module 'FieldtypeOptions'
 2022-01-10 11:01:41	giulio	http://localhost/perros2/public/edit/module/	Installed module 'SnipWire'
 2022-01-10 11:01:41	giulio	http://localhost/perros2/public/edit/module/	Saved module info caches
+2022-01-11 10:45:44	giulio	http://localhost/perros2/public/edit/module/download/	Saved module info caches
+2022-01-11 10:45:44	giulio	http://localhost/perros2/public/edit/module/download/	Saved module info caches
+2022-01-11 10:45:46	giulio	http://localhost/perros2/public/edit/module/	Installed module 'ProcessExportProfile'
+2022-01-11 10:45:46	giulio	http://localhost/perros2/public/edit/module/	Saved module info caches
+2022-01-11 14:28:08	giulio	http://localhost/perros2/public/edit/setup/template/edit?id=43	Installed module 'InputfieldTextTags'
+2022-01-11 14:28:09	giulio	http://localhost/perros2/public/edit/setup/template/edit?id=43	Saved module info caches
+2022-01-11 14:46:57	giulio	http://localhost/perros2/public/edit/module/download/	Saved module info caches
+2022-01-11 14:46:58	giulio	http://localhost/perros2/public/edit/module/download/	Saved module info caches
+2022-01-11 14:47:00	giulio	http://localhost/perros2/public/edit/module/	Installed module 'ProcessWire\AdminOnSteroids'
+2022-01-11 14:47:00	giulio	http://localhost/perros2/public/edit/module/	Saved module info caches
+2022-01-11 15:07:31	giulio	http://localhost/perros2/public/edit/module/?reset=1	Saved module info caches
+2022-01-11 15:07:40	giulio	http://localhost/perros2/public/edit/module/	Installed module 'InputfieldCombo'
+2022-01-11 15:07:40	giulio	http://localhost/perros2/public/edit/module/	Installed module 'FieldtypeCombo'
+2022-01-11 15:07:40	giulio	http://localhost/perros2/public/edit/module/	Saved module info caches
+2022-01-11 15:08:08	giulio	http://localhost/perros2/public/edit/setup/field/edit?id=122	Installed module 'InputfieldToggle'
+2022-01-11 15:08:08	giulio	http://localhost/perros2/public/edit/setup/field/edit?id=122	Saved module info caches
+2022-01-11 15:23:52	giulio	http://localhost/perros2/public/edit/module/	Installed module 'InputfieldRepeater'
+2022-01-11 15:23:52	giulio	http://localhost/perros2/public/edit/module/	Installed module 'FieldtypeRepeater'
+2022-01-11 15:23:52	giulio	http://localhost/perros2/public/edit/module/	Saved module info caches

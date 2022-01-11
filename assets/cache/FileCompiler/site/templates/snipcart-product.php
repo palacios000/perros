@@ -35,10 +35,6 @@ and here: https://docs.snipcart.com/getting-started/customer-dashboard
     </div>
 </div>
 
-<!--
-We remove the masthead-tagline region to save space in this sample.
--->
-<p id="masthead-tagline" pw-remove></p>
 
 <!--
 The content element holds your product detail view.
