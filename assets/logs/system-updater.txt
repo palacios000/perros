@@ -6,3 +6,33 @@
 2022-01-10 10:42:30	Update #10: Installed ProcessLogger and added: Setup > Logs
 2022-01-10 10:42:30	Update #10: Installed InputfieldIcon
 2022-01-10 10:42:30	Update #10: Completed!
+2022-01-10 10:47:16	Update #11: Initializing update
+2022-01-10 10:47:16	Update #11: Completed!
+2022-01-10 10:47:18	Update #12: Initializing update
+2022-01-10 10:47:18	Update #12: Added 'published' column to pages table
+2022-01-10 10:47:18	Update #12: Populated values to 'published' for 43 pages
+2022-01-10 10:47:18	Update #12: Completed!
+2022-01-10 10:47:18	Update #13: Initializing update
+2022-01-10 10:47:18	Update #13: Completed!
+2022-01-10 10:47:40	Update #14: Initializing update
+2022-01-10 10:47:40	Update #14: Completed!
+2022-01-10 10:47:43	Update #15: Initializing update
+2022-01-10 10:47:43	Update #15: Completed!
+2022-01-10 10:47:43	Update #16: Initializing update
+2022-01-10 10:47:43	Update #16: Completed!
+2022-01-10 10:49:26	Update #17: Initializing update
+2022-01-10 10:49:26	Update #17: Skipped: /perros2/public/site/.htaccess (already exists)
+2022-01-10 10:49:26	Update #17: Created: /perros2/public/site/assets/.htaccess
+2022-01-10 10:49:26	Update #17: Skipped: /perros2/public/site/assets/cache/.htaccess (already exists)
+2022-01-10 10:49:26	Update #17: Skipped: /perros2/public/site/assets/backups/.htaccess (already exists)
+2022-01-10 10:49:26	Update #17: Skipped: /perros2/public/site/assets/logs/.htaccess (already exists)
+2022-01-10 10:49:26	Update #17: Created: /perros2/public/site/templates/.htaccess
+2022-01-10 10:49:26	Update #17: Created: /perros2/public/site/modules/.htaccess
+2022-01-10 10:49:26	Update #17: Details: <a href='https://processwire.com/blog/posts/pw-3.0.135/' target='_blank'>https://processwire.com/blog/posts/pw-3.0.135/</a>
+2022-01-10 10:49:26	Update #17: Completed!
+2022-01-10 11:01:12	Update #18: Initializing update
+2022-01-10 11:01:12	Update #18: Completed!
+2022-01-10 11:01:17	Update #19: Initializing update
+2022-01-10 11:01:18	Update #19: Initializing update
+2022-01-10 11:01:18	Update #19: Removed 3 redundant modules table entries
+2022-01-10 11:01:18	Update #19: Completed!

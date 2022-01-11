@@ -1,0 +1,1 @@
+2022-01-10 11:16:47	giulio	http://localhost/perros2/public/edit/setup/snipwire/install-product-package/?ret=_perros2_public_edit_module_edit_name_SnipWire_collapse_info_1	Populated initial created/modified dates for 'snipcart_item_image'

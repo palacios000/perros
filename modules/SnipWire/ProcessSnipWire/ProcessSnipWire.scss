@@ -1,0 +1,499 @@
+/**
+ * ProcessSnipWire - stylesheet.
+ * 
+ * Licensed under MPL 2.0 (see LICENSE file provided with this package)
+ * Copyright 2019 by Martin Gartner
+ *
+ * ProcessWire 3.x, Copyright 2019 by Ryan Cramer
+ * https://processwire.com
+ *
+ */
+
+$danger-color: #ff4444;
+$danger-color-dark: #CC0000;
+$warning-color: #ffbb33;
+$warning-color-dark: #FF8800;
+$success-color: #00C851;
+$success-color-dark: #007E33;
+$info-color: #33b5e5;
+$info-color-dark: #0099CC;
+
+// Fix for unnecessary bottom margin on unused element
+// @todo: needs to fixed in PW core
+.modal {
+    
+    #pw-content-head-buttons {
+        display: none;
+    }
+}
+
+.ProcessSnipWire {
+
+    .danger-color {
+        color: $danger-color;
+    }
+    .danger-color-dark {
+        color: $danger-color-dark;
+    }
+    .warning-color {
+        color: $warning-color;
+    }
+    .warning-color-dark {
+        color: $warning-color-dark;
+    }
+    .success-color {
+        color: $success-color;
+    }
+    .success-color-dark {
+        color: $success-color-dark;
+    }
+    .info-color {
+        color: $info-color;
+    }
+    .info-color-dark {
+        color: $info-color-dark;
+    }
+
+    .snipwire-badge {
+        display: inline-block;
+        margin: 0 .25rem;
+        padding: .25em .5em;
+        font-size: .8em;
+        font-weight: 400;
+        line-height: 1.3;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        border-radius: .25rem;
+
+        &.snipwire-badge-large {
+            font-size: 1em;
+            line-height: 1.5;
+        }
+        &.snipwire-badge-success {
+            color: #fff;
+            background-color: $success-color-dark;
+        }
+        &.snipwire-badge-danger {
+            color: #fff;
+            background-color: $danger-color-dark;
+        }
+        &.snipwire-badge-warning {
+            color: #fff;
+            background-color: $warning-color-dark;
+        }
+        &.snipwire-badge-info {
+            color: #fff;
+            background-color: $info-color-dark;
+        }
+    }
+}
+
+#pw-content-head {
+    
+    h1 {
+        display: inline-block;
+        background: url(../assets/images/snipwire-logo.svg) no-repeat left center;
+        background-size: auto 1.1em;
+        padding-left: 1.3em;
+    }
+}
+
+#SnipWireDashboard {
+    clear: both;
+
+    .MarkupPagerNav {
+        float: right;
+    }
+    .pw-table-responsive,
+    .uk-table {
+        margin-top: 0;
+    }
+    .price-field {
+        font-weight: 600;
+    }
+}
+
+#SnipWireDashboardModal {
+    clear: both;
+
+    .pw-table-responsive,
+    .uk-table {
+        margin-top: 0;
+    }
+}
+
+#DateRangeDisplay {
+    display: inline-block;
+    margin: 0 .5rem;
+    
+    em {
+        font-style: normal;
+        margin: 0 .25rem;
+        padding: .25rem .5rem;
+        background-color: #fff;
+        border: none;
+        outline: 1px solid #d9e1ea;
+    }
+}
+#DateRangeReset {
+    display: inline-block;
+    margin: 0 .5rem 0 0;
+    z-index: 1;
+    
+    &.ui-button,
+    &.ui-button.ui-state-default,
+    &.ui-button.ui-state-hover {
+        padding: 0 .5rem;
+        line-height: inherit;
+        vertical-align: inherit;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .hidable-inputfield-label {
+        display: none;
+    }
+}
+
+#PerformanceBoxesContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+    
+    .snipwire-perf-box {
+        flex-basis: 100%;
+        box-sizing: border-box;
+        padding: 0 .5rem;
+        background-color: #f0f3f7;
+        margin-bottom: 1.2rem;
+        
+        .snipwire-perf-box-header {
+            padding: 2rem .25rem .25rem .25rem;
+            color: #6c8dae;
+            background: transparent;
+            font-size: 1rem;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .snipwire-perf-box-body {
+            padding: .25rem .25rem 2rem .25rem;
+            background: transparent;
+            font-size: 1.6rem;
+            text-align: center;
+        }
+    }
+    .customers-multivalue {
+        display: flex;
+
+        div {
+            flex-basis: 50%;
+            text-align: center;
+            border-right: 1px solid #d9e1ea;
+            
+            span {
+                display: block;
+            }
+            small {
+                display: block;
+                color: #6c8dae;
+                font-size: .75rem;
+                text-transform: uppercase;
+            }
+        }
+        div:last-child {
+            padding-right: 0;
+            border-right: none;
+        }
+    }
+}
+@media screen and (min-width: 768px) {
+    #PerformanceBoxesContainer {
+        
+        .snipwire-perf-box {
+            flex-basis: calc((100% + 1.2rem) / 2 - 1.2rem); // 2 boxes in row
+        }
+    }
+}
+@media screen and (min-width: 960px) {
+    #PerformanceBoxesContainer {
+
+        .snipwire-perf-box {
+            flex-basis: calc((100% + 1.2rem) / 4 - 1.2rem); // 4 boxes in row
+        }
+    }
+}
+
+// Custom red colored "danger" action button (for delete actions)
+.ui-button.ui-priority-danger,
+.ui-button.ui-state-default.ui-priority-danger,
+.ui-button.ui-state-hover.ui-priority-danger {
+    background: #e83561;
+    color: #fff;
+}
+.ui-button.ui-state-hover.ui-priority-danger,
+.ui-button:hover.ui-priority-danger {
+    background: #3eb998;
+    color: #fff;
+}
+
+.ActionButtonsWrapper {
+    overflow: hidden;
+    margin: 20px 0 20px 0;
+
+    .AdditionalButtonsWrapper {
+        float: left;
+    } 
+    .RefreshButtonsWrapper {
+        
+        &.wrapper-right {
+            float: right;
+            
+            .ui-button {
+                margin-right: 0;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+.ItemListerTable {
+    clear: both;
+    overflow-x: auto;
+    
+    .fa-right-margin {
+        margin-right: .5rem;
+    }
+}
+.ItemListerHeadline {
+    float: left;
+    margin-top: 20px;
+}
+
+.ItemDetailBackLink {
+    line-height: 1.5rem;
+    margin-bottom: 20px;
+    
+    .fa-right-margin {
+        margin-right: .25em;
+    }
+}
+.ItemDetailHeader {
+    overflow: hidden;
+    padding: 1rem 0;
+}
+.modal {
+
+    .ItemDetailHeader {
+        padding-top: 0;
+    }
+}
+.ItemDetailTitle {
+    font-size: 1.5rem !important;
+    line-height: 3rem !important;
+    margin: 0 !important;
+    
+    .fa {
+        opacity: .7;
+        font-size: inherit !important;
+    }
+    .fa-right-margin {
+        margin-right: .25em;
+    }
+}
+.ItemDetailAdditionalInfo {
+    line-height: 1.5rem;
+    font-size: 1rem;
+}
+.ItemDetailActionButtons {
+    line-height: 3rem;
+    
+    button,
+    .ui-button {
+        margin-left: 0;
+        margin-right: .5rem;
+    }
+    .ui-button-text.ui-button-text-email {
+        text-transform: lowercase;
+    }
+
+}
+@media screen and (min-width: 800px) {
+    .ItemDetailTitle {
+        float: left;
+        font-size: 2rem !important;
+    }
+    .ItemDetailAdditionalInfo {
+        float: right;
+        line-height: 3rem;
+        font-size: 1.3rem;
+    }
+    .ItemDetailActionButtons {
+        float: right;
+        
+        button,
+        .ui-button {
+            margin-left: .5rem;
+            margin-right: 0;
+        }
+    }
+}
+
+.SnipWireDataSheet {
+    border: none;
+    border-collapse: collapse;
+    margin: 0;
+    
+    th {
+        padding: .25rem 1rem .25rem 0;
+        line-height: 1.5rem;
+        text-align: left;
+        font-size: 13px;
+        font-weight: 700;
+        color: #6c8dae;
+        text-transform: uppercase;
+        vertical-align: top;
+    }
+    td {
+        padding: .25rem 0;
+        line-height: 1.5rem;
+        vertical-align: top;
+    }
+}
+@media screen and (min-width: 768px) {
+    .SnipWireDataSheet {
+        
+        th {
+            padding: .25rem 2rem .25rem 0;
+            white-space: nowrap;
+        }
+    }
+}
+
+#OrdersTable {
+    
+}
+
+.RefundFormDisabled {
+    display: flex;
+    width: 100%;
+    height: 4rem;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #bfbfbf;
+}
+
+#OrderSummaryTable,
+#CartSummaryTable {
+
+    .row-summary-subtotal {
+        
+        td {
+        	border-top: 2px solid #e5e5e5;
+        }
+        .subtotal-label {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .subtotal-value {
+            font-weight: bold;
+        }
+    }
+    .row-summary-shipping {
+        
+        td {
+            color: $info-color-dark;
+        }
+    }
+    .row-summary-tax {
+        
+        td {
+            font-size: .9rem;
+        }
+    }
+    .row-summary-total {
+        
+        td {
+        	border-top: 2px solid #e5e5e5;
+        }
+        .total-label {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .total-value {
+            font-weight: bold;
+        }
+    }
+    .row-summary-refunds {
+        
+        td {
+            color: $warning-color-dark;
+        }
+    }
+    .row-summary-total-adjusted {
+        
+        td {
+        	border-top: 2px solid #e5e5e5;
+        }
+        .total-adjusted-label {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .total-adjusted-value {
+            font-weight: bold;
+        }
+    }
+}
+
+.snipwire-no-items {
+    display: flex;
+    width: 100%;
+    height: 8rem;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #bfbfbf;
+}
+
+.footer-version-info {
+   margin-top: 1.5rem;
+   margin-bottom: 0;
+   
+   small {
+       margin-left: .3rem;
+       color: #8d939e;
+       font-size: .875rem;
+       line-height: 1.5;
+   } 
+}
+
+.RuntimeNotification {
+    position: fixed;
+    top: 1.25rem;
+	width: auto;
+	margin: 0 1rem;
+	padding: .5em 1em .5em 0.5em;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    text-align: center;
+	border-radius: .25em; 
+	white-space: nowrap;
+	box-shadow: 0px 0px 3px rgba(0,0,0,0.3); 
+	font-weight: normal;
+	line-height: 19px;
+	
+	&.NoticeError {
+        background: crimson;
+        color: #fff;
+	}
+	&.NoticeWarning {
+        background: orange;
+        color: #fff;
+	}
+}
+

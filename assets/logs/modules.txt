@@ -18,3 +18,17 @@
 2022-01-10 10:42:30	giulio	http://localhost/perros2/public/	Installed module 'InputfieldIcon'
 2022-01-10 10:42:30	giulio	http://localhost/perros2/public/	Saved module info caches
 2022-01-10 10:42:30	giulio	http://localhost/perros2/public/	Found 2 module(s) missing file: FieldtypeNumber => /var/www/html/perros2/public/site/modules/FieldtypeNumber/FieldtypeNumber.module, ProcessPage => /var/www/html/perros2/public/site/modules/ProcessPage/ProcessPage.module
+2022-01-10 10:47:18	?	?	Saved module info caches
+2022-01-10 10:47:18	?	?	Found 2 module(s) missing file: FieldtypeNumber => /var/www/html/perros2/public/site/modules/FieldtypeNumber/FieldtypeNumber.module, ProcessPage => /var/www/html/perros2/public/site/modules/ProcessPage/ProcessPage.module
+2022-01-10 10:47:43	?	?	Saved module info caches
+2022-01-10 10:47:43	?	?	Found 2 module(s) missing file: FieldtypeNumber => /var/www/html/perros2/public/site/modules/FieldtypeNumber/FieldtypeNumber.module, ProcessPage => /var/www/html/perros2/public/site/modules/ProcessPage/ProcessPage.module
+2022-01-10 10:47:43	?	?	Saved module info caches
+2022-01-10 10:47:43	?	?	Found 2 module(s) missing file: FieldtypeNumber => /var/www/html/perros2/public/site/modules/FieldtypeNumber/FieldtypeNumber.module, ProcessPage => /var/www/html/perros2/public/site/modules/ProcessPage/ProcessPage.module
+2022-01-10 11:01:37	giulio	http://localhost/perros2/public/edit/module/download/	Saved module info caches
+2022-01-10 11:01:39	giulio	http://localhost/perros2/public/edit/module/download/	Saved module info caches
+2022-01-10 11:01:41	giulio	http://localhost/perros2/public/edit/module/	Installed module 'ProcessSnipWire'
+2022-01-10 11:01:41	giulio	http://localhost/perros2/public/edit/module/	Installed module 'MarkupSnipWire'
+2022-01-10 11:01:41	giulio	http://localhost/perros2/public/edit/module/	Installed module 'FieldtypeSnipWireTaxSelector'
+2022-01-10 11:01:41	giulio	http://localhost/perros2/public/edit/module/	Installed module 'FieldtypeOptions'
+2022-01-10 11:01:41	giulio	http://localhost/perros2/public/edit/module/	Installed module 'SnipWire'
+2022-01-10 11:01:41	giulio	http://localhost/perros2/public/edit/module/	Saved module info caches

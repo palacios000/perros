@@ -123,3 +123,5 @@ $config->httpHosts = array('localhost');
  */
 $config->debug = false;
 
+
+$config->moduleInstall('download', true);
