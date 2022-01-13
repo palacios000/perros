@@ -17,3 +17,32 @@
 2022-01-12 18:48:58	guest	http://localhost/perros2/public/	Compiled file: /site/templates/home.php
 2022-01-12 18:51:19	guest	http://localhost/perros2/public/	Compiled file: /site/templates/home.php
 2022-01-12 18:51:29	guest	http://localhost/perros2/public/	Compiled file: /site/templates/home.php
+2022-01-13 10:23:54	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-13 10:26:30	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-13 10:27:45	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-13 10:30:02	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-13 10:32:13	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-13 10:51:55	giulio	http://localhost/perros2/public/	Maintenance/Copy new version of source file to target file: /site/templates/sc-product.php => /site/assets/cache/FileCompiler/site/templates/sc-product.php
+2022-01-13 10:51:55	giulio	http://localhost/perros2/public/	Maintenance/Copy new version of source file to target file: /site/templates/snipcart-product.php => /site/assets/cache/FileCompiler/site/templates/snipcart-product.php
+2022-01-13 10:51:55	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-13 10:54:43	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-13 10:58:25	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-13 10:58:53	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-13 11:00:00	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-13 11:00:35	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-13 11:01:24	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-13 11:01:39	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-13 11:02:37	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-13 11:03:09	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?fname=John	Compiled file: /site/templates/sc-product.php
+2022-01-13 11:22:36	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?fname=John	Compiled file: /site/templates/sc-product.php
+2022-01-13 11:22:46	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?fname=John	Compiled file: /site/templates/sc-product.php
+2022-01-13 11:23:08	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?fav_language=CSS	Compiled file: /site/templates/sc-product.php
+2022-01-13 11:23:36	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?fav_language=CSS	Compiled file: /site/templates/sc-product.php
+2022-01-13 11:30:06	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?taglia=CSS	Compiled file: /site/templates/sc-product.php
+2022-01-13 11:30:22	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?taglia=CSS	Compiled file: /site/templates/sc-product.php
+2022-01-13 11:32:17	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-13 11:33:09	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-13 11:33:39	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-13 11:35:03	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-13 11:35:21	giulio	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-13 11:47:14	giulio	http://localhost/perros2/public/	Compiled file: /site/templates/home.php

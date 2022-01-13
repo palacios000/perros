@@ -18,6 +18,8 @@
 		<!-- 3 -->
 		<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
 		<script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
-		<div hidden id="snipcart" data-api-key="ZGMzZTk0YmItMmU2OC00OGRjLTg3OTItYWY5ODBhZjRkNDM4NjM3Nzc0MDE2OTE4MzA0NzA2"></div>
+		
+
+		<script defer src="https://unpkg.com/alpinejs@3.7.1/dist/cdn.min.js"></script>
 
 
