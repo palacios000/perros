@@ -6,3 +6,14 @@
 2022-01-11 09:36:36	guest	http://localhost/perros2/public/snipcart-shop/big-schlemel-stout/	Compiled file: /site/templates/snipcart-product.php
 2022-01-11 09:45:25	guest	http://localhost/perros2/public/	Compiled file: /site/templates/basic-page.php
 2022-01-11 10:02:16	giulio	http://localhost/perros2/public/snipcart-shop/big-schlemel-stout/	Compiled file: /site/templates/snipcart-product.php
+2022-01-12 11:58:16	giulio	http://localhost/perros2/public/snipcart-shop/big-schlemel-stout/	Compiled file: /site/templates/snipcart-product.php
+2022-01-12 18:38:27	giulio	http://localhost/perros2/public/	Compiled file: /site/templates/home.php
+2022-01-12 18:39:57	guest	http://localhost/perros2/public/	Compiled file: /site/templates/home.php
+2022-01-12 18:40:55	guest	http://localhost/perros2/public/	Compiled file: /site/templates/home.php
+2022-01-12 18:46:02	guest	http://localhost/perros2/public/	Compiled file: /site/templates/home.php
+2022-01-12 18:46:38	guest	http://localhost/perros2/public/	Compiled file: /site/templates/home.php
+2022-01-12 18:48:14	guest	http://localhost/perros2/public/	Compiled file: /site/templates/home.php
+2022-01-12 18:48:22	guest	http://localhost/perros2/public/	Compiled file: /site/templates/home.php
+2022-01-12 18:48:58	guest	http://localhost/perros2/public/	Compiled file: /site/templates/home.php
+2022-01-12 18:51:19	guest	http://localhost/perros2/public/	Compiled file: /site/templates/home.php
+2022-01-12 18:51:29	guest	http://localhost/perros2/public/	Compiled file: /site/templates/home.php

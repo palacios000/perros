@@ -1,3 +1,12 @@
 2022-01-10 11:16:47	giulio	http://localhost/perros2/public/edit/setup/snipwire/install-product-package/?ret=_perros2_public_edit_module_edit_name_SnipWire_collapse_info_1	Populated initial created/modified dates for 'snipcart_item_image'
 2022-01-11 15:21:22	giulio	http://localhost/perros2/public/edit/setup/template/removeFields	Deleted field "snipcart_item_variations" data in 0 row(s) from 0 page(s) using template "snipcart-product". [page-by-page]
 2022-01-11 15:39:28	giulio	http://localhost/perros2/public/edit/setup/template/removeFields	Deleted field "snipcart_item_custom_fields" data in 1 row(s) from 1 page(s) using template "snipcart-product". [page-by-page]
+2022-01-12 11:56:30	giulio	http://localhost/perros2/public/edit/page/add/	Populated initial created/modified dates for 'images'
+2022-01-12 15:31:34	giulio	http://localhost/perros2/public/edit/setup/field/save?id=130	Deleted field "infotext" data in 1 row(s) from 1 page(s) using template "repeater_slider". [page-by-page]
+2022-01-13 10:05:53	giulio	http://localhost/perros2/public/edit/setup/template/removeFields	Deleted field "snipcart_item_id" data in 0 row(s) from 0 page(s) using template "sc-product". [page-by-page]
+2022-01-13 10:05:53	giulio	http://localhost/perros2/public/edit/setup/template/removeFields	Deleted field "snipcart_item_price_eur" data in 0 row(s) from 0 page(s) using template "sc-product". [page-by-page]
+2022-01-13 10:05:53	giulio	http://localhost/perros2/public/edit/setup/template/removeFields	Deleted field "snipcart_item_categories" data in 0 row(s) from 0 page(s) using template "sc-product". [page-by-page]
+2022-01-13 10:05:53	giulio	http://localhost/perros2/public/edit/setup/template/removeFields	Deleted field "snipcart_item_weight" data in 0 row(s) from 0 page(s) using template "sc-product". [page-by-page]
+2022-01-13 10:05:53	giulio	http://localhost/perros2/public/edit/setup/template/removeFields	Deleted field "snipcart_item_width" data in 0 row(s) from 0 page(s) using template "sc-product". [page-by-page]
+2022-01-13 10:05:53	giulio	http://localhost/perros2/public/edit/setup/template/removeFields	Deleted field "snipcart_item_length" data in 0 row(s) from 0 page(s) using template "sc-product". [page-by-page]
+2022-01-13 10:05:53	giulio	http://localhost/perros2/public/edit/setup/template/removeFields	Deleted field "snipcart_item_height" data in 0 row(s) from 0 page(s) using template "sc-product". [page-by-page]

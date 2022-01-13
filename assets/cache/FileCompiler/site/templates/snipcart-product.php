@@ -94,7 +94,25 @@ The content element holds your product detail view.
     ?>
 </div>
 
-<!--
-We remove the <aside> element which is not used in our shop sample.
--->
-<aside id="sidebar" pw-remove></aside>
+
+<!-- 
+table template & fields
+VARIAZIONE PRODOTTI
+|====================|=======|==================================================|
+| product_options    | combo | colours,price_extra                              |
+| product_variations | combo | code,price,nastro,circ_toracica,circ_addome,peso |
+
+MINUTERIA
+|==========|
+| title    |
+| images   |
+| infotext |
+|          |
+
+VARIABILI - colori
+|========|
+| title  |
+| codice |
+|        |
+
+ -->
