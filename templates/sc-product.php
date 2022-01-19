@@ -149,11 +149,11 @@
 												<p class="mt-2 text-gray-600">Foto + testo ecc.</p>
 												<!-- Buttons -->
 												<div class="mt-8 ">
-													<form action="" method="get">
+													<form action="" method="get" x-data="{ active: 1 }">
 
 														<?php 
 														$nItem = 1;
-														foreach ($page->snipcart_item_variations as $variation) { ?>
+														foreach ($page->snipcart_item_variations as $itm) { ?>
 <!-- 															/*echo "
 															  <input type='radio' id='$variation->id' name='server-size' value='{$variation->product_variations->code}'>
 															  <label for='$variation->id'>{$variation->product_variations->code}</label><br>
@@ -165,20 +165,29 @@
 														<fieldset>
 														  
 														  <div class="space-y-4"
-														    x-data="{ checked : false }"
+														    x-data="{ 
+														    	id: <?php echo $nItem ?>,
+														    	get expanded(){
+														    		return this.checked === this.id
+														    	},
+														    	set expanded(value){
+														    		this.checked = value ? this.id : null
+														    	},
+														    }"
 														  >
 														   
 														    <label 
-														    :class="checked ? 'border-transparent' : 'border-gray-300' "
+														    :class="expanded ? 'border-transparent' : 'border-gray-300' "
 														    class="relative block bg-white border rounded-lg shadow-sm px-6 py-4 cursor-pointer sm:flex sm:justify-between focus:outline-none"
 														    id="taglia-<?php echo $nItem ?>">
 														      <input
+														      @click="expanded = !expanded"
 														       id="taglia-<?php echo $nItem ?>"
-														       x-model="checked"
-														       type="radio" name="taglia" value="<?php echo $itm->title ?>" class="sr-only">
+														       
+														       type="radio" name="taglia" value="<?php echo $itm->product_variations->code ?>" class="sr-only">
 														      <div class="flex items-center">
 														        <div class="text-sm">
-														          <p class="font-medium text-gray-900"><?php echo $itm->title ?></p>
+														          <p class="font-medium text-gray-900"><?php echo $itm->product_variations->code ?></p>
 														          <div class="text-gray-500">
 														            <p class="sm:inline">8GB / 4 CPUs</p>
 														            <p class="sm:inline">160 GB SSD disk</p>
@@ -191,7 +200,7 @@
 														      </div>
 	
 														      <div 
-														      :class="checked ? 'border-indigo-500' : 'border-transparent' "
+														      :class="expanded ? 'border-indigo-500' : 'border-transparent' "
 														      class="absolute -inset-px rounded-lg border-2 pointer-events-none" aria-hidden="true"></div>
 														    </label>
 

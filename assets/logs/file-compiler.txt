@@ -130,3 +130,11 @@
 2022-01-19 17:56:27	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?server-size=Hobby	Compiled file: /site/templates/sc-product.php
 2022-01-19 17:57:17	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?server-size=Hobby	Compiled file: /site/templates/sc-product.php
 2022-01-19 17:57:33	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?server-size=Hobby	Compiled file: /site/templates/sc-product.php
+2022-01-19 18:07:07	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?server-size=Hobby	Compiled file: /site/templates/sc-product.php
+2022-01-19 18:08:00	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?server-size=Hobby	Compiled file: /site/templates/sc-product.php
+2022-01-19 18:09:04	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?server-size=Hobby	Compiled file: /site/templates/sc-product.php
+2022-01-19 18:10:17	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?server-size=Hobby	Compiled file: /site/templates/sc-product.php
+2022-01-19 18:10:58	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?server-size=Hobby	Compiled file: /site/templates/sc-product.php
+2022-01-19 18:11:28	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?taglia=	Compiled file: /site/templates/sc-product.php
+2022-01-19 18:12:26	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?taglia=	Compiled file: /site/templates/sc-product.php
+2022-01-19 18:13:04	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?taglia=	Compiled file: /site/templates/sc-product.php
