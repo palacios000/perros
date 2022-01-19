@@ -125,3 +125,6 @@ $config->debug = false;
 
 
 $config->moduleInstall('download', true);
+
+
+$config->prependTemplateFile('_defaultPages.php');

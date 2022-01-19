@@ -19,7 +19,8 @@
 		<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
 		<script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
 		
-
+		<script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
 		<script defer src="https://unpkg.com/alpinejs@3.7.1/dist/cdn.min.js"></script>
 
 
+	</head>
