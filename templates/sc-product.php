@@ -151,64 +151,58 @@
 												<div class="mt-8 ">
 													<form action="" method="get">
 
-														<?php foreach ($page->snipcart_item_variations as $variation) {
-															/*echo "
+														<?php 
+														$nItem = 1;
+														foreach ($page->snipcart_item_variations as $variation) { ?>
+<!-- 															/*echo "
 															  <input type='radio' id='$variation->id' name='server-size' value='{$variation->product_variations->code}'>
 															  <label for='$variation->id'>{$variation->product_variations->code}</label><br>
 															";*/
-														} ?>
+ -->															
 
 
-
-
-														<!-- TW button -->
+														<!-- TW radio buttons -->
 														<fieldset>
 														  
 														  <div class="space-y-4"
 														    x-data="{ checked : false }"
 														  >
-														    <!--
-														      Checked: "border-transparent", Not Checked: "border-gray-300"
-														      Active: "ring-2 ring-indigo-500"
-														    x-init="$watch('tagliax', value => console.log(value))"
-														    -->
+														   
 														    <label 
 														    :class="checked ? 'border-transparent' : 'border-gray-300' "
 														    class="relative block bg-white border rounded-lg shadow-sm px-6 py-4 cursor-pointer sm:flex sm:justify-between focus:outline-none"
-														    id="check">
+														    id="taglia-<?php echo $nItem ?>">
 														      <input
-														       id="check"
+														       id="taglia-<?php echo $nItem ?>"
 														       x-model="checked"
-														       type="radio" name="server-size" value="Hobby" class="sr-only" aria-labelledby="server-size-0-label" aria-describedby="server-size-0-description-0 server-size-0-description-1">
+														       type="radio" name="taglia" value="<?php echo $itm->title ?>" class="sr-only">
 														      <div class="flex items-center">
 														        <div class="text-sm">
-														          <p id="server-size-0-label" class="font-medium text-gray-900">
-														            Hobby
-														          </p>
-														          <div id="server-size-0-description-0" class="text-gray-500">
+														          <p class="font-medium text-gray-900"><?php echo $itm->title ?></p>
+														          <div class="text-gray-500">
 														            <p class="sm:inline">8GB / 4 CPUs</p>
-														            <span class="hidden sm:inline sm:mx-1" aria-hidden="true">&middot;</span>
 														            <p class="sm:inline">160 GB SSD disk</p>
 														          </div>
 														        </div>
 														      </div>
-														      <div id="server-size-0-description-1" class="mt-2 flex text-sm sm:mt-0 sm:block sm:ml-4 sm:text-right">
+														      <div class="mt-2 flex text-sm sm:mt-0 sm:block sm:ml-4 sm:text-right">
 														        <div class="font-medium text-gray-900">$40</div>
 														        <div class="ml-1 text-gray-500 sm:ml-0">/mo</div>
 														      </div>
-														      <!--
-														        Active: "border", Not Active: "border-2"
-														        Checked: "border-indigo-500", Not Checked: "border-transparent"
-														      -->
+	
 														      <div 
 														      :class="checked ? 'border-indigo-500' : 'border-transparent' "
 														      class="absolute -inset-px rounded-lg border-2 pointer-events-none" aria-hidden="true"></div>
 														    </label>
 
-
 														  </div>
 														</fieldset>
 														<!-- TW buttons END -->
+
+
+														<?php 
+ 															$nItem++;
+														} ?>
 
 
 
