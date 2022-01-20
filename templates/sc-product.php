@@ -12,6 +12,7 @@
 		} else { $image = ""; $imageDesc = "";}
 
 	// Range Prezzo
+		
 
 
 	// Get the formatted product price.
@@ -82,7 +83,7 @@
 							<div class="text-base text-gray-700 space-y-6"><?php echo $page->snipcart_item_description ?></div>
 						</div>
 
-						<form class="mt-6">
+						<div class="mt-6">
 							<!-- Colors -->
 							<div>
 								<h3 class="text-sm text-gray-600">Colori disponibili</h3>
@@ -118,7 +119,7 @@
 
 								</div>
 
-								<!-- Modal TAGLIA #### (da capire dov'e' finito x-trap... -->
+								<!-- Modal TAGLIA #### -->
 									<div
 										x-cloak
 										x-show="open"
@@ -141,7 +142,7 @@
 											<div
 												x-on:click.stop
 												x-trap.noscroll.inert="open"
-												class="relative max-w-2xl w-full bg-white border border-black p-8 overflow-y-auto"
+												class="relative max-w-6xl w-full bg-white border border-black p-8 overflow-y-auto"
 											>
 												<!-- Title -->
 												<h2 class="text-3xl font-medium" :id="$id('modal-title')">Taglie</h2>
@@ -151,15 +152,53 @@
 												<div class="mt-8 ">
 													<form action="" method="get" x-data="{ active: 1 }">
 
+														<!-- column title -->
+														<div class="flex justify-between">
+															<div class="w-1/5"><!--empty--></div>
+
+															<?php 
+															function tableTitle($titolo, $colore){
+																$th = "
+																<div class='w-1/5 text-center $colore'>
+																	$titolo
+																</div>";
+																return $th;
+															}
+
+															function tableCell($titolo, $colore, $unita){
+																// un po' di calcoli per min. max.
+																if ( strstr($titolo, '/')) {
+																	$minmax = explode('/', $titolo);
+																	$testo = $minmax[0] . " &#187; " . $minmax[1] . " $unita";
+																}else{
+																	$testo = $titolo . $unita;
+																}
+
+																$td = "
+																<div class='w-1/5 flex items-center $colore'>
+																  <div class='text-sm text-center font-medium text-gray-900 w-full'>
+																    $testo
+																  </div>
+																</div>
+																";
+																return $td;
+															}
+
+															if ($page->product_options->titolo1) echo tableTitle($page->product_options->titolo1, 'bg-perros-green-100');
+															if ($page->product_options->titolo2) echo tableTitle($page->product_options->titolo2, 'bg-perros-brown-100');
+															if ($page->product_options->titolo3) echo tableTitle($page->product_options->titolo3, 'bg-perros-green-100');
+
+															?>
+															
+															<div class="w-1/5 text-right"><!--empty--></div>
+
+
+														</div>
+
+
 														<?php 
 														$nItem = 1;
 														foreach ($page->snipcart_item_variations as $itm) { ?>
-<!-- 															/*echo "
-															  <input type='radio' id='$variation->id' name='server-size' value='{$variation->product_variations->code}'>
-															  <label for='$variation->id'>{$variation->product_variations->code}</label><br>
-															";*/
- -->															
-
 
 														<!-- TW radio buttons -->
 														<fieldset>
@@ -178,45 +217,53 @@
 														   
 														    <label 
 														    :class="expanded ? 'border-transparent' : 'border-gray-300' "
-														    class="relative block bg-white border rounded-lg shadow-sm px-6 py-4 cursor-pointer sm:flex sm:justify-between focus:outline-none"
+														    class="relative block bg-white border shadow-sm px-6 my-1  cursor-pointer flex justify-between focus:outline-none"
 														    id="taglia-<?php echo $nItem ?>">
 														      <input
 														      @click="expanded = !expanded"
-														       id="taglia-<?php echo $nItem ?>"
-														       
-														       type="radio" name="taglia" value="<?php echo $itm->product_variations->code ?>" class="sr-only">
-														      <div class="flex items-center">
+														      id="taglia-<?php echo $nItem ?>"
+														      type="radio" name="taglia" value="<?php echo $itm->product_variations->code ?>" class="sr-only">
+														      <!-- codice -->
+														      <div class="w-1/5 flex items-center">
 														        <div class="text-sm">
-														          <p class="font-medium text-gray-900"><?php echo $itm->product_variations->code ?></p>
+														          <p class="font-medium text-gray-900 uppercase"><?php echo $itm->product_variations->code ?></p>
 														          <div class="text-gray-500">
-														            <p class="sm:inline">8GB / 4 CPUs</p>
-														            <p class="sm:inline">160 GB SSD disk</p>
+														            <p class=""><?php echo $itm->product_variations->nastro ?></p>
 														          </div>
 														        </div>
 														      </div>
-														      <div class="mt-2 flex text-sm sm:mt-0 sm:block sm:ml-4 sm:text-right">
-														        <div class="font-medium text-gray-900">$40</div>
-														        <div class="ml-1 text-gray-500 sm:ml-0">/mo</div>
+
+																	<!-- titolo 1 - circ toracica/collo
+														      <div class="w-1/5 flex items-center bg-perros-green-100">
+														        <div class="text-sm text-center font-medium text-gray-900 uppercase w-full">
+														          valori
+														        </div>
+														      </div>
+																	 -->
+
+														      <?php 
+														      if ($page->product_options->titolo1) echo tableCell($itm->product_variations->circ_toracica, 'bg-perros-green-100', 'cm'); 
+														      if ($page->product_options->titolo2) echo tableCell($itm->product_variations->circ_addome, 'bg-perros-brown-100', 'cm'); 
+														      if ($page->product_options->titolo3) echo tableCell($itm->product_variations->peso, 'bg-perros-green-100', 'kg'); 
+														      ?>
+
+																	<!-- prezzo -->
+														      <div class="w-1/5 mt-2 flex text-sm sm:mt-0 sm:block sm:ml-4 sm:text-right">
+														        <div class="font-medium text-gray-900">&euro; <?php echo $itm->product_variations->price ?></div>
 														      </div>
 	
 														      <div 
 														      :class="expanded ? 'border-indigo-500' : 'border-transparent' "
-														      class="absolute -inset-px rounded-lg border-2 pointer-events-none" aria-hidden="true"></div>
+														      class="absolute -inset-px border-2 pointer-events-none" aria-hidden="true"></div>
 														    </label>
 
 														  </div>
 														</fieldset>
 														<!-- TW buttons END -->
 
-
 														<?php 
  															$nItem++;
 														} ?>
-
-
-
-
-
 
 
 														<button type="submit" x-on:click="open = false" class="bg-white border border-black px-4 py-2 focus:outline-none focus:ring-4 focus:ring-aqua-400">
@@ -230,7 +277,7 @@
 											</div>
 										</div>
 									</div>
-						</form>
+						</div>
 
 					</div>
 				</div>
@@ -269,9 +316,9 @@
 table template & fields
 
 VARIAZIONE PRODOTTI
-|====================|=======|==================================================|
-| product_options    | combo | colours,price_extra                              |
-| product_variations | combo | code,price,nastro,circ_toracica,circ_addome,peso |
+|====================|=======|===========================================================|
+| product_options    | combo | colours,minuteria,	price_extra, titolo1, titolo2, titolo3 |
+| product_variations | combo | code,price,nastro,circ_toracica,circ_addome,peso          |
 
 MINUTERIA
 |==========|
