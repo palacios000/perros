@@ -472,6 +472,11 @@ html {
 .bg-perros-brown{ --tw-bg-opacity: 1; background-color: rgb(141 117 109 / var(--tw-bg-opacity)); }
 .bg-perros-green-100{ --tw-bg-opacity: 1; background-color: rgb(183 220 210 / var(--tw-bg-opacity)); }
 .bg-red-100{ --tw-bg-opacity: 1; background-color: rgb(254 226 226 / var(--tw-bg-opacity)); }
+.bg-perros-brown-400{ --tw-bg-opacity: 1; background-color: rgb(159 138 131 / var(--tw-bg-opacity)); }
+.bg-stone-700{ --tw-bg-opacity: 1; background-color: rgb(68 64 60 / var(--tw-bg-opacity)); }
+.bg-pink-200{ --tw-bg-opacity: 1; background-color: rgb(251 207 232 / var(--tw-bg-opacity)); }
+.bg-lime-500{ --tw-bg-opacity: 1; background-color: rgb(132 204 22 / var(--tw-bg-opacity)); }
+.bg-violet-500{ --tw-bg-opacity: 1; background-color: rgb(139 92 246 / var(--tw-bg-opacity)); }
 .bg-opacity-50{ --tw-bg-opacity: 0.5; }
 .object-cover{ -o-object-fit: cover; object-fit: cover; }
 .object-center{ -o-object-position: center; object-position: center; }
@@ -524,6 +529,20 @@ html {
 .ring-transparent{ --tw-ring-color: transparent; }
 .ring-gray-400{ --tw-ring-opacity: 1; --tw-ring-color: rgb(156 163 175 / var(--tw-ring-opacity)); }
 .ring-black{ --tw-ring-opacity: 1; --tw-ring-color: rgb(0 0 0 / var(--tw-ring-opacity)); }
+.ring-orange-500{ --tw-ring-opacity: 1; --tw-ring-color: rgb(249 115 22 / var(--tw-ring-opacity)); }
+.ring-perros-brown-100{ --tw-ring-opacity: 1; --tw-ring-color: rgb(213 204 200 / var(--tw-ring-opacity)); }
+.ring-blue-500{ --tw-ring-opacity: 1; --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity)); }
+.ring-yellow-800{ --tw-ring-opacity: 1; --tw-ring-color: rgb(133 77 14 / var(--tw-ring-opacity)); }
+.ring-gray-800{ --tw-ring-opacity: 1; --tw-ring-color: rgb(31 41 55 / var(--tw-ring-opacity)); }
+.ring-rose-400{ --tw-ring-opacity: 1; --tw-ring-color: rgb(251 113 133 / var(--tw-ring-opacity)); }
+.ring-red-500{ --tw-ring-opacity: 1; --tw-ring-color: rgb(239 68 68 / var(--tw-ring-opacity)); }
+.ring-green-600{ --tw-ring-opacity: 1; --tw-ring-color: rgb(22 163 74 / var(--tw-ring-opacity)); }
+.ring-purple-600{ --tw-ring-opacity: 1; --tw-ring-color: rgb(147 51 234 / var(--tw-ring-opacity)); }
+.ring-perros-brown-400{ --tw-ring-opacity: 1; --tw-ring-color: rgb(159 138 131 / var(--tw-ring-opacity)); }
+.ring-stone-700{ --tw-ring-opacity: 1; --tw-ring-color: rgb(68 64 60 / var(--tw-ring-opacity)); }
+.ring-pink-200{ --tw-ring-opacity: 1; --tw-ring-color: rgb(251 207 232 / var(--tw-ring-opacity)); }
+.ring-lime-500{ --tw-ring-opacity: 1; --tw-ring-color: rgb(132 204 22 / var(--tw-ring-opacity)); }
+.ring-violet-500{ --tw-ring-opacity: 1; --tw-ring-color: rgb(139 92 246 / var(--tw-ring-opacity)); }
 .ring-opacity-5{ --tw-ring-opacity: 0.05; }
 .ring-offset-2{ --tw-ring-offset-width: 2px; }
 .ring-offset-1{ --tw-ring-offset-width: 1px; }

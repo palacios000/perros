@@ -13,8 +13,14 @@
 	}
 
 	// Immagine
-		if ($image = $page->snipcart_item_image->first()->width(640)) {
+		if ($image = $page->snipcart_item_image->getrandom()->width(640)) {
 			$imageDesc = $image->description ? $image->description : $page->title;
+			if (count($page->snipcart_item_image)) {
+				foreach($page->snipcart_item_image as $colorImage){
+					$colorImage->width(640); // same as aboce 4 lines up
+				}
+			}
+			
 		} else { $image = ""; $imageDesc = "";}
 
 	// Range Prezzo
@@ -31,7 +37,9 @@
 		}
 
 
-	// funzioni tabella
+	// funzioni 
+
+		//tabella
 		function tableTitle($titolo, $colore){
 			$th = "
 			<div class='w-1/5 text-center $colore'>
@@ -69,7 +77,7 @@
 		?>
 
 		<!-- ### PRODUCT DETAILS inizio  -->
-		<main class="max-w-7xl mx-auto sm:pt-16 sm:px-6 lg:px-8">
+		<main class="max-w-7xl mx-auto sm:pt-16 sm:px-6 lg:px-8" x-data="{imageUrl: '<?php echo $image->url ?>'}">
 			<div class="max-w-2xl mx-auto lg:max-w-none">
 				<!-- Product -->
 				<div class="lg:grid lg:grid-cols-2 lg:gap-x-8 lg:items-start">
@@ -91,7 +99,7 @@
 
 						<div class="w-full aspect-w-1 aspect-h-1">
 							<div id="tabs-2-panel-1" aria-labelledby="tabs-2-tab-1" role="tabpanel" tabindex="0">
-								<img src="<?php echo $image->url ?>" alt="<?php echo $imageDesc ?>" class="w-full h-full object-center object-cover sm:rounded-lg">
+								<img :src="imageUrl"  alt="<?php echo $imageDesc ?>" class="w-full h-full object-center object-cover sm:rounded-lg">
 							</div>
 						</div>
 					</div>
@@ -153,7 +161,6 @@
 												<span aria-hidden="true" class="h-6 w-6 bg-<?php echo $colordot->codice ?> border border-black border-opacity-10 rounded-full"></span>
 											</label>
 										<?php } ?>
-
 										
 									</div>
 								</fieldset>
@@ -204,7 +211,8 @@
 															<?php 
 															if ($page->product_options->titolo1) echo tableTitle($page->product_options->titolo1, 'bg-perros-green-100');
 															if ($page->product_options->titolo2) echo tableTitle($page->product_options->titolo2, 'bg-perros-brown-100');
-															if ($page->product_options->titolo3) echo tableTitle($page->product_options->titolo3, 'bg-red-100');
+															if ($page->product_options->titolo3) echo tableTitle($page->product_options->titolo3, 'bg-gray-200');
+															if ($page->product_options->titolo4) echo tableTitle($page->product_options->titolo4, 'bg-red-100');
 															?>
 															<div class="w-1/5 text-right"><!--empty--></div>
 														</div>
@@ -255,9 +263,10 @@
 																	 -->
 
 														      <?php 
-														      if ($page->product_options->titolo1) echo tableCell($itm->product_variations->circ_toracica, 'bg-perros-green-100', 'cm'); 
-														      if ($page->product_options->titolo2) echo tableCell($itm->product_variations->circ_addome, 'bg-perros-brown-100', 'cm'); 
-														      if ($page->product_options->titolo3) echo tableCell($itm->product_variations->peso, 'bg-red-100', 'kg'); 
+														      if ($page->product_options->titolo1) echo tableCell($itm->product_variations->torace, 'bg-perros-green-100', 'cm'); 
+														      if ($page->product_options->titolo2) echo tableCell($itm->product_variations->addome, 'bg-perros-brown-100', 'cm'); 
+														      if ($page->product_options->titolo3) echo tableCell($itm->product_variations->gabbia, 'bg-gray-200', 'cm'); 
+														      if ($page->product_options->titolo4) echo tableCell($itm->product_variations->peso, 'bg-red-100', 'kg'); 
 														      ?>
 
 																	<!-- prezzo -->
@@ -306,46 +315,93 @@
 							if ($page->product_options->colours) {
 								// 02.1 scegli colore - start 
 								// $itemOK definito sopra all'inzio ?>
-								<form action="" method="get" x-data="{ active: 1 }">
 
-														<!-- TW radio buttons -->
-														<fieldset>
-														  
-														  <div class="space-y-4">
-														   
-														    <label 
-														    :class="expanded ? 'border-transparent' : 'border-gray-300' "
-														    class="relative block bg-white border shadow-sm px-6 my-1  cursor-pointer flex justify-between focus:outline-none"
-														    >
-														      <input
-														      type="radio" name="taglia" value="" class="sr-only">
-														      <!-- codice -->
-														      <div class="w-1/5 flex items-center">
-														        <div class="text-sm">
-														          <p class="font-medium text-gray-900 uppercase"><?php echo $itemOK->product_variations->code ?></p>
-														          <div class="text-gray-500">
-														            <p class=""><?php echo $itemOK->product_variations->nastro ?></p>
-														          </div>
-														        </div>
-														      </div>
+								<!-- TW radio buttons -->
+								<fieldset>
+								  
+								  <div class="space-y-4">
+								   
+								    <label 
+								    :class="expanded ? 'border-transparent' : 'border-gray-300' "
+								    class="relative block bg-white border shadow-sm px-6 my-1  cursor-pointer flex justify-between focus:outline-none"
+								    >
+								      <input
+								      type="radio" name="taglia" value="" class="sr-only">
+								      <!-- codice -->
+								      <div class="w-1/5 flex items-center">
+								        <div class="text-sm">
+								          <p class="font-medium text-gray-900 uppercase"><?php echo $itemOK->product_variations->code ?></p>
+								          <div class="text-gray-500">
+								            <p class=""><?php echo $itemOK->product_variations->nastro ?></p>
+								          </div>
+								        </div>
+								      </div>
 
-														      <?php 
-														      if ($page->product_options->titolo1) echo tableCell($itemOK->product_variations->circ_toracica, 'bg-perros-green-100', 'cm', $page->product_options->titolo1); 
-														      if ($page->product_options->titolo2) echo tableCell($itemOK->product_variations->circ_addome, 'bg-perros-brown-100', 'cm', $page->product_options->titolo2); 
-														      if ($page->product_options->titolo3) echo tableCell($itemOK->product_variations->peso, 'bg-red-100', 'kg', $page->product_options->titolo2); 
-														      ?>
-	
-														      <div 
-														      :class="expanded ? 'border-indigo-500' : 'border-transparent' "
-														      class="absolute -inset-px border-2 pointer-events-none" aria-hidden="true"></div>
-														    </label>
+								      <?php 
+								      if ($page->product_options->titolo1) echo tableCell($itemOK->product_variations->torace, 'bg-perros-green-100', 'cm', $page->product_options->titolo1); 
+								      if ($page->product_options->titolo2) echo tableCell($itemOK->product_variations->addome, 'bg-perros-brown-100', 'cm', $page->product_options->titolo2); 
+								      if ($page->product_options->titolo3) echo tableCell($itemOK->product_variations->gabbia, 'bg-gray-200', 'cm', $page->product_options->titolo3); 
+								      if ($page->product_options->titolo4) echo tableCell($itemOK->product_variations->peso, 'bg-red-100', 'kg', $page->product_options->titolo4); 
+								      ?>
 
-														  </div>
-														</fieldset>
-														<!-- TW buttons END -->
+								      <div 
+								      :class="expanded ? 'border-indigo-500' : 'border-transparent' "
+								      class="absolute -inset-px border-2 pointer-events-none" aria-hidden="true"></div>
+								    </label>
 
+								  </div>
+								</fieldset>
+								<!-- TW buttons END -->
 
-													</form>
+								<form action="" method="get">
+
+									<!-- Colors -->
+										<div>
+											<h3 class="text-sm text-gray-600">Scegli il colore</h3>
+
+											<fieldset id="colordots" class="mt-2" x-data="{ active: 1 }">
+												<div class="flex items-center space-x-3">
+													<!--
+														Active and Checked: "ring ring-offset-1"
+														Not Active and Checked: "ring-2"
+													-->
+													<?php 
+													$nColors = 1;
+													foreach ($colorspage->children as $colordot) { 
+														// $swapImage = $config->httpHost -- forse aggiungere
+
+														$swapImage =  $page->filesUrl() . substr($colordot->name, 0, 4). substr($image->name, 4);
+														?>
+													<div
+													x-data="{ 
+														id: <?php echo $nColors ?>,
+														get expanded(){
+															return this.checked === this.id
+														},
+														set expanded(value){
+															this.checked = value ? this.id : null
+														},
+													}">
+														<label 
+														:class="expanded ? 'ring-2' : '' "
+														class="-m-0.5 relative rounded-full ring-offset-2 flex items-center justify-center cursor-pointer focus:outline-none ring-<?php echo $colordot->codice ?>">
+															<input
+															@click="expanded = !expanded; imageUrl = '<?php echo $swapImage ?>'"
+															id="colore-<?php echo $nColors ?>"
+															 type="radio" name="color" value="<?php echo $colordot->title ?>" class="sr-only">
+															<p id="color-choice-1-label" class="sr-only"><?php echo $colordot->title ?></p>
+															<span aria-hidden="true" class="h-6 w-6 bg-<?php echo $colordot->codice ?> border border-black border-opacity-10 rounded-full"></span>
+														</label>
+													</div>
+													<?php 
+													$nColors++;
+													} ?>
+													
+												</div>
+											</fieldset>
+										</div>
+
+								</form>
 							<?php } // 02.1 end ?>
 
 
@@ -361,15 +417,27 @@
 </div>
 
 <!-- questi mi servono a taildind per generare il codice colore nel css , altrimenti non si attivano tramite php  -->
-<!-- <span class="h-8 w-8 bg-orange-500 "></span>
-<span class="h-8 w-8 bg-perros-brown-100 "></span>
+<!-- 
+<span class="h-8 w-8 bg-gray-200 "></span>
+<span class="h-8 w-8 bg-orange-500 "></span>
+<span class="h-8 w-8 bg-perros-brown-400 "></span>
 <span class="h-8 w-8 bg-blue-500 "></span>
 <span class="h-8 w-8 bg-yellow-800 "></span>
-<span class="h-8 w-8 bg-gray-800 "></span>
-<span class="h-8 w-8 bg-rose-400 "></span>
+<span class="h-8 w-8 bg-stone-700 "></span>
+<span class="h-8 w-8 bg-pink-200 "></span>
 <span class="h-8 w-8 bg-red-500 "></span>
-<span class="h-8 w-8 bg-green-600 "></span>
-<span class="h-8 w-8 bg-purple-600 "></span>
+<span class="h-8 w-8 bg-lime-500 "></span>
+<span class="h-8 w-8 bg-violet-500 "></span>
+
+<span class="h-8 w-8 ring-orange-500 "></span>
+<span class="h-8 w-8 ring-perros-brown-400 "></span>
+<span class="h-8 w-8 ring-blue-500 "></span>
+<span class="h-8 w-8 ring-yellow-800 "></span>
+<span class="h-8 w-8 ring-stone-700 "></span>
+<span class="h-8 w-8 ring-pink-200 "></span>
+<span class="h-8 w-8 ring-red-500 "></span>
+<span class="h-8 w-8 ring-lime-500 "></span>
+<span class="h-8 w-8 ring-violet-500 "></span>
  -->
 </body>
 </html>
@@ -379,9 +447,10 @@
 table template & fields
 
 VARIAZIONE PRODOTTI
-|====================|=======|===========================================================|
-| product_options    | combo | colours,minuteria,	price_extra, titolo1, titolo2, titolo3 |
-| product_variations | combo | code,price,nastro,circ_toracica,circ_addome,peso          |
+|====================|=======|====================================================================|
+| product_options    | combo | colours,minuteria,	price_extra, titolo1, titolo2, titolo3, titolo4 |
+| product_variations | combo | code,price,nastro,torace,addome,gabbia,peso                        |
+|                    |       |                                                                    |
 
 MINUTERIA
 |==========|
