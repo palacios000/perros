@@ -6,25 +6,69 @@
 <div id="content"> <!-- The content element holds your product detail view. -->
 	<?php
 
+	// taglia selezionata
+	$tagliaOK = ($input->get->taglia) ? $sanitizer->name($input->get->taglia) : '';
+	if ($tagliaOK) {
+		$itemOK = $page->snipcart_item_variations->findOne("product_variations.code=$tagliaOK");
+	}
+
 	// Immagine
 		if ($image = $page->snipcart_item_image->first()->width(640)) {
 			$imageDesc = $image->description ? $image->description : $page->title;
 		} else { $image = ""; $imageDesc = "";}
 
 	// Range Prezzo
-		
+		if ($tagliaOK) {
+			$prezzo = '&euro;'.$itemOK->product_variations->price;
+		}else{
+			$minmaxPrice = array();
+			foreach ($page->snipcart_item_variations as $findPrice) {
+				$minmaxPrice[] = $findPrice->product_variations->price;
+			}
+			$priceMin = min($minmaxPrice);
+			$priceMax = max($minmaxPrice);
+			$prezzo = '&euro;'.$priceMin. ' - &euro;'.$priceMax;
+		}
+
+
+	// funzioni tabella
+		function tableTitle($titolo, $colore){
+			$th = "
+			<div class='w-1/5 text-center $colore'>
+				$titolo
+			</div>";
+			return $th;
+		}
+
+		function tableCell($titolo, $colore, $unita, $tableTitle = ''){
+			$testo = ($tableTitle) ? "<p class='text-sm'>$tableTitle<p>" : "";
+			// un po' di calcoli per min. max.
+			if ( strstr($titolo, '/')) {
+				$minmax = explode('/', $titolo);
+				$testo .= $minmax[0] . " &#187; " . $minmax[1] . " $unita";
+			}else{
+				$testo .= $titolo . $unita;
+			}
+
+			$td = "
+			<div class='w-1/5 flex items-center $colore'>
+			  <div class='text-sm text-center font-medium text-gray-900 w-full'>
+			    $testo
+			  </div>
+			</div>
+			";
+			return $td;
+		}
+
 
 
 	// Get the formatted product price.
 	// The getProductPriceFormatted method is provided by MarkupSnipWire module and can be called 
 	// via custom API variable: $snipwire->getProductPriceFormatted()
 	$priceFormatted = wire('snipwire')->getProductPriceFormatted(page());
+		?>
 
-
-
-
-	if (!$input->get->taglia) { 
-		### PRODUCT DETAILS inizio ?>
+		<!-- ### PRODUCT DETAILS inizio  -->
 		<main class="max-w-7xl mx-auto sm:pt-16 sm:px-6 lg:px-8">
 			<div class="max-w-2xl mx-auto lg:max-w-none">
 				<!-- Product -->
@@ -58,7 +102,7 @@
 
 						<div class="mt-3">
 							<h2 class="sr-only">Prezzo prodotto</h2>
-							<p class="text-3xl text-gray-900">$140</p>
+							<p class="text-3xl text-gray-900"><?php echo $prezzo ?></p>
 						</div>
 
 						<!-- Reviews -->
@@ -83,6 +127,8 @@
 							<div class="text-base text-gray-700 space-y-6"><?php echo $page->snipcart_item_description ?></div>
 						</div>
 
+						<?php if (!$tagliaOK) { ?>
+						<!-- ### 01 selezione Taglia -->
 						<div class="mt-6">
 							<!-- Colors -->
 							<div>
@@ -155,46 +201,13 @@
 														<!-- column title -->
 														<div class="flex justify-between">
 															<div class="w-1/5"><!--empty--></div>
-
 															<?php 
-															function tableTitle($titolo, $colore){
-																$th = "
-																<div class='w-1/5 text-center $colore'>
-																	$titolo
-																</div>";
-																return $th;
-															}
-
-															function tableCell($titolo, $colore, $unita){
-																// un po' di calcoli per min. max.
-																if ( strstr($titolo, '/')) {
-																	$minmax = explode('/', $titolo);
-																	$testo = $minmax[0] . " &#187; " . $minmax[1] . " $unita";
-																}else{
-																	$testo = $titolo . $unita;
-																}
-
-																$td = "
-																<div class='w-1/5 flex items-center $colore'>
-																  <div class='text-sm text-center font-medium text-gray-900 w-full'>
-																    $testo
-																  </div>
-																</div>
-																";
-																return $td;
-															}
-
 															if ($page->product_options->titolo1) echo tableTitle($page->product_options->titolo1, 'bg-perros-green-100');
 															if ($page->product_options->titolo2) echo tableTitle($page->product_options->titolo2, 'bg-perros-brown-100');
-															if ($page->product_options->titolo3) echo tableTitle($page->product_options->titolo3, 'bg-perros-green-100');
-
+															if ($page->product_options->titolo3) echo tableTitle($page->product_options->titolo3, 'bg-red-100');
 															?>
-															
 															<div class="w-1/5 text-right"><!--empty--></div>
-
-
 														</div>
-
 
 														<?php 
 														$nItem = 1;
@@ -244,7 +257,7 @@
 														      <?php 
 														      if ($page->product_options->titolo1) echo tableCell($itm->product_variations->circ_toracica, 'bg-perros-green-100', 'cm'); 
 														      if ($page->product_options->titolo2) echo tableCell($itm->product_variations->circ_addome, 'bg-perros-brown-100', 'cm'); 
-														      if ($page->product_options->titolo3) echo tableCell($itm->product_variations->peso, 'bg-perros-green-100', 'kg'); 
+														      if ($page->product_options->titolo3) echo tableCell($itm->product_variations->peso, 'bg-red-100', 'kg'); 
 														      ?>
 
 																	<!-- prezzo -->
@@ -279,21 +292,71 @@
 									</div>
 						</div>
 
+
+
+
+
+
+
+
+
+
+						<!-- ### 02 selezione Opzioni -->
+						<?php }else{ 
+							if ($page->product_options->colours) {
+								// 02.1 scegli colore - start 
+								// $itemOK definito sopra all'inzio ?>
+								<form action="" method="get" x-data="{ active: 1 }">
+
+														<!-- TW radio buttons -->
+														<fieldset>
+														  
+														  <div class="space-y-4">
+														   
+														    <label 
+														    :class="expanded ? 'border-transparent' : 'border-gray-300' "
+														    class="relative block bg-white border shadow-sm px-6 my-1  cursor-pointer flex justify-between focus:outline-none"
+														    >
+														      <input
+														      type="radio" name="taglia" value="" class="sr-only">
+														      <!-- codice -->
+														      <div class="w-1/5 flex items-center">
+														        <div class="text-sm">
+														          <p class="font-medium text-gray-900 uppercase"><?php echo $itemOK->product_variations->code ?></p>
+														          <div class="text-gray-500">
+														            <p class=""><?php echo $itemOK->product_variations->nastro ?></p>
+														          </div>
+														        </div>
+														      </div>
+
+														      <?php 
+														      if ($page->product_options->titolo1) echo tableCell($itemOK->product_variations->circ_toracica, 'bg-perros-green-100', 'cm', $page->product_options->titolo1); 
+														      if ($page->product_options->titolo2) echo tableCell($itemOK->product_variations->circ_addome, 'bg-perros-brown-100', 'cm', $page->product_options->titolo2); 
+														      if ($page->product_options->titolo3) echo tableCell($itemOK->product_variations->peso, 'bg-red-100', 'kg', $page->product_options->titolo2); 
+														      ?>
+	
+														      <div 
+														      :class="expanded ? 'border-indigo-500' : 'border-transparent' "
+														      class="absolute -inset-px border-2 pointer-events-none" aria-hidden="true"></div>
+														    </label>
+
+														  </div>
+														</fieldset>
+														<!-- TW buttons END -->
+
+
+													</form>
+							<?php } // 02.1 end ?>
+
+
+						<?php } ?>
+
 					</div>
 				</div>
 
 			</div>
 		</main>
-
-
-	<?php
-		### PRODUCT DETAILS fine
-	}else{
-		echo "";
-	}
-	?>
-
-
+		<!-- ### PRODUCT DETAILS fine -->
 
 </div>
 

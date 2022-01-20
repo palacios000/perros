@@ -471,6 +471,7 @@ html {
 .bg-perros-green{ --tw-bg-opacity: 1; background-color: rgb(78 162 138 / var(--tw-bg-opacity)); }
 .bg-perros-brown{ --tw-bg-opacity: 1; background-color: rgb(141 117 109 / var(--tw-bg-opacity)); }
 .bg-perros-green-100{ --tw-bg-opacity: 1; background-color: rgb(183 220 210 / var(--tw-bg-opacity)); }
+.bg-red-100{ --tw-bg-opacity: 1; background-color: rgb(254 226 226 / var(--tw-bg-opacity)); }
 .bg-opacity-50{ --tw-bg-opacity: 0.5; }
 .object-cover{ -o-object-fit: cover; object-fit: cover; }
 .object-center{ -o-object-position: center; object-position: center; }
