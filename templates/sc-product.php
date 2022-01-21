@@ -6,26 +6,46 @@
 <div id="content"> <!-- The content element holds your product detail view. -->
 	<?php
 
-	// taglia selezionata
+	// Get values
 	$tagliaOK = ($input->get->taglia) ? $sanitizer->name($input->get->taglia) : '';
+	$coloreOK = ($input->get->colore) ? $sanitizer->name($input->get->colore) : '';
+	$minuteriaOK = ($input->get->minuteria) ? $sanitizer->name($input->get->minuteria) : '';
+	$checkoutOK = ($input->get->minuteria);
+
+	// taglia selezionata
 	if ($tagliaOK) {
 		$itemOK = $page->snipcart_item_variations->findOne("product_variations.code=$tagliaOK");
 	}
 
 	// Immagine
-		if ($image = $page->snipcart_item_image->getrandom()->width(640)) {
-			$imageDesc = $image->description ? $image->description : $page->title;
-			if (count($page->snipcart_item_image)) {
-				foreach($page->snipcart_item_image as $colorImage){
-					$colorImage->width(640); // same as aboce 4 lines up
+		if (!$coloreOK) {
+			if ($image = $page->snipcart_item_image->getrandom()->width(640)) {
+				$imageDesc = $image->description ? $image->description : $page->title;
+				if (count($page->snipcart_item_image)) {
+					//devo ritagliare le immagini via API altrimenti il JS prende quelle grandi
+					//qui dovrei controllare se l'immagine ha la variazione corretta, come ho fatto per siamoalpi
+					foreach($page->snipcart_item_image as $colorImage){
+						$colorImage->width(640); // same as above 4 lines up
+					}
 				}
+			} else { 
+				$image = ""; $imageDesc = "";
 			}
-			
-		} else { $image = ""; $imageDesc = "";}
+		}else{
+			$colo = substr($coloreOK, 0, 4); // ovvero la regola dei primi 4 caratteri del colore
+			$image = $page->snipcart_item_image->findOne("name%^=$colo"); // %^= starts like
+		}
 
 	// Range Prezzo
 		if ($tagliaOK) {
-			$prezzo = '&euro;'.$itemOK->product_variations->price;
+			$prezzo = $itemOK->product_variations->price;
+			if ($minuteriaOK) {
+				if ($minuteriaOK != "tradizionale") {
+					$prezzo = $prezzo + $page->product_options->price_extra;
+				}
+			}
+			$totale = $prezzo;
+			$prezzo = '&euro;'. $prezzo;
 		}else{
 			$minmaxPrice = array();
 			foreach ($page->snipcart_item_variations as $findPrice) {
@@ -302,9 +322,25 @@
 						</div>
 
 
-						<!-- ### 02 selezione Opzioni -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						<!-- ### 02 Riepilogo e ##################################### -->
+						<!-- ### 03 selezione Opzioni ##################################### -->
 						<?php }else{ ?>
-							<!-- TW Riepilogo -->
+							<!-- TW Riepilogo TAGLIA (ovvero mostro taglia selezionata) -->
 							<fieldset>
 							  
 							  <div class="space-y-4">
@@ -338,12 +374,16 @@
 
 							  </div>
 							</fieldset>
-							<!-- TW Riepilogo END -->
-							<?php if ($page->product_options->colours) {
-								// 02.1 scegli colore - start 
-								// $itemOK definito sopra all'inzio ?>
+							<!-- TW Riepilogo TAGLIA END -->
+
+
+							<!-- opzioni colore & minuteria -->
+							<?php if ($page->product_options->colours && !$checkoutOK) { ?>
 
 								<form action="" method="get">
+
+									<input type="hidden" name="taglia" value="<?php echo $tagliaOK ?>">
+									<input type="hidden" name="checkout" value="go">
 
 									<!-- Colors -->
 										<div>
@@ -377,7 +417,7 @@
 															<input
 															@click="expanded = !expanded; imageUrl = '<?php echo $swapImage ?>'"
 															id="colore-<?php echo $nColors ?>"
-															 type="radio" name="color" value="<?php echo $colordot->title ?>" class="sr-only">
+															 type="radio" name="colore" value="<?php echo $colordot->name ?>" class="sr-only" required>
 															<p id="color-choice-1-label" class="sr-only"><?php echo $colordot->title ?></p>
 															<span aria-hidden="true" class="h-6 w-6 bg-<?php echo $colordot->codice ?> border border-black border-opacity-10 rounded-full"></span>
 														</label>
@@ -421,7 +461,7 @@
 											      <input
 											      @click="expa = !expa"
 											      id="minuteria-<?php echo $nItem ?>"
-											      type="radio" name="minuteria" value="<?php echo $itm->title ?>" class="">
+											      type="radio" name="minuteria" value="<?php echo $itm->name ?>" class="" required>
 
 														<!-- titolo  -->
 											      <div class="w-1/6 flex items-center ">
@@ -463,7 +503,32 @@
 										</button>
 
 								</form>
-							<?php } // 02.1 end ?>
+							<?php }else{ 
+							// Ho la taglia + scelta opzioni
+
+								echo "<h3>Colore: $coloreOK </h3>";
+								echo "<h3>minuteria: $minuteriaOK </h3>";
+
+								$checkoutTitolo = $page->snipcart_item_description;
+								if ($coloreOK) $checkoutTitolo .= ' | Colore: ' . $coloreOK;
+								if ($minuteriaOK) $checkoutTitolo .= ' | Minuteria: ' . $minuteriaOK;
+
+
+								//SnipCart button
+								echo "
+								<button class='snipcart-add-item'
+								  data-item-id='$tagliaOK'
+								  data-item-price='$totale'
+								  data-item-url='$page->url'
+								  data-item-description='$page->snipcart_item_description'
+								  data-item-image='$image->url'
+								  data-item-name='$checkoutTitolo'
+								  >
+								  Aggiungi al carrello
+								</button>";
+
+
+							} ?>
 
 
 						<?php } ?>
