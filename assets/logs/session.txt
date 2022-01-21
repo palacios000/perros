@@ -16,3 +16,5 @@
 2022-01-20 14:54:41	giulio	http://localhost/perros2/public/edit/login/view/errors/	Successful login for 'giulio'
 2022-01-20 16:56:41	giulio	http://localhost/perros2/public/edit/login/	Successful login for 'giulio'
 2022-01-20 18:21:06	giulio	http://localhost/perros2/public/edit/login/?id=124	Successful login for 'giulio'
+2022-01-21 11:46:56	giulio	http://localhost/perros2/public/edit/login/	Successful login for 'giulio'
+2022-01-21 14:50:24	giulio	http://localhost/perros2/public/edit/login/?id=1045	Successful login for 'giulio'

@@ -302,64 +302,53 @@
 						</div>
 
 
-
-
-
-
-
-
-
-
 						<!-- ### 02 selezione Opzioni -->
-						<?php }else{ 
-							if ($page->product_options->colours) {
+						<?php }else{ ?>
+							<!-- TW Riepilogo -->
+							<fieldset>
+							  
+							  <div class="space-y-4">
+							   
+							    <label 
+							    class="relative block bg-white border shadow-sm px-6 my-1  cursor-pointer flex justify-between focus:outline-none"
+							    >
+							      <input
+							      type="radio" name="taglia" value="" class="sr-only">
+							      <!-- codice -->
+							      <div class="w-1/5 flex items-center">
+							        <div class="text-sm">
+							          <p class="font-medium text-gray-900 uppercase"><?php echo $itemOK->product_variations->code ?></p>
+							          <div class="text-gray-500">
+							            <p class=""><?php echo $itemOK->product_variations->nastro ?></p>
+							          </div>
+							        </div>
+							      </div>
+
+							      <?php 
+							      if ($page->product_options->titolo1) echo tableCell($itemOK->product_variations->torace, 'bg-perros-green-100', 'cm', $page->product_options->titolo1); 
+							      if ($page->product_options->titolo2) echo tableCell($itemOK->product_variations->addome, 'bg-perros-brown-100', 'cm', $page->product_options->titolo2); 
+							      if ($page->product_options->titolo3) echo tableCell($itemOK->product_variations->gabbia, 'bg-gray-200', 'cm', $page->product_options->titolo3); 
+							      if ($page->product_options->titolo4) echo tableCell($itemOK->product_variations->peso, 'bg-red-100', 'kg', $page->product_options->titolo4); 
+							      ?>
+
+							      <div 
+							      :class="expanded ? 'border-indigo-500' : 'border-transparent' "
+							      class="absolute -inset-px border-2 pointer-events-none" aria-hidden="true"></div>
+							    </label>
+
+							  </div>
+							</fieldset>
+							<!-- TW Riepilogo END -->
+							<?php if ($page->product_options->colours) {
 								// 02.1 scegli colore - start 
 								// $itemOK definito sopra all'inzio ?>
-
-								<!-- TW radio buttons -->
-								<fieldset>
-								  
-								  <div class="space-y-4">
-								   
-								    <label 
-								    :class="expanded ? 'border-transparent' : 'border-gray-300' "
-								    class="relative block bg-white border shadow-sm px-6 my-1  cursor-pointer flex justify-between focus:outline-none"
-								    >
-								      <input
-								      type="radio" name="taglia" value="" class="sr-only">
-								      <!-- codice -->
-								      <div class="w-1/5 flex items-center">
-								        <div class="text-sm">
-								          <p class="font-medium text-gray-900 uppercase"><?php echo $itemOK->product_variations->code ?></p>
-								          <div class="text-gray-500">
-								            <p class=""><?php echo $itemOK->product_variations->nastro ?></p>
-								          </div>
-								        </div>
-								      </div>
-
-								      <?php 
-								      if ($page->product_options->titolo1) echo tableCell($itemOK->product_variations->torace, 'bg-perros-green-100', 'cm', $page->product_options->titolo1); 
-								      if ($page->product_options->titolo2) echo tableCell($itemOK->product_variations->addome, 'bg-perros-brown-100', 'cm', $page->product_options->titolo2); 
-								      if ($page->product_options->titolo3) echo tableCell($itemOK->product_variations->gabbia, 'bg-gray-200', 'cm', $page->product_options->titolo3); 
-								      if ($page->product_options->titolo4) echo tableCell($itemOK->product_variations->peso, 'bg-red-100', 'kg', $page->product_options->titolo4); 
-								      ?>
-
-								      <div 
-								      :class="expanded ? 'border-indigo-500' : 'border-transparent' "
-								      class="absolute -inset-px border-2 pointer-events-none" aria-hidden="true"></div>
-								    </label>
-
-								  </div>
-								</fieldset>
-								<!-- TW buttons END -->
 
 								<form action="" method="get">
 
 									<!-- Colors -->
 										<div>
 											<h3 class="text-sm text-gray-600">Scegli il colore</h3>
-
-											<fieldset id="colordots" class="mt-2" x-data="{ active: 1 }">
+											<fieldset id="colordots" class="mt-2" >
 												<div class="flex items-center space-x-3">
 													<!--
 														Active and Checked: "ring ring-offset-1"
@@ -400,6 +389,78 @@
 												</div>
 											</fieldset>
 										</div>
+
+									<?php if ($page->product_options->minuteria) { ?>
+									<!-- Minuteria -->
+										<div>
+											<h3 class="text-sm text-gray-600">Scegli la minuteria</h3>
+
+											<?php 
+											$nItem = $nColors + 1;
+											foreach ($pages->findOne("template=variabili, name=minuteria")->children("sort=-name") as $itm) { ?>
+
+											<!-- TW radio buttons -->
+											<fieldset >
+											  
+											  <div class="space-y-4"
+											    x-data="{ 
+											    	id: <?php echo $nItem ?>,
+											    	get expa(){
+											    		return this.checked === this.id
+											    	},
+											    	set expa(value){
+											    		this.checked = value ? this.id : null
+											    	},
+											    }"
+											  >
+											   
+											    <label 
+											    :class="expa ? 'border-transparent' : 'border-gray-300' "
+											    class="relative block bg-white border shadow-sm px-6 my-1  cursor-pointer flex justify-between focus:outline-none"
+											    id="minuteria-<?php echo $nItem ?>">
+											      <input
+											      @click="expa = !expa"
+											      id="minuteria-<?php echo $nItem ?>"
+											      type="radio" name="minuteria" value="<?php echo $itm->title ?>" class="">
+
+														<!-- titolo  -->
+											      <div class="w-1/6 flex items-center ">
+											        <div class="text-sm text-center font-medium text-gray-900 uppercase w-full">
+											        	<h3><?php echo $itm->title ?></h3>
+											          <img src="<?php echo $itm->images->first->url ?>" alt="">
+											        </div>
+											      </div>
+														
+											      <!-- testo -->
+											      <div class="w-2/3 flex items-center">
+											        <div class="text-sm">
+											          <p class=""><?php echo $itm->infotext ?></p>
+											        </div>
+											      </div>
+											      
+														<!-- prezzo -->
+											      <div class="w-1/6 mt-2 flex text-sm sm:mt-0 sm:block sm:ml-4 sm:text-right">
+											        <div class="font-medium text-gray-900"><?php echo ($itm->name == "tradizionale") ? "incluso" : '+ &euro; ' . $page->product_options->price_extra ?></div>
+											      </div>
+
+											      <div 
+											      :class="expa ? 'border-indigo-500' : 'border-transparent' "
+											      class="absolute -inset-px border-2 pointer-events-none" aria-hidden="true"></div>
+											    </label>
+
+											  </div>
+											</fieldset>
+											<!-- TW buttons END -->
+
+											<?php 
+													$nItem++;
+											} ?>
+										</div>
+									<?php } ?>
+
+										<button type="submit" class="bg-white border border-black px-4 py-2 focus:outline-none focus:ring-4 focus:ring-aqua-400">
+											Seleziona e riepilogo
+										</button>
 
 								</form>
 							<?php } // 02.1 end ?>
