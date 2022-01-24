@@ -2,3 +2,7 @@
 /* questo file viene importato da tailwind.css, che si trova nel root del progetto */
 
 [x-cloak] { display: none !important; }
+
+#griglia *, .griglia * {
+	border:  pink 1px solid;
+}

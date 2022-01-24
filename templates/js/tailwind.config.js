@@ -12,9 +12,16 @@ module.exports = {
         'perros-brown': {  DEFAULT: '#8D756D',  '50': '#DED6D4',  '100': '#D5CCC8',  '200': '#C3B6B1',  '300': '#B1A09A',  '400': '#9F8A83',  '500': '#8D756D',  '600': '#6D5B55',  '700': '#4E403C',  '800': '#2E2624',  '900': '#0E0C0B'},
       },
       fontFamily: {
-        'display': ['"Oswald", sans-serif;'], 
+        'oswald': ['"Oswald", sans-serif;'], 
         'sans': ['"Open Sans", sans-serif;']
       },
+      fontSize: {
+        'xxl': '1.35rem',
+        '2ll': '1.6rem'
+      },
+      borderWidth: {
+        '28' : '28px'
+      }
     },
   },
   plugins: [

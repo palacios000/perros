@@ -54,3 +54,5 @@
 2022-01-19 11:54:03	giulio	http://localhost/perros2/public/edit/module/?reset=1	Saved module info caches
 2022-01-19 11:54:11	giulio	http://localhost/perros2/public/edit/module/	Installed module 'ProcessPageListerPro'
 2022-01-19 11:54:11	giulio	http://localhost/perros2/public/edit/module/	Saved module info caches
+2022-01-24 12:14:03	giulio	http://localhost/perros2/public/edit/page/link/?id=1&modal=1&text=APPROFONDISCI	Installed module 'InputfieldPageAutocomplete'
+2022-01-24 12:14:03	giulio	http://localhost/perros2/public/edit/page/link/?id=1&modal=1&text=APPROFONDISCI	Saved module info caches

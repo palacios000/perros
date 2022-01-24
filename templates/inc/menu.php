@@ -1,17 +1,17 @@
 
 <div hidden id="snipcart" data-api-key="ZGMzZTk0YmItMmU2OC00OGRjLTg3OTItYWY5ODBhZjRkNDM4NjM3Nzc0MDE2OTE4MzA0NzA2"></div>
 
-<div class="container mx-auto">
+<div id="navigation" class="container mx-auto">
 	<div class="relative bg-white con">
 		<div class="flex justify-between  px-4 py-6 sm:px-6 md:justify-start md:space-x-10">
-			<div id="logo" class="w-1/6">
+			<div id="logo" class="w-1/3">
 				<a href="#" class="flex">
 					<span class="sr-only">Perros Life - Tecnica Cinofila al guinzaglio</span>
-					<img class="h-8 w-auto sm:h-10" src="<?php echo $config->urls->templates ?>styles/images/logo.png" alt="Perros Life - Tecnica Cinofila al guinzaglio">
+					<img class="w-60" src="<?php echo $config->urls->templates ?>styles/images/PERROSLIFE_logo-1.svg" alt="Perros Life - Tecnica Cinofila al guinzaglio">
 				</a>
 			</div>
-			<div id="menus" class="w-5/6">
-				<div class="grid justify-items-end">
+			<div id="menus" class="w-2/3">
+				<div class="grid justify-items-end content-between h-full">
 
 					<div class="snipcart-summary" >
 							<a href="#" class="snipcart-checkout" aria-label="Shopping cart">
@@ -21,25 +21,25 @@
 							<button class="snipcart-user-profile" type="button">
 									<span class="snipcart-user-email">My Account</span>
 							</button>
-							<div class="snipcart-user-logout">
+							<!-- <div class="snipcart-user-logout">
 									<button class="snipcart-edit-profile" type="button">Edit Profile</button>
-							</div>
+							</div> -->
 					</div>
 
-					<nav class="flex space-x-10">
+					<nav class="flex space-x-9 uppercase ">
 
 
 						<?php if($page->editable()){
-							echo "<a class='' href='$page->editURL'>Modifica Pagina</a>";
+							echo "<a class='font-oswald' href='$page->editURL'>Modifica Pagina</a>";
 						} 
 						foreach ($homepage->children as $menu) {
-							echo "<a href='$menu->url' class=''>$menu->title</a>";
+							echo "<a class='font-oswald text-xxl' href='$menu->url' class=''>$menu->title</a>";
 						}?>
 
 						<div class="relative">
 							<!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
-							<button type="button" class="text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" aria-expanded="false">
-								<span>More</span>
+							<button type="button" class="font-oswald text-xxl group bg-white rounded-md inline-flex items-center text-base hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" aria-expanded="false">
+								<span>Perros</span>
 								<!--
 									Heroicon name: solid/chevron-down
 
