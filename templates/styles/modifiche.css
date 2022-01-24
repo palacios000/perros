@@ -6,3 +6,36 @@
 #griglia *, .griglia * {
 	border:  pink 1px solid;
 }
+:not(.bg-perros-green) .homebox h3{
+	@apply text-perros-green;
+}
+.bg-perros-green .homebox h3{
+	@apply text-white;
+}
+.homebox{
+  h3{
+    @apply text-5xl font-oswald mb-8;
+  }
+  a{
+  	@apply mt-7 block;
+  }
+  hr{
+  	@apply mt-12 border-dotted border-t-8 border-neutral-300;
+  }
+  .colonnina p{
+  	@apply pb-10;
+  }
+}
+/*
+#citazione{
+	blockquote p.quote{
+		position: relative;
+	}
+	blockquote p.quote::before{
+		content: '"';
+		position: absolute;
+		top:0;
+		left: -20px;
+		size:5rem;
+	}
+}*/
