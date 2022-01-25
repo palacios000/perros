@@ -79,7 +79,7 @@
 					    <div class="w-full flex flex-row-reverse">
 					    	<div class="w-28 flex flex-col text-center font-oswald">
 					    		<div class="prezzo text-2ll text-perros-brown">da &euro; 24,90</div>
-					    		<a href="" class="button block">Visualizza</a>
+					    		<a href="<?php echo $item->url ?>" class="button block max-w-xs bottone-green uppercase">Visualizza</a>
 					    	</div>
 					    </div>
 					  </div>

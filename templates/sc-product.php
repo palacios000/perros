@@ -62,7 +62,7 @@
 		//tabella
 		function tableTitle($titolo, $colore){
 			$th = "
-			<div class='w-1/5 text-center $colore'>
+			<div class='w-1/5 text-center font-oswald uppercase font-bold $colore'>
 				$titolo
 			</div>";
 			return $th;
@@ -181,10 +181,10 @@
 								</fieldset>
 							</div>
 
-							<!-- <div x-data="{ open: false }"> -->
-							<div x-data="{ open: true }">
+							<div x-data="{ open: false }">
+							<!-- <div x-data="{ open: true }"> -->
 								<div class="mt-10 flex sm:flex-col1">
-									<button x-on:click="open = true" type="button" class="max-w-xs flex-1 bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500 sm:w-full">Scegli la Taglia</button>
+									<button x-on:click="open = true" type="button" class="max-w-xs flex-1 bottone-green">Scegli la Taglia</button>
 
 								</div>
 
@@ -228,17 +228,17 @@
 												</div>
 
 												<!-- Table -->
-												<div class="mt-8 ">
+												<div class="mt-12 ">
 													<form action="" method="get" x-data="{ active: 1 }">
 
 														<!-- column title -->
-														<div class="flex justify-between">
+														<div class="px-6 my-1 flex justify-between focus:outline-none">
 															<div class="w-1/5"><!--empty--></div>
 															<?php 
-															if ($page->product_options->titolo1) echo tableTitle($page->product_options->titolo1, 'bg-perros-green-100');
-															if ($page->product_options->titolo2) echo tableTitle($page->product_options->titolo2, 'bg-perros-brown-100');
-															if ($page->product_options->titolo3) echo tableTitle($page->product_options->titolo3, 'bg-gray-200');
-															if ($page->product_options->titolo4) echo tableTitle($page->product_options->titolo4, 'bg-red-100');
+															if ($page->product_options->titolo1) echo tableTitle($page->product_options->titolo1, 'text-perros-green');
+															if ($page->product_options->titolo2) echo tableTitle($page->product_options->titolo2, 'text-perros-brown');
+															if ($page->product_options->titolo3) echo tableTitle($page->product_options->titolo3, 'text-gray-500');
+															if ($page->product_options->titolo4) echo tableTitle($page->product_options->titolo4, 'text-red-300');
 															?>
 															<div class="w-1/5 text-right"><!--empty--></div>
 														</div>
@@ -272,10 +272,10 @@
 														      type="radio" name="taglia" value="<?php echo $itm->product_variations->code ?>" class="sr-only">
 														      <!-- codice -->
 														      <div class="w-1/5 flex items-center">
-														        <div class="text-sm">
-														          <p class="font-medium text-gray-900 uppercase"><?php echo $itm->product_variations->code ?></p>
+														        <div>
+														          <p class="text-lg text-gray-900 uppercase"><?php echo $itm->product_variations->code ?></p>
 														          <div class="text-gray-500">
-														            <p class=""><?php echo $itm->product_variations->nastro ?></p>
+														            <p class="text-sm"><?php echo $itm->product_variations->nastro ?></p>
 														          </div>
 														        </div>
 														      </div>
@@ -297,13 +297,14 @@
 
 																	<!-- prezzo -->
 														      <div class="w-1/5 mt-2 flex text-sm sm:mt-0 sm:block sm:ml-4 sm:text-right">
-														        <div class="font-medium text-gray-900">&euro; <?php echo $itm->product_variations->price ?></div>
+														        <div class="text-xl text-gray-900">&euro; <?php echo $itm->product_variations->price ?></div>
 														      </div>
 	
 														      <div 
-														      :class="expanded ? 'border-indigo-500' : 'border-transparent' "
-														      class="absolute -inset-px border-2 pointer-events-none" aria-hidden="true"></div>
+														      :class="expanded ? 'border-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-perros-green-500' : 'border-transparent' "
+														      class="absolute -inset-px border-2 ring-offset-2 pointer-events-none " aria-hidden="true"></div>
 														    </label>
+														    <!-- focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-perros-green-500 -->
 
 														  </div>
 														</fieldset>
@@ -314,12 +315,12 @@
 														} ?>
 
 
-														<button type="submit" x-on:click="open = false" class="bg-white border border-black px-4 py-2 focus:outline-none focus:ring-4 focus:ring-aqua-400">
-															Confirm
+														<button type="submit" x-on:click="open = false" class="bottone-green max-w-xs mt-8">
+															Conferma
 														</button>
-														<button type="button" x-on:click="open = false" class="bg-white border border-black px-4 py-2 focus:outline-none focus:ring-4 focus:ring-aqua-400">
+														<!-- <button type="button" x-on:click="open = false" class="bg-white border border-black px-4 py-2 focus:outline-none focus:ring-4 focus:ring-aqua-400">
 															Cancel
-														</button>
+														</button> -->
 													</form>
 												</div>
 											</div>
@@ -506,7 +507,7 @@
 										</div>
 									<?php } ?>
 
-										<button type="submit" class="bg-white border border-black px-4 py-2 focus:outline-none focus:ring-4 focus:ring-aqua-400">
+										<button type="submit" class="max-w-xs bottone-green">
 											Seleziona e riepilogo
 										</button>
 
@@ -524,7 +525,7 @@
 
 								//SnipCart button
 								echo "
-								<button class='snipcart-add-item'
+								<button class='snipcart-add-item max-w-xs bottone-green'
 								  data-item-id='$tagliaOK'
 								  data-item-price='$totale'
 								  data-item-url='$page->url'
@@ -534,6 +535,8 @@
 								  >
 								  Aggiungi al carrello
 								</button>";
+
+								echo "<br><p><a href='$page->url'>Cancella selezione</a></p>";
 
 
 							} ?>
