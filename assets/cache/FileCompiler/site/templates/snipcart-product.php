@@ -1,4 +1,4 @@
-<?php include 'inc/head.php'; ?>
+<?php include(\ProcessWire\wire('files')->compile('inc/head.php',array('includes'=>true,'namespace'=>true,'modules'=>true,'skipIfNamespace'=>true))); ?>
 </head>
 
 <!--
@@ -41,17 +41,17 @@ The content element holds your product detail view.
 -->
 <div id="content">
     <?php
-    //echo ukHeading1(page()->title, 'divider');
+    //echo ukHeading1(\ProcessWire\page()->title, 'divider');
 
     // We use the first image in snipcart_item_image field for demo
-    if ($image = page()->snipcart_item_image->first()) {
+    if ($image = \ProcessWire\page()->snipcart_item_image->first()) {
         $productImageLarge = $image->size(800, 0, array('quality' => 70));
-        $imageDesc = $productImageLarge->description ? $productImageLarge->description : page()->title;
+        $imageDesc = $productImageLarge->description ? $productImageLarge->description : \ProcessWire\page()->title;
         $imageMedia = '<img src="' . $productImageLarge->url . '" alt="' . $imageDesc . '">';
     } else {
         $imageMedia = 
         '<div class="uk-width-1-1 uk-height-medium uk-background-muted uk-text-muted uk-flex uk-flex-center uk-flex-middle">' .
-            '<div title="' . __('No product image available') . '">' .  
+            '<div title="' . \ProcessWire\__('No product image available') . '">' .  
             '</div>' .
         '</div>';
     }
@@ -63,14 +63,14 @@ The content element holds your product detail view.
     $options = array(
         'label' => 'Add to cart',
         'class' => 'uk-button uk-button-primary',
-        'attr' => array('aria-label' => __('Add item to cart')),
+        'attr' => array('aria-label' => \ProcessWire\__('Add item to cart')),
     );
-    $anchor = wire('snipwire')->anchor(page(), $options);
+    $anchor = \ProcessWire\wire('snipwire')->anchor(\ProcessWire\page(), $options);
 
     // Get the formatted product price.
     // The getProductPriceFormatted method is provided by MarkupSnipWire module and can be called 
     // via custom API variable: $snipwire->getProductPriceFormatted()
-    $priceFormatted = wire('snipwire')->getProductPriceFormatted(page());
+    $priceFormatted = \ProcessWire\wire('snipwire')->getProductPriceFormatted(\ProcessWire\page());
 
     $out =
     '<div class="uk-margin-medium-bottom" uk-grid>' .
@@ -82,9 +82,9 @@ The content element holds your product detail view.
                 '<dt>Price</dt>' .
                 '<dd><span class="uk-text-primary uk-text-large">' . $priceFormatted . '</span></dd>' .
                 '<dt>Description</dt>' .
-                '<dd>' . page()->snipcart_item_description . '</dd>' .
+                '<dd>' . \ProcessWire\page()->snipcart_item_description . '</dd>' .
                 '<dt>Product ID</dt>' .
-                '<dd>' . page()->snipcart_item_id . '</dd>' .
+                '<dd>' . \ProcessWire\page()->snipcart_item_id . '</dd>' .
             '</dl>' .
             $anchor .
         '</div>' .

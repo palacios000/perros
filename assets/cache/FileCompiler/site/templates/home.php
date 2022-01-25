@@ -178,8 +178,9 @@
     </div>
   </div>
 
+<?php include(\ProcessWire\wire('files')->compile('inc/footer.php',array('includes'=>true,'namespace'=>true,'modules'=>true,'skipIfNamespace'=>true)))?>
 
-<!-- swiper -->
+
 <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
@@ -191,9 +192,9 @@
           prevEl: ".swiper-button-prev",
         },
         loop: true,
-        autoplay: {
-          delay: 5000,
-        },
+        // autoplay: {
+        //   delay: 5000,
+        // },
       });
     </script>
 
@@ -202,8 +203,6 @@
 
 
 <?php
-
-
 
 /*
 table template & fields

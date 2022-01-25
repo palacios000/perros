@@ -573,6 +573,9 @@
 <span class="h-8 w-8 ring-lime-500 "></span>
 <span class="h-8 w-8 ring-violet-500 "></span>
  -->
+
+<?php include 'inc/footer.php' ?>
+
 </body>
 </html>
 
