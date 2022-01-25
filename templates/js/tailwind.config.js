@@ -21,10 +21,18 @@ module.exports = {
       },
       borderWidth: {
         '28' : '28px'
+      },
+      backgroundImage:{
+        'ossi-pattern': "url('images/ossi-pattern-opacity10.svg')",
+      },
+      height: {
+        '620': '31rem',
+        '720': '36rem'
       }
     },
   },
   plugins: [
     require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
     ],
 }

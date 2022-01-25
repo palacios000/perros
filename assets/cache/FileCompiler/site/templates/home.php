@@ -3,6 +3,48 @@
 
 <?php include(\ProcessWire\wire('files')->compile('inc/menu.php',array('includes'=>true,'namespace'=>true,'modules'=>true,'skipIfNamespace'=>true)))?>
 
+<!-- banner intro -->
+  <div class="h-720 relative overflow-hidden">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <?php foreach ($page->slider as $slider1): ?>
+        <div class="bg-ossi-pattern bg-repeat lg:overflow-hidden swiper-slide">
+          <div class="mx-auto max-w-7xl lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8">
+              <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
+                <div class="lg:py-24">
+                  <a href="#" class="inline-flex items-center text-white bg-zinc-700 rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200">
+                    <span class="px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-perros-green rounded-full">Spedizione Gratis</span>
+                    <span class="ml-4 text-sm">Per gli ordine superiori a &euro; 45 </span>
+                  </a>
+                  <p class="mt-4 text-5xl tracking-tight font-bold text-black font-oswald sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
+                    <?php echo $slider1->title ?>
+                  </p>
+                  <div class="mt-3 text-2xl font-light text-neutral-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl bg-white">
+                    <?php echo $slider1->body ?>
+                  </div>
+                  <div class="mt-10 sm:mt-12">
+                    
+                    <button type="submit" class="block w-1/2 py-3 px-4 rounded-md shadow bg-perros-brown text-white font-medium hover:bg-perros-green-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700 focus:ring-offset-gray-900">Bottone</button>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-12 -mb-16 sm:-mb-48 lg:m-0 lg:relative">
+                <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
+                  <img class="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none" src="<?php echo  $slider1->images->first->url ?>" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <?php endforeach ?>
+
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+
 <!-- info boxes -->
   <section id="info">
     <?php 
@@ -137,6 +179,23 @@
   </div>
 
 
+<!-- swiper -->
+<!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        loop: true,
+        autoplay: {
+          delay: 5000,
+        },
+      });
+    </script>
 
 </body>
 </html>
