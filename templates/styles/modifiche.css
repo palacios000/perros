@@ -40,3 +40,48 @@
 		@apply font-oswald font-bold bg-perros-green border border-transparent rounded-md py-3 px-5 flex items-center justify-center text-base font-medium text-white hover:bg-perros-green-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-perros-green-500 sm:w-full;
 	}
 }
+
+
+
+/* prodotto modal */
+	#modalTaglia{
+		h2, h3{
+			@apply font-oswald font-bold text-base uppercase;
+		}
+		h2{
+			@apply  my-4;
+		}
+		h3{
+			@apply text-perros-green my-1;
+		}
+		p{
+			@apply font-oswald font-light pb-0.5;
+		}
+		hr{
+			@apply my-3 border-dotted border-t-4 border-neutral-300;
+		}
+	}
+
+	#caratteristicheText{
+		h2{
+			@apply font-oswald text-4ll leading-tight mb-4;
+		}
+		cite{
+			@apply font-oswald text-2ll font-light text-perros-green leading-tight;
+			font-style: normal;
+		}
+		h3{
+			@apply font-oswald text-2ll uppercase;
+		}
+		p{
+			@apply text-gray-700;
+		}
+	}
+
+
+.dottedLineBig{
+	@apply border-dotted border-t-8 border-neutral-300;
+}
+.dottedLineSmall{
+	@apply border-dotted border-t-4 border-neutral-300;
+}

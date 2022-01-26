@@ -126,7 +126,7 @@
 
 					<!-- Product info -->
 					<div class="mt-10 px-4 sm:px-0 sm:mt-16 lg:mt-0">
-						<h1 class="text-3xl font-extrabold tracking-tight">
+						<h1 class="text-3xl font-bold tracking-tight font-oswald text-4ll leading-tight">
 							<?php echo $page->title; if ($tagliaOK) echo " - " . $tagliaOK ?>
 						</h1>
 
@@ -153,8 +153,8 @@
 							</div>
 
 						<div class="mt-6">
-							<h3 class="sr-only">Description</h3>
-							<div class="text-base text-gray-700 space-y-6"><?php echo $page->snipcart_item_description ?></div>
+							<h3 class="sr-only">Descrizione</h3>
+							<div class="text-base text-perros-green space-y-6"><?php echo $page->snipcart_item_description ?></div>
 						</div>
 
 						<?php if (!$tagliaOK) { ?>
@@ -172,7 +172,7 @@
 											<label class="-m-0.5 relative rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400">
 												<input 
 												@click="imageUrl = '<?php echo $swapImage ?>'"
-												type="radio" name="color-choice" value="White" class="sr-only" aria-labelledby="color-choice-1-label">
+												type="radio" name="color-choice" value="White" class="sr-only" aria-labelledby="color-choice-1-label" required>
 												<p id="color-choice-1-label" class="sr-only"><?php echo $colordot->title ?></p>
 												<span aria-hidden="true" class="h-6 w-6 bg-<?php echo $colordot->codice ?> border border-black border-opacity-10 rounded-full"></span>
 											</label>
@@ -182,7 +182,7 @@
 							</div>
 
 							<div x-data="{ open: false }">
-							<!-- <div x-data="{ open: true }"> -->
+							<!-- <div x-data="{ open: true }"> DEV -->
 								<div class="mt-10 flex sm:flex-col1">
 									<button x-on:click="open = true" type="button" class="max-w-xs flex-1 bottone-green">Scegli la Taglia</button>
 
@@ -213,17 +213,25 @@
 												x-trap.noscroll.inert="open"
 												class="relative max-w-6xl w-full bg-perros-green border border-perros-green rounded-2xl p-4 overflow-y-auto"
 											>
-											<div class="bg-white p-4 border-4 border-white rounded-2xl">
+											<!-- bottoncino crocetta chiudi -->
+											<a href="#" x-on:click="open = false">
+											<img class="absolute top-1 right-1 h-10 w-10" src="<?php echo $config->urls->templates ?>styles/images/crocetta-verde.svg" alt="chiudi finestra">
+											</a>
+
+											<div id="modalTaglia" class="bg-white p-4 border-4 border-white rounded-2xl">
 
 												<div class="grid grid-cols-2">
 													<div>
 														<img src="<?php echo $page->images_details->first->url ?>" alt="Come misurare il cane">
+														<p class="text-xs text-gray-500 mt-4 mx-10 text-center"><?php echo $page->images_details->first->description  ?></p>
 													</div>
-													<div>
-														<!-- Title -->
-														<h2 class="text-3xl font-medium" :id="$id('modal-title')">Taglie</h2>
-														<!-- Content -->
+													<div :id="$id('modal-title')" class="px-3">
+														<?php echo $page->body_extra ?>
+														<!-- Title 
+														<h2 class="text-3xl font-bold font-oswald" >Taglie</h2>
+														
 														<p class="mt-2 text-gray-600">Foto + testo ecc.</p>
+														-->
 													</div>
 												</div>
 
@@ -263,13 +271,13 @@
 														  >
 														   
 														    <label 
-														    :class="expanded ? 'border-transparent' : 'border-gray-300' "
-														    class="relative block bg-white border shadow-sm px-6 my-1  cursor-pointer flex justify-between focus:outline-none"
+														    :class="expanded ? '' : 'border-gray-300' "
+														    class="relative block bg-white border shadow-sm px-6 my-1 cursor-pointer flex justify-between font-oswald focus:outline-none hover:boder-1 hover:border-perros-green hover:opacity-95"
 														    id="taglia-<?php echo $nItem ?>">
 														      <input
 														      @click="expanded = !expanded"
 														      id="taglia-<?php echo $nItem ?>"
-														      type="radio" name="taglia" value="<?php echo $itm->product_variations->code ?>" class="sr-only">
+														      type="radio" name="taglia" value="<?php echo $itm->product_variations->code ?>" class="sr-only" required>
 														      <!-- codice -->
 														      <div class="w-1/5 flex items-center">
 														        <div>
@@ -280,7 +288,7 @@
 														        </div>
 														      </div>
 
-																	<!-- titolo 1 - circ toracica/collo
+															  <!-- titolo 1 - circ toracica/collo
 														      <div class="w-1/5 flex items-center bg-perros-green-100">
 														        <div class="text-sm text-center font-medium text-gray-900 uppercase w-full">
 														          valori
@@ -315,12 +323,10 @@
 														} ?>
 
 
-														<button type="submit" x-on:click="open = false" class="bottone-green max-w-xs mt-8">
-															Conferma
+														<button type="submit" class="bottone-green max-w-xs mt-8">
+															Seleziona & Conferma
 														</button>
-														<!-- <button type="button" x-on:click="open = false" class="bg-white border border-black px-4 py-2 focus:outline-none focus:ring-4 focus:ring-aqua-400">
-															Cancel
-														</button> -->
+														
 													</form>
 												</div>
 											</div>
@@ -356,10 +362,10 @@
 							  <div class="space-y-4">
 							   
 							    <label 
-							    class="relative block bg-white border shadow-sm px-6 my-1  cursor-pointer flex justify-between focus:outline-none"
+							    class="relative block bg-white border shadow-sm px-6 my-1  cursor-pointer flex justify-between font-oswald focus:outline-none"
 							    >
 							      <input
-							      type="radio" name="taglia" value="" class="sr-only">
+							      type="radio" name="taglia" value="" class="sr-only" required>
 							      <!-- codice -->
 							      <div class="w-1/5 flex items-center">
 							        <div class="text-sm">
@@ -397,7 +403,7 @@
 
 									<!-- Colors -->
 										<div>
-											<h3 class="text-sm text-gray-600">Scegli il colore</h3>
+											<h3 class="font-oswald font-bold text-3xl mt-10 mb-5">Scegli il colore</h3>
 											<fieldset id="colordots" class="mt-2" >
 												<div class="flex items-center space-x-3">
 													<!--
@@ -442,7 +448,7 @@
 									<?php if ($page->product_options->minuteria) { ?>
 									<!-- Minuteria -->
 										<div>
-											<h3 class="text-sm text-gray-600">Scegli la minuteria</h3>
+											<h3 class="font-oswald font-bold text-3xl mt-10 mb-5">Scegli la minuteria</h3>
 
 											<?php 
 											$nItem = $nColors + 1;
@@ -465,12 +471,12 @@
 											   
 											    <label 
 											    :class="expa ? 'border-transparent' : 'border-gray-300' "
-											    class="relative block bg-white border shadow-sm px-6 my-1  cursor-pointer flex justify-between focus:outline-none"
+											    class="relative block bg-white border shadow-sm px-6 my-1 cursor-pointer flex justify-between font-oswald py-3 focus:outline-none hover:border-perros-green"
 											    id="minuteria-<?php echo $nItem ?>">
 											      <input
 											      @click="expa = !expa"
 											      id="minuteria-<?php echo $nItem ?>"
-											      type="radio" name="minuteria" value="<?php echo $itm->name ?>" class="" required>
+											      type="radio" name="minuteria" value="<?php echo $itm->name ?>" class="text-red-500" required>
 
 														<!-- titolo  -->
 											      <div class="w-1/6 flex items-center ">
@@ -489,11 +495,11 @@
 											      
 														<!-- prezzo -->
 											      <div class="w-1/6 mt-2 flex text-sm sm:mt-0 sm:block sm:ml-4 sm:text-right">
-											        <div class="font-medium text-gray-900"><?php echo ($itm->name == "tradizionale") ? "incluso" : '+ &euro; ' . $page->product_options->price_extra ?></div>
+											        <div class="text-3xl text-gray-900"><?php echo ($itm->name == "tradizionale") ? "incluso" : '+ &euro; ' . $page->product_options->price_extra ?></div>
 											      </div>
 
 											      <div 
-											      :class="expa ? 'border-indigo-500' : 'border-transparent' "
+											      :class="expa ? 'border-red-500' : 'border-transparent' "
 											      class="absolute -inset-px border-2 pointer-events-none" aria-hidden="true"></div>
 											    </label>
 
@@ -502,21 +508,23 @@
 											<!-- TW buttons END -->
 
 											<?php 
-													$nItem++;
+												$nItem++;
 											} ?>
 										</div>
 									<?php } ?>
 
-										<button type="submit" class="max-w-xs bottone-green">
+										<button type="submit" class="max-w-xs bottone-green my-8">
 											Seleziona e riepilogo
 										</button>
 
 								</form>
 							<?php }else{ 
 							// Ho la taglia + scelta opzioni
+								echo "<div class='pt-6 pb-8'>";
 
-								echo "<h3>Colore: $coloreOK </h3>";
-								echo "<h3>minuteria: $minuteriaOK </h3>";
+								echo "<h3 class='font-oswald font-bold text-2xl'>Colore: $coloreOK </h3>";
+								echo "<h3 class='font-oswald font-bold text-2xl'>minuteria: $minuteriaOK </h3>";
+								echo "</div>";
 
 								$checkoutTitolo = $page->snipcart_item_description;
 								if ($coloreOK) $checkoutTitolo .= ' | Colore: ' . $coloreOK;
@@ -536,7 +544,7 @@
 								  Aggiungi al carrello
 								</button>";
 
-								echo "<br><p><a href='$page->url'>Cancella selezione</a></p>";
+								echo "<p class='mt-3 text-sm text-perros-brown'><a href='$page->url'>Cancella selezione</a></p>";
 
 
 							} ?>
@@ -550,6 +558,59 @@
 			</div>
 		</main>
 		<!-- ### PRODUCT DETAILS fine -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<section id="info">
+			<!-- list -->
+			<div class="container mx-auto">
+				<hr class="dottedLineBig my-8">
+				<div class="flex flex-center">
+					<div class="mx-auto py-6">
+					    <dl class="space-y-2">
+								<?php foreach ($page->description_list as $list): ?>
+					      <div class="relative bg-white">
+					        <dt>
+					          <!-- Heroicon name: outline/check -->
+					          <svg class="absolute h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+					            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+					          </svg>
+					          <p class="ml-9 text-lg leading-6 font-medium text-gray-900 font-oswald"><?php echo $list->title ?></p>
+					        </dt>
+					        <dd class="mt-2 ml-9 text-gray-400 ">
+					        	<?php echo $list->infotext ?>
+					        </dd>
+					      </div>
+								<?php endforeach ?>
+					    </dl>
+					</div>
+				</div>
+				<hr class="dottedLineBig my-8">
+			</div>
+
+			<!-- body -->
+			<main class="lg:relative">
+			  <div class="mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-48 lg:text-left">
+			    <div id="caratteristicheText" class="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
+			      <?php echo $page->body ?>
+			    </div>
+			  </div>
+			  <div class="relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
+			    <img class="absolute w-full h-full object-cover" src="<?php echo $page->images_bg->first->url ?>" alt="">
+			  </div>
+			</main>
+		</section>
 
 </div>
 
@@ -585,13 +646,16 @@
 
 <!-- 
 table template & fields
+|============|=======================|
+| body_extra | info misurazione cane |
+|            |                       |
 		
 IMMAGINI
-|================|===============================|===|
-| images         | immagini inerenti prodotto    |   |
-| images_bg      | immagini sfondo & riempimento |   |
-| images_details | immagine misurazione cane     |   |
-|                |                               |   |
+|================|===============================|===================================|
+| images         | immagini inerenti prodotto    |                                   |
+| images_bg      | immagini sfondo & riempimento | 1a next to body, others on bottom |
+| images_details | immagine misurazione cane     |                                   |
+|                |                               |                                   |
 
 
 VARIAZIONE PRODOTTI

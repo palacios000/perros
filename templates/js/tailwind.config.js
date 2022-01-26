@@ -16,8 +16,10 @@ module.exports = {
         'sans': ['"Open Sans", sans-serif;']
       },
       fontSize: {
+        'xxs': '.65rem',
         'xxl': '1.35rem',
-        '2ll': '1.6rem'
+        '2ll': '1.6rem',
+        '4ll': '2.5rem',
       },
       borderWidth: {
         '28' : '28px'

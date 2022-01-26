@@ -12,3 +12,4 @@
 2022-01-13 10:05:53	giulio	http://localhost/perros2/public/edit/setup/template/removeFields	Deleted field "snipcart_item_height" data in 0 row(s) from 0 page(s) using template "sc-product". [page-by-page]
 2022-01-21 17:29:54	giulio	http://localhost/perros2/public/edit/page/edit/?id=1068	Populated initial created/modified dates for 'images_details'
 2022-01-21 17:29:54	giulio	http://localhost/perros2/public/edit/page/edit/?id=1068	Populated initial created/modified dates for 'images_bg'
+2022-01-26 18:02:21	giulio	http://localhost/perros2/public/edit/page/sort/	Updated sort for 5 pages

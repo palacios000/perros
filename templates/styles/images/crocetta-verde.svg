@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg5225"
+   version="1.1"
+   viewBox="0 0 20.609983 20.609631"
+   height="20.609631mm"
+   width="20.609983mm">
+  <defs
+     id="defs5219">
+    <clipPath
+       id="clipPath2258"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path2256"
+         d="M 0,0 H 2140 V 14000 H 0 Z" />
+    </clipPath>
+  </defs>
+  <metadata
+     id="metadata5222">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-113.6712,-41.01066)"
+     id="layer1">
+    <g
+       id="g2252"
+       transform="matrix(0.35277777,0,0,-0.35277777,-460.14943,2563.8613)">
+      <g
+         clip-path="url(#clipPath2258)"
+         id="g2254">
+        <g
+           transform="translate(1655.7892,7092.9668)"
+           id="g2260">
+          <path
+             id="path2262"
+             style="fill:#4ea28a;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             d="M 0,0 C 16.132,0 29.211,13.078 29.211,29.21 29.211,45.343 16.132,58.421 0,58.421 -16.133,58.421 -29.211,45.343 -29.211,29.21 -29.211,13.078 -16.133,0 0,0" />
+        </g>
+      </g>
+    </g>
+    <g
+       transform="matrix(0.35277777,0,0,-0.35277777,119.08739,46.426748)"
+       id="g2264">
+      <path
+         id="path2266"
+         style="fill:none;stroke:#ffffff;stroke-width:4.09000015;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 0,0 27.716,-27.716" />
+    </g>
+    <g
+       transform="matrix(0.35277777,0,0,-0.35277777,128.86499,46.426615)"
+       id="g2268">
+      <path
+         id="path2270"
+         style="fill:none;stroke:#ffffff;stroke-width:4.09000015;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 0,0 -27.716,-27.716" />
+    </g>
+  </g>
+</svg>

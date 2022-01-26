@@ -3,11 +3,11 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<title>Perros Life<?php echo $page->title; ?></title>
-		<link rel="stylesheet" type="text/css" href="<?php echo $config->urls->templates?>styles/main.css" />
 
 		<link rel="preconnect" href="https://cdn.snipcart.com" />
 		<link rel="preconnect" href="https://app.snipcart.com" />
 		
+		<link rel="stylesheet" type="text/css" href="<?php echo $config->urls->templates?>styles/main.css" />
 		<!-- 2 -->
 <!-- 		 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
