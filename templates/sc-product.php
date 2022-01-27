@@ -90,7 +90,7 @@
 		?>
 
 		<!-- ### PRODUCT DETAILS inizio  -->
-		<main class="max-w-7xl mx-auto sm:pt-16 sm:px-6 lg:px-8" x-data="{imageUrl: '<?php echo $image->url ?>'}">
+		<main class="max-w-7xl mx-auto sm:pt-16 sm:px-6 lg:px-8 z-10" x-data="{imageUrl: '<?php echo $image->url ?>'}">
 			<div class="max-w-2xl mx-auto lg:max-w-none">
 				<!-- Product -->
 				<div class="lg:grid lg:grid-cols-2 lg:gap-x-8 lg:items-start">
@@ -172,8 +172,8 @@
 											<label class="-m-0.5 relative rounded-full flex items-center justify-center cursor-pointer focus:outline-none ring-gray-400">
 												<input 
 												@click="imageUrl = '<?php echo $swapImage ?>'"
-												type="radio" name="color-choice" value="White" class="sr-only" aria-labelledby="color-choice-1-label" required>
-												<p id="color-choice-1-label" class="sr-only"><?php echo $colordot->title ?></p>
+												type="radio" name="color-choice" value="" class="sr-only">
+												<p id="" class="sr-only"><?php echo $colordot->title ?></p>
 												<span aria-hidden="true" class="h-6 w-6 bg-<?php echo $colordot->codice ?> border border-black border-opacity-10 rounded-full"></span>
 											</label>
 										<?php } ?>
@@ -272,7 +272,7 @@
 														   
 														    <label 
 														    :class="expanded ? '' : 'border-gray-300' "
-														    class="relative block bg-white border shadow-sm px-6 my-1 cursor-pointer flex justify-between font-oswald focus:outline-none hover:boder-1 hover:border-perros-green hover:opacity-95"
+														    class="relative block bg-white border px-6 my-1 cursor-pointer flex justify-between font-oswald focus:outline-none hover:boder-1 hover:border-perros-green hover:opacity-95"
 														    id="taglia-<?php echo $nItem ?>">
 														      <input
 														      @click="expanded = !expanded"
@@ -362,7 +362,7 @@
 							  <div class="space-y-4">
 							   
 							    <label 
-							    class="relative block bg-white border shadow-sm px-6 my-1  cursor-pointer flex justify-between font-oswald focus:outline-none"
+							    class="relative block bg-white border px-6 my-1  cursor-pointer flex justify-between font-oswald focus:outline-none"
 							    >
 							      <input
 							      type="radio" name="taglia" value="" class="sr-only" required>
@@ -432,8 +432,8 @@
 															<input
 															@click="expanded = !expanded; imageUrl = '<?php echo $swapImage ?>'"
 															id="colore-<?php echo $nColors ?>"
-															 type="radio" name="colore" value="<?php echo $colordot->name ?>" class="sr-only" required>
-															<p id="color-choice-1-label" class="sr-only"><?php echo $colordot->title ?></p>
+															 type="radio" name="colore" value="<?php echo $colordot->name ?>" class="sr-only"  aria-labelledby="<?php echo $colordot->name ?>" required>
+															<p id="<?php echo $colordot->name ?>" class="sr-only"><?php echo $colordot->title ?></p>
 															<span aria-hidden="true" class="h-6 w-6 bg-<?php echo $colordot->codice ?> border border-black border-opacity-10 rounded-full"></span>
 														</label>
 													</div>
@@ -471,7 +471,7 @@
 											   
 											    <label 
 											    :class="expa ? 'border-transparent' : 'border-gray-300' "
-											    class="relative block bg-white border shadow-sm px-6 my-1 cursor-pointer flex justify-between font-oswald py-3 focus:outline-none hover:border-perros-green"
+											    class="relative block bg-white border px-6 my-1 cursor-pointer flex justify-between font-oswald py-3 focus:outline-none hover:border-perros-green"
 											    id="minuteria-<?php echo $nItem ?>">
 											      <input
 											      @click="expa = !expa"
@@ -540,11 +540,12 @@
 
 
 								//SnipCart button
+								$snipJson = $config->paths->httpAssets . "files/" . $page->id . "/snipcart.json";
 								echo "
 								<button class='snipcart-add-item max-w-xs bottone-green'
 								  data-item-id='$tagliaOK'
 								  data-item-price='$totale'
-								  data-item-url='$page->url'
+								  data-item-url='$snipJson'
 								  data-item-description='$page->snipcart_item_description'
 								  data-item-image='$image->url'
 								  data-item-name='$checkoutTitolo'

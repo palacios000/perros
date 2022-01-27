@@ -34,7 +34,7 @@
 								echo "<a class='font-oswald' href='$page->editURL'>Modifica Pagina</a>";
 							} 
 							foreach ($homepage->children as $menu) {
-								echo "<a class='font-oswald uppercase text-xxl' href='$menu->url' class=''>$menu->title</a>";
+								echo "<a class='font-oswald uppercase text-xxl' href='$menu->url'>$menu->title</a>";
 							}?>
 
 							<!-- flyout menu -->
@@ -87,7 +87,7 @@
 					        :id="$id('dropdown-button')"
 					        style="display: none;"
 
-					         class="absolute z-10 left-1/2 top-8 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-xs sm:px-0">
+					         class="absolute z-50 left-1/2 top-8 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-xs sm:px-0">
 										<div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
 											<div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
 												<a href="#" class="-m-3 p-3 block rounded-md hover:bg-gray-50">

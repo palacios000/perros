@@ -987,3 +987,11 @@
 2022-01-27 15:01:29	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?taglia=G15m&checkout=go&colore=nero&minuteria=acciaio-inox-304	Compiled file: /site/templates/sc-product.php
 2022-01-27 15:02:33	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
 2022-01-27 15:04:03	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?taglia=G15s&checkout=go&colore=rosso&minuteria=bronzo	Compiled file: /site/templates/sc-product.php
+2022-01-27 17:49:22	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?taglia=G15s&checkout=go&colore=rosso&minuteria=bronzo	Compiled file: /site/templates/sc-product.php
+2022-01-27 17:56:05	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-27 17:56:16	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-27 18:04:48	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-27 18:04:57	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-27 18:05:33	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-27 18:08:20	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-27 18:08:24	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
