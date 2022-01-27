@@ -30,3 +30,71 @@ $wire->addHookAfter('SeoMaestro::renderSeoDataValue', function (\ProcessWire\Hoo
         $event->return = $sanitizer->text($description) ;
     }
 });
+
+
+/**
+  * 
+  * Soluzione per creare file json con tutti le varianti prodotto 
+  * 
+*/   
+    $wire->addHookAfter('Pages::saved', function($event) {
+
+      $page = $event->arguments(0);
+      $config = \ProcessWire\wire('config');
+      $pages  = \ProcessWire\wire('pages');
+
+      if ($page->template == "sc-product") {
+
+        // imposta file sul server
+        $jsonName = "snipcart.json";
+        $filePath = $config->paths->assets . "files/" . $page->id . "/" . $jsonName;
+        $httpPath = $config->paths->httpAssets . "files/" . $page->id . "/" . $jsonName;
+
+        // imposta json
+        $json = array();
+        $jsonItem = array();
+        $taglie = array();
+        $colori = $pages->findOne("name=colori, template=variabili");
+        foreach ($page->snipcart_item_variations as $item) {
+            $jsonItem['id'] = $item->product_variations->code;
+            $jsonItem['price'] = $item->product_variations->price;
+            $jsonItem['url'] = $httpPath;
+            $json[] = $jsonItem;
+
+            // dammi tutte le taglie, cosi' posso itereare tutti i colori qui sotto
+            // $taglie[] = $item->product_variations->code;
+            if ($page->product_options->colours) {
+                $taglieColori = array();
+                //foreach ($taglie as $taglia) {
+                //    $codiceTaglia = $taglia[0];
+                    foreach ($colori->children as $colore) {
+                        $taglieColori['id'] = $item->product_variations->code . "_" . substr($colore->name, 0, 4);
+                        $taglieColori['price'] = $item->product_variations->price;
+                        $taglieColori['url'] = $httpPath;
+                        $json[] = $taglieColori;
+                    }
+                //}
+            }
+        }
+
+        //crea tutte le varianti colore
+        $json = json_encode($json);
+
+
+
+        //create file
+        $snipCartJson = fopen("$filePath", "w");
+        fwrite($snipCartJson, $json);
+        // fwrite($snipCartJson, $json);
+        fclose($snipCartJson);
+
+        // 2 scrivi sul log
+        // \ProcessWire\wire('log')->save('notifiche', "$page->title : salvata!");
+
+        // 3 spara un messaggio di notifica sulla pagina
+        throw new \ProcessWire\WireException("$filePath");
+
+
+      }
+
+    });

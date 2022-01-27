@@ -3,10 +3,18 @@
 
 [x-cloak] { display: none !important; }
 
+@layer components {
+	.bottone-green{
+		@apply font-oswald font-bold bg-perros-green border border-transparent rounded-md py-3 px-5 flex items-center justify-center text-base font-medium text-white hover:bg-perros-green-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-perros-green-500 sm:w-full;
+	}
+}
+
+
 #griglia *, .griglia * {
 	border:  pink 1px solid;
 }
-:not(.bg-perros-green) .homebox h3{
+.bg-white .homebox h3,
+.bg-neutral-200 h3{/*purtroppo colo :not mi da' problemi*/
 	@apply text-perros-green;
 }
 .bg-perros-green .homebox h3{
@@ -35,11 +43,6 @@
 	background-size: 350px;
 }
 
-@layer components {
-	.bottone-green{
-		@apply font-oswald font-bold bg-perros-green border border-transparent rounded-md py-3 px-5 flex items-center justify-center text-base font-medium text-white hover:bg-perros-green-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-perros-green-500 sm:w-full;
-	}
-}
 
 
 

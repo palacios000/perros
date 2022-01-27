@@ -610,7 +610,34 @@
 			    <img class="absolute w-full h-full object-cover" src="<?php echo $page->images_bg->first->url ?>" alt="">
 			  </div>
 			</main>
+
+			<!-- recensioni -->
+			<hr class="dottedLineBig my-8">
+				<div class="container mx-auto py-12">
+					<h3 class="font-oswald font-bold text-4xl text-center">Recensioni</h3>
+				</div>
+			<hr class="dottedLineBig my-8">
 		</section>
+
+
+		<!-- images -->
+		  <section id="immagini" class="flex flex-row container mx-auto">
+		    <!-- 1 -->
+		    <?php 
+		    echo "
+		    <div>
+		      <img src='{$page->images_bg->eq(1)->size(1055,614)->url}' alt='{$page->images_bg->eq(1)->description}'>
+		    </div>
+		    <!-- 2 -->
+		    <div>
+		      <div class='relative'>
+		      <img src='{$page->images_bg->eq(2)->size(633,614)->url}' alt='{$page->images_bg->eq(2)->description}'>
+		        <img class='absolute top-0 left-0' src='{$config->urls->templates}styles/images/linguetta-perros.png' alt='etichetta Perros Life'>
+		      </div>
+		    </div>    
+		    ";
+		     ?>
+		  </section>
 
 </div>
 
@@ -678,3 +705,7 @@ VARIABILI - colori
 |        |
 
  -->
+
+
+
+?>

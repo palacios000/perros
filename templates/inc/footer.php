@@ -14,7 +14,7 @@
 		          </div>
 		          <p class="mt-5 text-2xl leading-6 font-medium font-oswald font-bold uppercase text-center">'.$icons->title.'</p>
 		        </dt>
-		        <dd class="mt-2 text-xl text-gray-500 text-center font-oswald">'.$icons->infotext.'
+		        <dd class="mt-2 mx-8 text-lg text-gray-500 text-center font-oswald">'.$icons->infotext.'
 
 		        </dd>
 		      </div>';

@@ -152,6 +152,29 @@
   </section>
 
 <!-- pre footer -->
+<?php $varsContatti = $pages->findOne("template=variabili, name=contattaci, parent=1055"); ?>
+  <div id="prefooter" class="bg-white">
+    <div class="container mx-auto grid grid-cols-2 gap-x-24 pt-32 pb-28">
+      <div class="text-center px-12">
+        <h5 class="font-oswald text-perros-brown text-5xl mb-9">Che titolo?</h5>
+        <p>Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Quibusdam velit recusandae sed reiciendis voluptatum incidunt earum</p>
+      </div>
+      <div class="text-center border-dotted border-l-8 border-neutral-300">
+        <h5 class="font-oswald text-perros-brown text-5xl mb-9"><?php echo $varsContatti->title ?></h5>
+        <div class="max-w-xs mx-auto space-y-10 md:space-y-0 md:grid md:grid-cols-1 md:gap-x-8 md:gap-y-10">
+          
+        <?php 
+        foreach ($varsContatti->children as $iconsContact) {
+          echo '<div class="pl-8">';
+           echo "<img class='absolute w-14 h-14' src='{$iconsContact->images->first->url}' alt='$iconsContact->title'>";
+           echo "<p class='pt-4'><a href='$iconsContact->name:".str_replace(' ', '', $iconsContact->infotext)."'>$iconsContact->infotext</a></p>";
+          echo '</div>';
+         } ?>
+
+        </div>
+      </div>
+    </div>
+  </div>
 
 <!-- #2 quote -->
   <?php $quote = $pages->findOne("template=variabili, name=quotes")->children->getRandom();  ?>
