@@ -45,7 +45,7 @@
 				}
 			}
 			$totale = $prezzo;
-			$prezzo = '&euro;'. $prezzo;
+			$prezzo = '&euro;'. (number_format($prezzo, 2, ',', ''));
 		}else{
 			$minmaxPrice = array();
 			foreach ($page->snipcart_item_variations as $findPrice) {
@@ -53,7 +53,7 @@
 			}
 			$priceMin = min($minmaxPrice);
 			$priceMax = max($minmaxPrice);
-			$prezzo = '&euro;'.$priceMin. ' - &euro;'.$priceMax;
+			$prezzo = '&euro;'. number_format($priceMin, 2, ','). ' - &euro;'. number_format($priceMax, 2, ',');
 		}
 
 
@@ -526,9 +526,17 @@
 								echo "<h3 class='font-oswald font-bold text-2xl'>minuteria: $minuteriaOK </h3>";
 								echo "</div>";
 
-								$checkoutTitolo = $page->snipcart_item_description;
-								if ($coloreOK) $checkoutTitolo .= ' | Colore: ' . $coloreOK;
-								if ($minuteriaOK) $checkoutTitolo .= ' | Minuteria: ' . $minuteriaOK;
+								$checkoutTitolo = $page->title;
+								if ($coloreOK) {
+									$checkoutTitolo .= ' | Colore: ' . $coloreOK;
+									$tagliaOK .= '_' . $colo; // colore a 4 cifre
+								}
+								if ($minuteriaOK) {
+									$checkoutTitolo .= ' | Minuteria: ' . $minuteriaOK;
+									if ($minuteriaOK != 'tradizionale') {
+										$tagliaOK .= '-' . $minuteriaOK;
+									}
+								}
 
 
 								//SnipCart button
@@ -612,11 +620,13 @@
 			</main>
 
 			<!-- recensioni -->
+			<div class="container mx-auto">
 			<hr class="dottedLineBig my-8">
 				<div class="container mx-auto py-12">
 					<h3 class="font-oswald font-bold text-4xl text-center">Recensioni</h3>
 				</div>
 			<hr class="dottedLineBig my-8">
+			</div>
 		</section>
 
 
@@ -705,7 +715,3 @@ VARIABILI - colori
 |        |
 
  -->
-
-
-
-?>

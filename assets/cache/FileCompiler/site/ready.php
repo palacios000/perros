@@ -55,25 +55,35 @@ $wire->addHookAfter('SeoMaestro::renderSeoDataValue', function (\ProcessWire\Hoo
         $jsonItem = array();
         $taglie = array();
         $colori = $pages->findOne("name=colori, template=variabili");
+        $minuteria = array('acciaio', 'bronzo' ); // acciaio bronzo, senza star li' a cercare le pagine
         foreach ($page->snipcart_item_variations as $item) {
+            $prezzo = floatval(number_format($item->product_variations->price, 2, '.', ''));
             $jsonItem['id'] = $item->product_variations->code;
-            $jsonItem['price'] = $item->product_variations->price;
+            $jsonItem['price'] = $prezzo;
             $jsonItem['url'] = $httpPath;
             $json[] = $jsonItem;
 
-            // dammi tutte le taglie, cosi' posso itereare tutti i colori qui sotto
-            // $taglie[] = $item->product_variations->code;
+            // aggiungi tutte le taglie
             if ($page->product_options->colours) {
                 $taglieColori = array();
-                //foreach ($taglie as $taglia) {
-                //    $codiceTaglia = $taglia[0];
-                    foreach ($colori->children as $colore) {
-                        $taglieColori['id'] = $item->product_variations->code . "_" . substr($colore->name, 0, 4);
-                        $taglieColori['price'] = $item->product_variations->price;
-                        $taglieColori['url'] = $httpPath;
-                        $json[] = $taglieColori;
+                foreach ($colori->children as $colore) {
+                    $taglieColori['id'] = $item->product_variations->code . "_" . substr($colore->name, 0, 4);
+                    $taglieColori['price'] = $prezzo;
+                    $taglieColori['url'] = $httpPath;
+                    $json[] = $taglieColori;
+
+                    // aggiungi minuteria
+                    if ($page->product_options->minuteria) {
+                        $taglieMinuteria = array();
+                        $prezzoExtra = $prezzo + floatval($page->product_options->price_extra);
+                        foreach ($minuteria as $key => $value) {
+                            $taglieMinuteria['id'] = $taglieColori['id'] . "-" . $value;
+                            $taglieMinuteria['price'] = $prezzoExtra;
+                            $taglieMinuteria['url'] = $httpPath;
+                            $json[] = $taglieMinuteria;
+                        }
                     }
-                //}
+                }
             }
         }
 
