@@ -305,7 +305,7 @@
 
 																	<!-- prezzo -->
 														      <div class="w-1/5 mt-2 flex text-sm sm:mt-0 sm:block sm:ml-4 sm:text-right">
-														        <div class="text-xl text-gray-900">&euro; <?php echo $itm->product_variations->price ?></div>
+														        <div class="text-xl text-gray-900">&euro; <?php echo (number_format($itm->product_variations->price, 2, ',', '')) ?></div>
 														      </div>
 	
 														      <div 
@@ -495,7 +495,7 @@
 											      
 														<!-- prezzo -->
 											      <div class="w-1/6 mt-2 flex text-sm sm:mt-0 sm:block sm:ml-4 sm:text-right">
-											        <div class="text-3xl text-gray-900"><?php echo ($itm->name == "tradizionale") ? "incluso" : '+ &euro; ' . $page->product_options->price_extra ?></div>
+											        <div class="text-2xl text-gray-900"><?php echo ($itm->name == "tradizionale") ? "incluso" : '+ &euro; ' . (number_format($page->product_options->price_extra, 2, ',', ''))  ?></div>
 											      </div>
 
 											      <div 
@@ -549,6 +549,7 @@
 								  data-item-description='$page->snipcart_item_description'
 								  data-item-image='$image->url'
 								  data-item-name='$checkoutTitolo'
+								  'hasTaxesIncluded': true,
 								  >
 								  Aggiungi al carrello
 								</button>";
@@ -697,10 +698,10 @@ IMMAGINI
 
 
 VARIAZIONE PRODOTTI
-|====================|=======|====================================================================|
-| product_options    | combo | colours,minuteria,	price_extra, titolo1, titolo2, titolo3, titolo4 |
-| product_variations | combo | code,price,nastro,torace,addome,gabbia,peso                        |
-|                    |       |                                                                    |
+|====================|=======|===============================================================================|
+| product_options    | combo | colours,minuteria, price_min, price_extra, titolo1, titolo2, titolo3, titolo4 |
+| product_variations | combo | code,price,nastro,torace,addome,gabbia,peso                                   |
+|                    |       |                                                                               |
 
 MINUTERIA
 |==========|

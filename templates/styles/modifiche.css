@@ -1,7 +1,15 @@
 /* *** modifiche ed aggiunte da apportare a tailwind *** */
 /* questo file viene importato da tailwind.css, che si trova nel root del progetto */
 
+/* alpine */
 [x-cloak] { display: none !important; }
+
+/* dev */
+	#griglia *, .griglia * {
+		border:  pink 1px solid;
+	}
+
+
 
 @layer components {
 	.bottone-green{
@@ -9,41 +17,50 @@
 	}
 }
 
+/* grafiche */
 
-#griglia *, .griglia * {
-	border:  pink 1px solid;
-}
-.bg-white .homebox h3,
-.bg-neutral-200 h3{/*purtroppo colo :not mi da' problemi*/
-	@apply text-perros-green;
-}
-.bg-perros-green .homebox h3{
-	@apply text-white;
-}
+	.bg-ossi-pattern{
+		background-size: 350px;
+	}
 
-.bigDottedLine{
-  	@apply mt-12 border-dotted border-t-8 border-neutral-300;
-}
-.homebox{
-  h3{
-    @apply text-5xl font-oswald mb-8;
-  }
-  a{
-  	@apply mt-7 block;
-  }
-  hr{
-  	@apply mt-12 border-dotted border-t-8 border-neutral-300;
-  }
-  .colonnina p{
-  	@apply pb-10;
-  }
-}
+	.dottedLineBig{
+		@apply border-dotted border-t-8 border-neutral-300;
+	}
+	.dottedLineSmall{
+		@apply border-dotted border-t-4 border-neutral-300;
+	}
 
-.bg-ossi-pattern{
-	background-size: 350px;
-}
+	/*.bigDottedLine{
+	  	@apply mt-12 border-dotted border-t-8 border-neutral-300;
+	}
+	*/
 
 
+/* homepage - homebox */
+
+	.bg-white .homebox h3,
+	.bg-neutral-200 h3{/*purtroppo col :not mi da' problemi*/
+		@apply text-perros-green;
+	}
+	.bg-perros-green .homebox h3{
+		@apply text-white;
+	}
+
+
+	.homebox{
+	  h3{
+	    @apply text-5xl font-oswald mb-8;
+	  }
+	  a{
+	  	@apply mt-7 block;
+	  }
+	  hr{
+	  	@apply mt-12 border-dotted border-t-8 border-neutral-300;
+	  }
+	  .colonnina p{
+	  	@apply pb-10;
+	  }
+	}
 
 
 /* prodotto modal */
@@ -82,9 +99,4 @@
 	}
 
 
-.dottedLineBig{
-	@apply border-dotted border-t-8 border-neutral-300;
-}
-.dottedLineSmall{
-	@apply border-dotted border-t-4 border-neutral-300;
-}
+

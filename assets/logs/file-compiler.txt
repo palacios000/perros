@@ -995,3 +995,10 @@
 2022-01-27 18:05:33	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
 2022-01-27 18:08:20	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
 2022-01-27 18:08:24	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-28 09:33:20	guest	http://localhost/perros2/public/	Compiled file: /site/ready.php
+2022-01-28 09:56:30	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?taglia=G15m&checkout=go&colore=azzurro&minuteria=tradizionale	Compiled file: /site/templates/sc-product.php
+2022-01-28 11:09:58	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-28 11:13:37	guest	http://localhost/perros2/public/negozio-mio/	Compiled file: /site/templates/sc-shop.php
+2022-01-28 11:16:25	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-01-28 11:17:35	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?taglia=G15m	Compiled file: /site/templates/sc-product.php
+2022-01-28 11:17:44	guest	http://localhost/perros2/public/negozio-mio/guinzaglio-test/?taglia=G15m	Compiled file: /site/templates/sc-product.php

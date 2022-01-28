@@ -1,0 +1,16 @@
+/* snipcart modal */
+	.snipcart__font--secondary, .snipcart__font--subtitle, .snipcart__font--subtitle-small{
+		font-family: Oswald;
+	}
+	#snipcart.snipcart .snipcart-modal__container .snipcart-layout.snipcart-modal {
+		margin-left: 2px;
+	}
+	/*#snipcart{
+		[type="button"].snipcart-button-primary{
+			background-color: rgb(100 181 158 / var(--tw-bg-opacity));
+		}
+	}*/
+
+	#snipcart{
+		--bgColor-buttonPrimary: rgb(100 181 158);
+	}

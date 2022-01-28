@@ -43,7 +43,8 @@ $wire->addHookAfter('SeoMaestro::renderSeoDataValue', function (HookEvent $event
       $config = wire('config');
       $pages  = wire('pages');
 
-      if ($page->template == "sc-product") {
+      // if ($page->template == "sc-product") {
+      if ($page->template == "cambia-questo") {
 
         // imposta file sul server
         $jsonName = "snipcart.json";
@@ -90,12 +91,9 @@ $wire->addHookAfter('SeoMaestro::renderSeoDataValue', function (HookEvent $event
         //crea tutte le varianti colore
         $json = json_encode($json);
 
-
-
         //create file
         $snipCartJson = fopen("$filePath", "w");
         fwrite($snipCartJson, $json);
-        // fwrite($snipCartJson, $json);
         fclose($snipCartJson);
 
         // 2 scrivi sul log
@@ -103,8 +101,6 @@ $wire->addHookAfter('SeoMaestro::renderSeoDataValue', function (HookEvent $event
 
         // 3 spara un messaggio di notifica sulla pagina
         throw new WireException("$filePath");
-
-
       }
 
     });
