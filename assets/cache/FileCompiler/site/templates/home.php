@@ -17,10 +17,10 @@
                     <span class="px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-perros-green rounded-full">Spedizione Gratis</span>
                     <span class="ml-4 text-sm">Per gli ordine superiori a &euro; 45 </span>
                   </a>
-                  <p class="mt-4 text-5xl tracking-tight font-bold text-black font-oswald sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
+                  <p class="mt-4 tracking-tight font-bold text-black font-oswald sm:mt-5 lg:mt-6 text-5xl">
                     <?php echo $slider1->title ?>
                   </p>
-                  <div class="mt-3 text-2xl font-light text-neutral-700 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl bg-white">
+                  <div class="mt-3 text-3xl font-light text-neutral-700 sm:mt-5 sm:text-xl font-oswald font-light">
                     <?php echo $slider1->body ?>
                   </div>
                   <div class="mt-10 sm:mt-12">

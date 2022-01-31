@@ -93,7 +93,7 @@
 		<main class="max-w-7xl mx-auto sm:pt-16 sm:px-6 lg:px-8 z-10" x-data="{imageUrl: '<?php echo $image->url ?>'}">
 			<div class="max-w-2xl mx-auto lg:max-w-none">
 				<!-- Product -->
-				<div class="lg:grid lg:grid-cols-2 lg:gap-x-8 lg:items-start">
+				<div class="lg:grid lg:grid-cols-3 lg:gap-x-8 lg:items-start">
 					<!-- Image gallery -->
 					<div class="flex flex-col-reverse">
 						<!-- Image selector -->
@@ -125,7 +125,7 @@
 					</div>
 
 					<!-- Product info -->
-					<div class="mt-10 px-4 sm:px-0 sm:mt-16 lg:mt-0">
+					<div class="mt-10 px-4 sm:px-0 sm:mt-16 lg:mt-0 col-span-2">
 						<h1 class="text-3xl font-bold tracking-tight font-oswald text-4ll leading-tight">
 							<?php echo $page->title; if ($tagliaOK) echo " - " . $tagliaOK ?>
 						</h1>
@@ -220,23 +220,18 @@
 
 											<div id="modalTaglia" class="bg-white p-4 border-4 border-white rounded-2xl">
 
-												<div class="grid grid-cols-2">
+												<div class="grid grid-cols-3">
 													<div>
 														<img src="<?php echo $page->images_details->first->url ?>" alt="Come misurare il cane">
 														<p class="text-xs text-gray-500 mt-4 mx-10 text-center"><?php echo $page->images_details->first->description  ?></p>
-													</div>
 													<div :id="$id('modal-title')" class="px-3">
 														<?php echo $page->body_extra ?>
-														<!-- Title 
-														<h2 class="text-3xl font-bold font-oswald" >Taglie</h2>
-														
-														<p class="mt-2 text-gray-600">Foto + testo ecc.</p>
-														-->
 													</div>
-												</div>
 
-												<!-- Table -->
-												<div class="mt-12 ">
+													</div>
+
+													<!-- Table -->
+												<div class="mt-12 col-span-2">
 													<form action="" method="get" x-data="{ active: 1 }">
 
 														<!-- column title -->
@@ -297,10 +292,10 @@
 																	 -->
 
 														      <?php 
-														      if ($page->product_options->titolo1) echo tableCell($itm->product_variations->torace, 'bg-perros-green-100', 'cm'); 
-														      if ($page->product_options->titolo2) echo tableCell($itm->product_variations->addome, 'bg-perros-brown-100', 'cm'); 
-														      if ($page->product_options->titolo3) echo tableCell($itm->product_variations->gabbia, 'bg-gray-200', 'cm'); 
-														      if ($page->product_options->titolo4) echo tableCell($itm->product_variations->peso, 'bg-red-100', 'kg'); 
+														      if ($page->product_options->titolo1) echo tableCell($itm->product_variations->torace, 'bg-white', 'cm'); 
+														      if ($page->product_options->titolo2) echo tableCell($itm->product_variations->addome, 'bg-white', 'cm'); 
+														      if ($page->product_options->titolo3) echo tableCell($itm->product_variations->gabbia, 'bg-white', 'cm'); 
+														      if ($page->product_options->titolo4) echo tableCell($itm->product_variations->peso, 'bg-white', 'kg'); 
 														      ?>
 
 																	<!-- prezzo -->
@@ -329,6 +324,14 @@
 														
 													</form>
 												</div>
+
+
+
+
+
+												</div>
+
+												
 											</div>
 											</div>
 
@@ -561,6 +564,88 @@
 
 
 						<?php } ?>
+
+
+
+
+
+
+
+
+
+						<!-- This example requires Tailwind CSS v2.0+ -->
+							<nav aria-label="Progress" x-data="{ open: false }">
+							  <ol role="list" class="border border-gray-300 rounded-md divide-y divide-gray-300 md:flex md:divide-y-0">
+							    <li class="relative md:flex-1 md:flex">
+							      <!-- Completed Step -->
+							      <a x-on:click="open = true" href="#" class="group flex items-center w-full">
+							        <span class="px-6 py-4 flex items-center text-sm font-medium">
+							          <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-indigo-600 rounded-full group-hover:bg-indigo-800">
+							            <!-- Heroicon name: solid/check -->
+							            <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+							              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+							            </svg>
+							          </span>
+							          <span class="ml-4 text-sm font-medium text-gray-900">Scegli la taglia</span>
+							        </span>
+							      </a>
+
+							      <!-- Arrow separator for lg screens and up -->
+							      <div class="hidden md:block absolute top-0 right-0 h-full w-5" aria-hidden="true">
+							        <svg class="h-full w-full text-gray-300" viewBox="0 0 22 80" fill="none" preserveAspectRatio="none">
+							          <path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor" stroke-linejoin="round" />
+							        </svg>
+							      </div>
+							    </li>
+
+							    <li class="relative md:flex-1 md:flex">
+							      <!-- Current Step -->
+							      <a href="#" class="px-6 py-4 flex items-center text-sm font-medium" aria-current="step">
+							        <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 border-indigo-600 rounded-full">
+							          <span class="text-indigo-600">02</span>
+							        </span>
+							        <span class="ml-4 text-sm font-medium text-indigo-600">Application form</span>
+							      </a>
+
+							      <!-- Arrow separator for lg screens and up -->
+							      <div class="hidden md:block absolute top-0 right-0 h-full w-5" aria-hidden="true">
+							        <svg class="h-full w-full text-gray-300" viewBox="0 0 22 80" fill="none" preserveAspectRatio="none">
+							          <path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor" stroke-linejoin="round" />
+							        </svg>
+							      </div>
+							    </li>
+
+							    <li class="relative md:flex-1 md:flex">
+							      <!-- Upcoming Step -->
+							      <a href="#" class="group flex items-center">
+							        <span class="px-6 py-4 flex items-center text-sm font-medium">
+							          <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 border-gray-300 rounded-full group-hover:border-gray-400">
+							            <span class="text-gray-500 group-hover:text-gray-900">03</span>
+							          </span>
+							          <span class="ml-4 text-sm font-medium text-gray-500 group-hover:text-gray-900">Preview</span>
+							        </span>
+							      </a>
+							    </li>
+							  </ol>
+							</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 					</div>
 				</div>
