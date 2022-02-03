@@ -79,10 +79,10 @@
 			}
 
 			$td = "
-			<div class='w-1/5 flex items-center $colore'>
-			  <div class='text-sm text-center font-medium text-gray-900 w-full'>
-			    $testo
-			  </div>
+			<div class='w-1/5 flex items-center '>
+				<div class='text-sm text-center font-medium $colore w-full'>
+					$testo
+				</div>
 			</div>
 			";
 			return $td;
@@ -103,12 +103,15 @@
 								<!-- Immagini info | galleria  BUTTONs	-->
 								<?php if (count($page->images)){
 									foreach ($page->images->find("limit=4") as $infoImg) { ?>
-										<button id="tabs-2-tab-1" class="relative h-24 bg-white rounded-md flex items-center justify-center text-sm font-medium uppercase text-gray-900 cursor-pointer" aria-controls="tabs-2-panel-1" role="tab" type="button">
-											<span class="absolute inset-0 rounded-md overflow-hidden">
+										<button id="tabs-2-tab-1" class="relative h-24 bg-white flex items-center justify-center text-sm font-medium uppercase text-gray-900 cursor-pointer" aria-controls="tabs-2-panel-1" role="tab" type="button">
+											<span class="absolute inset-0 overflow-hidden">
+												<a @click="imageUrl = '<?php echo $infoImg->url ?>'" >
+													
 												<img src="<?php echo $infoImg->url ?>" alt="<?php echo $imageDesc ?>" class="w-full h-full object-center object-cover">
+												</a>
 											</span>
 											<!-- Selected: "ring-indigo-500", Not Selected: "ring-transparent" -->
-											<span class="ring-transparent absolute inset-0 rounded-md ring-2 ring-offset-2 pointer-events-none" aria-hidden="true"></span>
+											<span class="ring-transparent absolute ring-2 ring-offset-2 pointer-events-none" aria-hidden="true"></span>
 										</button>
 								<?php 										
 									}
@@ -181,12 +184,47 @@
 								</fieldset>
 							</div>
 
-							<div x-data="{ open: false }">
 							<!-- <div x-data="{ open: true }"> DEV -->
-								<div class="mt-10 flex sm:flex-col1">
-									<button x-on:click="open = true" type="button" class="max-w-xs flex-1 bottone-green">Scegli la Taglia</button>
+							<div x-data="{ open: false }">
 
-								</div>
+								<!-- blocco 3 steps - 1/3 -->
+									<div class="mt-10 flex ">
+										<button x-on:click="open = true" type="button" class="bottone-green">
+											<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full">
+												<span class="">01</span>
+											</span>
+											<span class="ml-2">Scegli la Taglia1</span>
+										</button>
+
+										<!-- Arrow separator for lg screens and up -->
+										<div class="hidden md:block h-full w-8 mx-2" aria-hidden="true">
+											<svg class="h-full w-full text-gray-500 pt-3" viewBox="0 0 22 80" fill="none" preserveAspectRatio="none">
+												<path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor" stroke-linejoin="round" />
+											</svg>
+										</div>
+
+										<button type="button" class="bottone-white cursor-default">
+											<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full">
+												<span class="">02</span>
+											</span>
+											<span class="ml-2">Opzioni</span>
+										</button>
+
+										<!-- Arrow separator for lg screens and up -->
+										<div class="hidden md:block h-full w-8 mx-2" aria-hidden="true">
+											<svg class="h-full w-full text-gray-500 pt-3" viewBox="0 0 22 80" fill="none" preserveAspectRatio="none">
+												<path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor" stroke-linejoin="round" />
+											</svg>
+										</div>
+
+										<button type="button" class="bottone-white cursor-default">
+											<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full">
+												<span class="">03</span>
+											</span>
+											<span class="ml-2">Carrello</span>
+										</button>
+									</div>
+
 
 								<!-- Modal TAGLIA #### -->
 									<div
@@ -252,69 +290,69 @@
 
 														<!-- TW radio buttons -->
 														<fieldset>
-														  
-														  <div class="space-y-4"
-														    x-data="{ 
-														    	id: <?php echo $nItem ?>,
-														    	get expanded(){
-														    		return this.checked === this.id
-														    	},
-														    	set expanded(value){
-														    		this.checked = value ? this.id : null
-														    	},
-														    }"
-														  >
-														   
-														    <label 
-														    :class="expanded ? '' : 'border-gray-300' "
-														    class="relative block bg-white border px-6 my-1 cursor-pointer flex justify-between font-oswald focus:outline-none hover:boder-1 hover:border-perros-green hover:opacity-95"
-														    id="taglia-<?php echo $nItem ?>">
-														      <input
-														      @click="expanded = !expanded"
-														      id="taglia-<?php echo $nItem ?>"
-														      type="radio" name="taglia" value="<?php echo $itm->product_variations->code ?>" class="sr-only" required>
-														      <!-- codice -->
-														      <div class="w-1/5 flex items-center">
-														        <div>
-														          <p class="text-lg text-gray-900 uppercase"><?php echo $itm->product_variations->code ?></p>
-														          <div class="text-gray-500">
-														            <p class="text-sm"><?php echo $itm->product_variations->nastro ?></p>
-														          </div>
-														        </div>
-														      </div>
+															
+															<div class="space-y-4"
+																x-data="{ 
+																	id: <?php echo $nItem ?>,
+																	get expanded(){
+																		return this.checked === this.id
+																	},
+																	set expanded(value){
+																		this.checked = value ? this.id : null
+																	},
+																}"
+															>
+															 
+																<label 
+																:class="expanded ? '' : 'border-gray-300' "
+																class="relative block bg-white border px-6 my-1 cursor-pointer flex justify-between font-oswald focus:outline-none hover:boder-1 hover:border-perros-green hover:opacity-95"
+																id="taglia-<?php echo $nItem ?>">
+																	<input
+																	@click="expanded = !expanded"
+																	id="taglia-<?php echo $nItem ?>"
+																	type="radio" name="taglia" value="<?php echo $itm->product_variations->code ?>" class="" required>
+																	<!-- codice -->
+																	<div class="w-1/5 flex items-center">
+																		<div>
+																			<p class="text-lg text-gray-900 uppercase"><?php echo $itm->product_variations->code ?></p>
+																			<div class="text-gray-500">
+																				<p class="text-sm"><?php echo $itm->product_variations->nastro ?></p>
+																			</div>
+																		</div>
+																	</div>
 
-															  <!-- titolo 1 - circ toracica/collo
-														      <div class="w-1/5 flex items-center bg-perros-green-100">
-														        <div class="text-sm text-center font-medium text-gray-900 uppercase w-full">
-														          valori
-														        </div>
-														      </div>
+																<!-- titolo 1 - circ toracica/collo
+																	<div class="w-1/5 flex items-center bg-perros-green-100">
+																		<div class="text-sm text-center font-medium text-gray-900 uppercase w-full">
+																			valori
+																		</div>
+																	</div>
 																	 -->
 
-														      <?php 
-														      if ($page->product_options->titolo1) echo tableCell($itm->product_variations->torace, 'bg-white', 'cm'); 
-														      if ($page->product_options->titolo2) echo tableCell($itm->product_variations->addome, 'bg-white', 'cm'); 
-														      if ($page->product_options->titolo3) echo tableCell($itm->product_variations->gabbia, 'bg-white', 'cm'); 
-														      if ($page->product_options->titolo4) echo tableCell($itm->product_variations->peso, 'bg-white', 'kg'); 
-														      ?>
+																	<?php 
+																	if ($page->product_options->titolo1) echo tableCell($itm->product_variations->torace, 'text-perros-green', 'cm'); 
+																	if ($page->product_options->titolo2) echo tableCell($itm->product_variations->addome, 'text-perros-brown', 'cm'); 
+																	if ($page->product_options->titolo3) echo tableCell($itm->product_variations->gabbia, 'text-gray-600', 'cm'); 
+																	if ($page->product_options->titolo4) echo tableCell($itm->product_variations->peso, 'text-red-700', 'kg'); 
+																	?>
 
 																	<!-- prezzo -->
-														      <div class="w-1/5 mt-2 flex text-sm sm:mt-0 sm:block sm:ml-4 sm:text-right">
-														        <div class="text-xl text-gray-900">&euro; <?php echo (number_format($itm->product_variations->price, 2, ',', '')) ?></div>
-														      </div>
+																	<div class="w-1/5 mt-2 flex text-sm sm:mt-0 sm:block sm:ml-4 sm:text-right">
+																		<div class="text-xl text-gray-900">&euro; <?php echo (number_format($itm->product_variations->price, 2, ',', '')) ?></div>
+																	</div>
 	
-														      <div 
-														      :class="expanded ? 'border-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-perros-green-500' : 'border-transparent' "
-														      class="absolute -inset-px border-2 ring-offset-2 pointer-events-none " aria-hidden="true"></div>
-														    </label>
-														    <!-- focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-perros-green-500 -->
+																	<div 
+																	:class="expanded ? 'border-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-perros-green-500' : 'border-transparent' "
+																	class="absolute -inset-px border-2 ring-offset-2 pointer-events-none " aria-hidden="true"></div>
+																</label>
+																<!-- focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-perros-green-500 -->
 
-														  </div>
+															</div>
 														</fieldset>
 														<!-- TW buttons END -->
 
 														<?php 
- 															$nItem++;
+															$nItem++;
 														} ?>
 
 
@@ -361,37 +399,37 @@
 						<?php }else{ ?>
 							<!-- TW Riepilogo TAGLIA (ovvero mostro taglia selezionata) -->
 							<fieldset>
-							  
-							  <div class="space-y-4">
-							   
-							    <label 
-							    class="relative block bg-white border px-6 my-1  cursor-pointer flex justify-between font-oswald focus:outline-none"
-							    >
-							      <input
-							      type="radio" name="taglia" value="" class="sr-only" required>
-							      <!-- codice -->
-							      <div class="w-1/5 flex items-center">
-							        <div class="text-sm">
-							          <p class="font-medium text-gray-900 uppercase"><?php echo $itemOK->product_variations->code ?></p>
-							          <div class="text-gray-500">
-							            <p class=""><?php echo $itemOK->product_variations->nastro ?></p>
-							          </div>
-							        </div>
-							      </div>
+								
+								<div class="space-y-4">
+								 
+									<label 
+									class="relative block bg-white border px-6 my-1  cursor-pointer flex justify-between font-oswald focus:outline-none"
+									>
+										<input
+										type="radio" name="taglia" value="" class="sr-only" required>
+										<!-- codice -->
+										<div class="w-1/5 flex items-center">
+											<div class="text-sm">
+												<p class="font-medium text-gray-900 uppercase"><?php echo $itemOK->product_variations->code ?></p>
+												<div class="text-gray-500">
+													<p class=""><?php echo $itemOK->product_variations->nastro ?></p>
+												</div>
+											</div>
+										</div>
 
-							      <?php 
-							      if ($page->product_options->titolo1) echo tableCell($itemOK->product_variations->torace, 'bg-perros-green-100', 'cm', $page->product_options->titolo1); 
-							      if ($page->product_options->titolo2) echo tableCell($itemOK->product_variations->addome, 'bg-perros-brown-100', 'cm', $page->product_options->titolo2); 
-							      if ($page->product_options->titolo3) echo tableCell($itemOK->product_variations->gabbia, 'bg-gray-200', 'cm', $page->product_options->titolo3); 
-							      if ($page->product_options->titolo4) echo tableCell($itemOK->product_variations->peso, 'bg-red-100', 'kg', $page->product_options->titolo4); 
-							      ?>
+										<?php 
+										if ($page->product_options->titolo1) echo tableCell($itemOK->product_variations->torace, 'bg-perros-green-100', 'cm', $page->product_options->titolo1); 
+										if ($page->product_options->titolo2) echo tableCell($itemOK->product_variations->addome, 'bg-perros-brown-100', 'cm', $page->product_options->titolo2); 
+										if ($page->product_options->titolo3) echo tableCell($itemOK->product_variations->gabbia, 'bg-gray-200', 'cm', $page->product_options->titolo3); 
+										if ($page->product_options->titolo4) echo tableCell($itemOK->product_variations->peso, 'bg-red-100', 'kg', $page->product_options->titolo4); 
+										?>
 
-							      <div 
-							      :class="expanded ? 'border-indigo-500' : 'border-transparent' "
-							      class="absolute -inset-px border-2 pointer-events-none" aria-hidden="true"></div>
-							    </label>
+										<div 
+										:class="expanded ? 'border-indigo-500' : 'border-transparent' "
+										class="absolute -inset-px border-2 pointer-events-none" aria-hidden="true"></div>
+									</label>
 
-							  </div>
+								</div>
 							</fieldset>
 							<!-- TW Riepilogo TAGLIA END -->
 
@@ -428,12 +466,15 @@
 														set expanded(value){
 															this.checked = value ? this.id : null
 														},
-													}">
+													}"
+													x-id="['selezioneColori']">
 														<label 
 														:class="expanded ? 'ring-2' : '' "
+														:id="$id('selezioneColori')"
 														class="-m-0.5 relative rounded-full ring-offset-2 flex items-center justify-center cursor-pointer focus:outline-none ring-<?php echo $colordot->codice ?>">
 															<input
 															@click="expanded = !expanded; imageUrl = '<?php echo $swapImage ?>'"
+
 															id="colore-<?php echo $nColors ?>"
 															 type="radio" name="colore" value="<?php echo $colordot->name ?>" class="sr-only"  aria-labelledby="<?php echo $colordot->name ?>" required>
 															<p id="<?php echo $colordot->name ?>" class="sr-only"><?php echo $colordot->title ?></p>
@@ -459,54 +500,54 @@
 
 											<!-- TW radio buttons -->
 											<fieldset >
-											  
-											  <div class="space-y-4"
-											    x-data="{ 
-											    	id: <?php echo $nItem ?>,
-											    	get expa(){
-											    		return this.checked === this.id
-											    	},
-											    	set expa(value){
-											    		this.checked = value ? this.id : null
-											    	},
-											    }"
-											  >
-											   
-											    <label 
-											    :class="expa ? 'border-transparent' : 'border-gray-300' "
-											    class="relative block bg-white border px-6 my-1 cursor-pointer flex justify-between font-oswald py-3 focus:outline-none hover:border-perros-green"
-											    id="minuteria-<?php echo $nItem ?>">
-											      <input
-											      @click="expa = !expa"
-											      id="minuteria-<?php echo $nItem ?>"
-											      type="radio" name="minuteria" value="<?php echo $itm->name ?>" class="text-red-500" required>
+												
+												<div class="space-y-4"
+													x-data="{ 
+														id: <?php echo $nItem ?>,
+														get expa(){
+															return this.checked === this.id
+														},
+														set expa(value){
+															this.checked = value ? this.id : null
+														},
+													}"
+												>
+												 
+													<label 
+													:class="expa ? 'border-transparent' : 'border-gray-300' "
+													class="relative block bg-white border px-2 my-1 cursor-pointer flex justify-between font-oswald py-2 focus:outline-none hover:border-perros-green"
+													id="minuteria-<?php echo $nItem ?>">
+														<input
+														@click="expa = !expa"
+														id="minuteria-<?php echo $nItem ?>"
+														type="radio" name="minuteria" value="<?php echo $itm->name ?>" class="text-red-500" required>
 
 														<!-- titolo  -->
-											      <div class="w-1/6 flex items-center ">
-											        <div class="text-sm text-center font-medium text-gray-900 uppercase w-full">
-											        	<h3><?php echo $itm->title ?></h3>
-											          <img src="<?php echo $itm->images->first->url ?>" alt="">
-											        </div>
-											      </div>
+														<div class="w-1/6 flex items-center ">
+															<div class="text-sm text-center font-medium text-gray-900 uppercase w-full">
+																<img class="h-12 mx-auto"  src="<?php echo $itm->images->first->url ?>" alt="">
+															</div>
+														</div>
 														
-											      <!-- testo -->
-											      <div class="w-2/3 flex items-center">
-											        <div class="text-sm">
-											          <p class=""><?php echo $itm->infotext ?></p>
-											        </div>
-											      </div>
-											      
+														<!-- testo -->
+														<div class="w-2/3 flex items-center">
+															<div class="text-sm">
+																<h3 class="text-xl"><?php echo $itm->title ?></h3>
+																<p class=""><?php echo $itm->infotext ?></p>
+															</div>
+														</div>
+														
 														<!-- prezzo -->
-											      <div class="w-1/6 mt-2 flex text-sm sm:mt-0 sm:block sm:ml-4 sm:text-right">
-											        <div class="text-2xl text-gray-900"><?php echo ($itm->name == "tradizionale") ? "incluso" : '+ &euro; ' . (number_format($page->product_options->price_extra, 2, ',', ''))  ?></div>
-											      </div>
+														<div class="w-1/6 mt-2 flex text-sm sm:mt-0 sm:block sm:ml-4 sm:text-right">
+															<div class="text-2xl text-gray-900"><?php echo ($itm->name == "tradizionale") ? "incluso" : '+ &euro; ' . (number_format($page->product_options->price_extra, 2, ',', ''))  ?></div>
+														</div>
 
-											      <div 
-											      :class="expa ? 'border-red-500' : 'border-transparent' "
-											      class="absolute -inset-px border-2 pointer-events-none" aria-hidden="true"></div>
-											    </label>
+														<div 
+														:class="expa ? 'border-red-500' : 'border-transparent' "
+														class="absolute -inset-px border-2 pointer-events-none" aria-hidden="true"></div>
+													</label>
 
-											  </div>
+												</div>
 											</fieldset>
 											<!-- TW buttons END -->
 
@@ -516,9 +557,53 @@
 										</div>
 									<?php } ?>
 
-										<button type="submit" class="max-w-xs bottone-green my-8">
-											Seleziona e riepilogo
-										</button>
+									<!-- blocco 3 steps 2/3 - sono dentro un form -->
+										<div class="mt-10 flex ">
+											<button type="button" class="bottone-green bg-perros-green-400 cursor-default">
+												<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full">
+													<!-- checked -->
+													<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-white rounded-full">
+														<svg class="w-6 h-6 text-perros-green " x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+													  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+													</svg>
+													</span>
+									       <!-- cheked end -->
+												</span>
+											<a href="<?php echo $page->url ?>">
+												<span class="ml-2">Taglia selezionata</span>
+											</a>
+											</button>
+
+											<!-- Arrow separator for lg screens and up -->
+											<div class="hidden md:block h-full w-8 mx-2" aria-hidden="true">
+												<svg class="h-full w-full text-gray-500 pt-3" viewBox="0 0 22 80" fill="none" preserveAspectRatio="none">
+													<path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor" stroke-linejoin="round" />
+												</svg>
+											</div>
+
+											<button type="submit" class="bottone-green ">
+												<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full">
+													<span class="">02</span>
+												</span>
+												<span class="ml-2">Conferma colore e minuteria</span>
+											</button>
+
+											<!-- Arrow separator for lg screens and up -->
+											<div class="hidden md:block h-full w-8 mx-2" aria-hidden="true">
+												<svg class="h-full w-full text-gray-500 pt-3" viewBox="0 0 22 80" fill="none" preserveAspectRatio="none">
+													<path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor" stroke-linejoin="round" />
+												</svg>
+											</div>
+
+											<button type="button" class="bottone-white cursor-default">
+												<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full">
+													<span class="">03</span>
+												</span>
+												<span class="ml-2">Carrello</span>
+											</button>
+										</div>
+
+
 
 								</form>
 							<?php }else{ 
@@ -544,107 +629,78 @@
 
 								//SnipCart button
 								$snipJson = $config->paths->httpAssets . "files/" . $page->id . "/snipcart.json";
-								echo "
-								<button class='snipcart-add-item max-w-xs bottone-green'
-								  data-item-id='$tagliaOK'
-								  data-item-price='$totale'
-								  data-item-url='$snipJson'
-								  data-item-description='$page->snipcart_item_description'
-								  data-item-image='$image->url'
-								  data-item-name='$checkoutTitolo'
-								  'hasTaxesIncluded': true,
-								  >
-								  Aggiungi al carrello
-								</button>";
+								$snipButton = "
+									data-item-id='$tagliaOK'
+									data-item-price='$totale'
+									data-item-url='$snipJson'
+									data-item-description='$page->snipcart_item_description'
+									data-item-image='$image->url'
+									data-item-name='$checkoutTitolo'
+									'hasTaxesIncluded': true,
+									";
 
-								echo "<p class='mt-3 text-sm text-perros-brown'><a href='$page->url'>Cancella selezione</a></p>";
+								//echo "<p class='mt-3 text-sm text-perros-brown'><a href='$page->url'>Cancella selezione</a></p>";
+
+									?>
+
+									<!-- blocco 3 steps - 3/3  -->
+										<div class="mt-10 flex ">
+											<button type="button" class="bottone-green bg-perros-green-400 cursor-default">
+												<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full">
+													<!-- checked -->
+													<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-white rounded-full">
+														<svg class="w-6 h-6 text-perros-green " x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+													  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+													</svg>
+													</span>
+									       <!-- cheked end -->
+												</span>
+											<a href="<?php echo $page->url ?>">
+												<span class="ml-2">Taglia selezionata</span>
+											</a>
+											</button>
+
+											<!-- Arrow separator for lg screens and up -->
+											<div class="hidden md:block h-full w-8 mx-2" aria-hidden="true">
+												<svg class="h-full w-full text-gray-500 pt-3" viewBox="0 0 22 80" fill="none" preserveAspectRatio="none">
+													<path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor" stroke-linejoin="round" />
+												</svg>
+											</div>
+
+											<button type="submit" class="bottone-green bg-perros-green-400 cursor-default">
+												<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full">
+													<!-- checked -->
+													<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-white rounded-full">
+														<svg class="w-6 h-6 text-perros-green " x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+													  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+													</svg>
+													</span>
+									       <!-- cheked end -->
+												</span>
+												<span class="ml-2">Opzioini selezionate</span>
+											</button>
+
+											<!-- Arrow separator for lg screens and up -->
+											<div class="hidden md:block h-full w-8 mx-2" aria-hidden="true">
+												<svg class="h-full w-full text-gray-500 pt-3" viewBox="0 0 22 80" fill="none" preserveAspectRatio="none">
+													<path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor" stroke-linejoin="round" />
+												</svg>
+											</div>
+
+											<button type="button" class="bottone-green ring-2 ring-offset-2 ring-offset-gray-50 ring-perros-green-500 snipcart-add-item" <?php echo $snipButton ?>>
+												<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full">
+													<span class="">03</span>
+												</span>
+												<span class="ml-2">Aggiungi al carrello</span>
+											</button>
+										</div>
 
 
+							<?php 
 							} ?>
 
 
 						<?php } ?>
-
-
-
-
-
-
-
-
-
-						<!-- This example requires Tailwind CSS v2.0+ -->
-							<nav aria-label="Progress" x-data="{ open: false }">
-							  <ol role="list" class="border border-gray-300 rounded-md divide-y divide-gray-300 md:flex md:divide-y-0">
-							    <li class="relative md:flex-1 md:flex">
-							      <!-- Completed Step -->
-							      <a x-on:click="open = true" href="#" class="group flex items-center w-full">
-							        <span class="px-6 py-4 flex items-center text-sm font-medium">
-							          <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-indigo-600 rounded-full group-hover:bg-indigo-800">
-							            <!-- Heroicon name: solid/check -->
-							            <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-							            </svg>
-							          </span>
-							          <span class="ml-4 text-sm font-medium text-gray-900">Scegli la taglia</span>
-							        </span>
-							      </a>
-
-							      <!-- Arrow separator for lg screens and up -->
-							      <div class="hidden md:block absolute top-0 right-0 h-full w-5" aria-hidden="true">
-							        <svg class="h-full w-full text-gray-300" viewBox="0 0 22 80" fill="none" preserveAspectRatio="none">
-							          <path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor" stroke-linejoin="round" />
-							        </svg>
-							      </div>
-							    </li>
-
-							    <li class="relative md:flex-1 md:flex">
-							      <!-- Current Step -->
-							      <a href="#" class="px-6 py-4 flex items-center text-sm font-medium" aria-current="step">
-							        <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 border-indigo-600 rounded-full">
-							          <span class="text-indigo-600">02</span>
-							        </span>
-							        <span class="ml-4 text-sm font-medium text-indigo-600">Application form</span>
-							      </a>
-
-							      <!-- Arrow separator for lg screens and up -->
-							      <div class="hidden md:block absolute top-0 right-0 h-full w-5" aria-hidden="true">
-							        <svg class="h-full w-full text-gray-300" viewBox="0 0 22 80" fill="none" preserveAspectRatio="none">
-							          <path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor" stroke-linejoin="round" />
-							        </svg>
-							      </div>
-							    </li>
-
-							    <li class="relative md:flex-1 md:flex">
-							      <!-- Upcoming Step -->
-							      <a href="#" class="group flex items-center">
-							        <span class="px-6 py-4 flex items-center text-sm font-medium">
-							          <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 border-gray-300 rounded-full group-hover:border-gray-400">
-							            <span class="text-gray-500 group-hover:text-gray-900">03</span>
-							          </span>
-							          <span class="ml-4 text-sm font-medium text-gray-500 group-hover:text-gray-900">Preview</span>
-							        </span>
-							      </a>
-							    </li>
-							  </ol>
-							</nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 					</div>
@@ -673,22 +729,22 @@
 				<hr class="dottedLineBig my-8">
 				<div class="flex flex-center">
 					<div class="mx-auto py-6">
-					    <dl class="space-y-2">
+							<dl class="space-y-2">
 								<?php foreach ($page->description_list as $list): ?>
-					      <div class="relative bg-white">
-					        <dt>
-					          <!-- Heroicon name: outline/check -->
-					          <svg class="absolute h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-					            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-					          </svg>
-					          <p class="ml-9 text-lg leading-6 font-medium text-gray-900 font-oswald"><?php echo $list->title ?></p>
-					        </dt>
-					        <dd class="mt-2 ml-9 text-gray-400 ">
-					        	<?php echo $list->infotext ?>
-					        </dd>
-					      </div>
+								<div class="relative bg-white">
+									<dt>
+										<!-- Heroicon name: outline/check -->
+										<svg class="absolute h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+										</svg>
+										<p class="ml-9 text-lg leading-6 font-medium text-gray-900 font-oswald"><?php echo $list->title ?></p>
+									</dt>
+									<dd class="mt-2 ml-9 text-gray-400 ">
+										<?php echo $list->infotext ?>
+									</dd>
+								</div>
 								<?php endforeach ?>
-					    </dl>
+							</dl>
 					</div>
 				</div>
 				<hr class="dottedLineBig my-8">
@@ -696,14 +752,14 @@
 
 			<!-- body -->
 			<main class="lg:relative">
-			  <div class="mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-48 lg:text-left">
-			    <div id="caratteristicheText" class="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
-			      <?php echo $page->body ?>
-			    </div>
-			  </div>
-			  <div class="relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
-			    <img class="absolute w-full h-full object-cover" src="<?php echo $page->images_bg->first->url ?>" alt="">
-			  </div>
+				<div class="mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-48 lg:text-left">
+					<div id="caratteristicheText" class="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
+						<?php echo $page->body ?>
+					</div>
+				</div>
+				<div class="relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
+					<img class="absolute w-full h-full object-cover" src="<?php echo $page->images_bg->first->url ?>" alt="">
+				</div>
 			</main>
 
 			<!-- recensioni -->
@@ -718,23 +774,23 @@
 
 
 		<!-- images -->
-		  <section id="immagini" class="flex flex-row container mx-auto">
-		    <!-- 1 -->
-		    <?php 
-		    echo "
-		    <div>
-		      <img src='{$page->images_bg->eq(1)->size(1055,614)->url}' alt='{$page->images_bg->eq(1)->description}'>
-		    </div>
-		    <!-- 2 -->
-		    <div>
-		      <div class='relative'>
-		      <img src='{$page->images_bg->eq(2)->size(633,614)->url}' alt='{$page->images_bg->eq(2)->description}'>
-		        <img class='absolute top-0 left-0' src='{$config->urls->templates}styles/images/linguetta-perros.png' alt='etichetta Perros Life'>
-		      </div>
-		    </div>    
-		    ";
-		     ?>
-		  </section>
+			<section id="immagini" class="flex flex-row container mx-auto">
+				<!-- 1 -->
+				<?php 
+				echo "
+				<div>
+					<img src='{$page->images_bg->eq(1)->size(1055,614)->url}' alt='{$page->images_bg->eq(1)->description}'>
+				</div>
+				<!-- 2 -->
+				<div>
+					<div class='relative'>
+					<img src='{$page->images_bg->eq(2)->size(633,614)->url}' alt='{$page->images_bg->eq(2)->description}'>
+						<img class='absolute top-0 left-0' src='{$config->urls->templates}styles/images/linguetta-perros.png' alt='etichetta Perros Life'>
+					</div>
+				</div>    
+				";
+				 ?>
+			</section>
 
 </div>
 

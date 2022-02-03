@@ -19,6 +19,7 @@ module.exports = {
         'xxs': '.65rem',
         'xxl': '1.35rem',
         '2ll': '1.6rem',
+        '3ll': '2rem',
         '4ll': '2.5rem',
       },
       borderWidth: {
@@ -30,6 +31,9 @@ module.exports = {
       height: {
         '620': '31rem',
         '720': '36rem'
+      },
+      width: {
+        '58': '14.5rem',
       }
     },
   },

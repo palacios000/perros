@@ -4,28 +4,35 @@
 <?php include 'inc/menu.php'; ?>
 
 <!-- intro banner -->
-	<div class="bg-ossi-pattern">
-	  <div class="container mx-auto py-6 px-4 lg:grid lg:grid-cols-2 lg:gap-x-8">
+	<div class="relative">
+		<div class="absolute inset-0 z-0">
+			<img class="h-full w-full object-cover" src="<?php echo $page->images_bg->first->url ?>" alt="">
+		</div>
+	  <div class="relative container mx-auto py-6 px-4 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:py-12 text-white">
 	    <div>
 	      <h1 class="font-bold font-oswald text-6xl"><?php echo $page->titleH1 ?></h1>
-		      <p class="mt-6 text-2ll text-perros-green font-oswald font-light bg-white"><?php echo $page->subtitleH1 ?></p>
+		      <p class="mt-6 text-2ll  font-oswald font-light leading-tight"><?php echo $page->subtitleH1 ?></p>
 	    </div>
 	    <div>
 	      <dl class="space-y-5 sm:space-y-0 sm:grid sm:grid-cols-1 sm:grid-rows-3 sm:grid-flow-col sm:gap-x-6 sm:gap-y-4 lg:gap-x-8">
-	  			<?php foreach ($page->description_list as $list): ?>
-	        <div class="relative bg-white">
+	  			<?php 
+	  			$circle = 1;
+	  			foreach ($page->description_list as $list){ ?>
+	        <div class="relative ">
 	          <dt>
 	            <!-- Heroicon name: outline/check -->
-	            <svg class="absolute h-6 w-6 text-perros-green" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-	              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-	            </svg>
-	            <p class="ml-9 text-lg leading-6 font-medium text-gray-900 font-oswald"><?php echo $list->title ?></p>
+	            <span class="absolute top-1 flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 rounded-full">
+								<span class="text-xl"><?php echo $circle ?></span>
+							</span>
+	            <!-- <p class="ml-9 text-lg leading-6 font-medium font-oswald"><?php echo $list->title ?></p> -->
 	          </dt>
-	          <dd class="mt-2 ml-9 text-gray-500 ">
+	          <dd class="ml-14 font-oswald font-light leading-tight">
 	          	<?php echo $list->infotext ?>
 	          </dd>
 	        </div>
-	  			<?php endforeach ?>
+	  			<?php 
+	  			$circle++;
+	  		} ?>
 	      </dl>
 	    </div>
 
@@ -46,60 +53,113 @@
 	</div>';
 	$item = $page->children->first
 	?>
-	<section id="products" class="container mx-auto">
-	<div class="flex flex-row">
-		<div class="w-4/5">
-			<!-- prodotto start -->
-			<div class="flex flex-row my-12">
-				<div class="w-1/3">
-					<!-- img + colori -->
-					<a href="<?php echo $item->url ?>">
-					<img src="<?php echo $item->snipcart_item_image->first->url ?>" alt="">
-					<?php echo $dots ?>
-					</a>
-				</div>
-				<div class="w-full mx-5">
-					<h3 class="font-oswald font-bold text-4xl mb-6"><?php echo $item->title ?></h3>
-					  <div>
-					  	<!-- lista -->
-					    <dl class="space-y-1 grid grid-cols-1 gap-x-6 ">
-								<?php foreach ($item->description_list as $list): ?>
-					      <div class="relative">
-					        <dt>
-					          <!-- Heroicon name: outline/check -->
-					          <svg class="absolute h-6 w-6 text-perros-green" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-					            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-					          </svg>
-					          <p class="ml-9 text-lg leading-6 font-medium text-perros-green font-oswald"><?php echo $list->title ?></p>
-					        </dt>
-					      </div>
-								<?php endforeach ?>
-					    </dl>
-					    <!-- prezzo -->
-					    <div class="w-full flex flex-row-reverse">
-					    	<div class="w-28 flex flex-col text-center font-oswald">
-					    		<div class="prezzo text-2ll text-perros-brown">da &euro; <?php echo $item->product_options->price_min ?></div>
-					    		<a href="<?php echo $item->url ?>" class="button block max-w-xs bottone-green uppercase">Visualizza</a>
-					    	</div>
-					    </div>
-					  </div>
-				</div>
-			</div>
-			<!-- prodotto end -->
-			<hr class="bigDottedLine">
-		</div>
 
-		<div class="w-1/5">
-			<div class="bg-perros-brown p-5 my-12 text-white font-oswald">
-				<h2>Prodotti</h2>
-				<ul>
-					<li>Pettorine</li>
-					<li>Guinzagli</li>
-				</ul>
+	<section id="products" class="container mx-auto">
+		<div class="flex flex-row gap-x-4">
+			<!-- colonna prodotti -->
+			<div class="w-auto">
+				<!-- prodotto start -->
+				<div class="flex flex-row my-12">
+					<div class="w-1/3">
+						<!-- img + colori -->
+						<a href="<?php echo $item->url ?>">
+						<img src="<?php echo $item->snipcart_item_image->first->url ?>" alt="">
+						<?php echo $dots ?>
+						</a>
+					</div>
+					<div class="w-full mx-5">
+						<h3 class="font-oswald font-bold text-4xl"><?php echo $item->title ?></h3>
+						<p class="mt-2 mb-6 text-perros-green text-xl font-oswald"><?php echo $item->subtitleH1 ?></p>
+						  <div>
+						  	<!-- lista -->
+						    <dl class="space-y-1 grid grid-cols-1 gap-x-6 ">
+									<?php foreach ($item->description_list as $list): ?>
+						      <div class="relative">
+						        <dt>
+						          <!-- Heroicon name: outline/check -->
+						          <svg class="absolute h-6 w-6 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+						            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+						          </svg>
+						          <p class="ml-9 text-lg leading-5 font-medium font-oswald"><?php echo $list->title ?></p>
+						        </dt>
+						      </div>
+									<?php endforeach ?>
+						    </dl>
+						    <!-- prezzo -->
+						    <div class="w-full flex flex-row-reverse">
+						    	<div class="w-28 flex flex-col text-center font-oswald">
+						    		<div class="prezzo text-2ll text-perros-brown">da &euro; <?php echo $item->product_options->price_min ?></div>
+						    		<a href="<?php echo $item->url ?>" class="button block max-w-xs bottone-green uppercase">Visualizza</a>
+						    	</div>
+						    </div>
+						  </div>
+					</div>
+				</div>
+				<!-- prodotto end -->
+				<hr class="dottedLineBig">
 			</div>
-		</div>
+
+
+			<!-- colonna info sinistra -->
+			<div class="w-58 flex-none">
+
+				<!-- menu prodotti -->
+				<div class="bg-perros-brown p-5 my-12 text-white font-oswald w-full text-center uppercase">
+					<h2 class="text-3ll my-2">Prodotti</h2>
+					<ul class="text-2xl font-light">
+						<li class="py-2">Pettorine</li>
+						<li class="py-2 dottedLineSmall">Guinzagli</li>
+						<li class="py-2 dottedLineSmall">altro</li>
+					</ul>
+				</div>
+
+				<!-- tutto (cane) -->
+				<div>
+				  <div class="flex ">
+				    <div class="w-58 bg-perros-green bg-ossi-pattern mix-blend-multiply mt-36 relative">
+				      <!-- 1st image circle-->
+				      <img class="w-58 absolute -top-28" src="<?php echo $page->images_bg->last->url ?>" alt="" >
+				      <!-- etichetta -->
+				      <img class="absolute top-0 -right-8" src="<?php echo $config->urls->templates ?>styles/images/linguetta-perros.png" alt="etichetta Perros Life">
+
+				      <!-- testo -->
+				      <?php $tuttoSu = $pages->get(1089); ?>
+				      <div class="colonnina mx-4 text-white pb-8">
+				        <h3 class="mt-36 mb-6 text-4xl font-oswald "><?php echo $tuttoSu->title ?></h3>
+				        <ul>
+				        	<?php foreach ($tuttoSu->children as $tutto){#
+				        		$tuttoLink = $pages->get($tutto->codice)->url;
+				        		echo "<li><a class='uppercase font-oswald font-light text-xl' href='$tuttoLink'>&gt; $tutto->title</a></li>";	
+				        	} ?>
+				        </ul>
+				      </div>
+
+				    </div>
+				  </div>
+				</div>
+			</div>
 		</div>
 	</section>
+
+
+	<!-- images -- copiato da sc-product (tranne che qui le images & images_bg sono invertiti...) -->
+		<section id="immagini" class="flex flex-row container mx-auto">
+			<!-- 1 -->
+			<?php 
+			echo "
+			<div>
+				<img src='{$page->images->eq(1)->size(1055,614)->url}' alt='{$page->images->eq(1)->description}'>
+			</div>
+			<!-- 2 -->
+			<div>
+				<div class='relative'>
+				<img src='{$page->images->eq(2)->size(633,614)->url}' alt='{$page->images->eq(2)->description}'>
+					<img class='absolute top-0 left-0' src='{$config->urls->templates}styles/images/linguetta-perros.png' alt='etichetta Perros Life'>
+				</div>
+			</div>    
+			";
+			 ?>
+		</section>
 
 <?php include 'inc/footer.php' ?>
 

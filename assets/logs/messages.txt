@@ -13,3 +13,15 @@
 2022-01-21 17:29:54	giulio	http://localhost/perros2/public/edit/page/edit/?id=1068	Populated initial created/modified dates for 'images_details'
 2022-01-21 17:29:54	giulio	http://localhost/perros2/public/edit/page/edit/?id=1068	Populated initial created/modified dates for 'images_bg'
 2022-01-26 18:02:21	giulio	http://localhost/perros2/public/edit/page/sort/	Updated sort for 5 pages
+2022-01-31 11:15:44	giulio	http://localhost/perros2/public/edit/page/sort/	Updated sort for 5 pages
+2022-01-31 11:15:49	giulio	http://localhost/perros2/public/edit/page/sort/	Updated sort for 2 pages
+2022-01-31 11:16:03	giulio	http://localhost/perros2/public/edit/page/sort/	Updated sort for 3 pages
+2022-01-31 11:16:08	giulio	http://localhost/perros2/public/edit/page/sort/	Updated sort for 5 pages
+2022-01-31 11:16:13	giulio	http://localhost/perros2/public/edit/page/sort/	Updated sort for 4 pages
+2022-01-31 11:16:17	giulio	http://localhost/perros2/public/edit/page/sort/	Updated sort for 3 pages
+2022-01-31 11:16:22	giulio	http://localhost/perros2/public/edit/page/sort/	Updated sort for 2 pages
+2022-02-02 11:28:44	giulio	http://localhost/perros2/public/edit/page/sort/	Updated sort for 6 pages
+2022-02-02 11:28:49	giulio	http://localhost/perros2/public/edit/page/sort/	Updated sort for 2 pages
+2022-02-02 11:36:14	giulio	http://localhost/perros2/public/edit/page/sort/	Updated sort for 3 pages
+2022-02-02 11:39:20	giulio	http://localhost/perros2/public/edit/setup/template/removeFields	Deleted field "infotext" data in 0 row(s) from 0 page(s) using template "basic-page". [page-by-page]
+2022-02-02 11:45:30	giulio	http://localhost/perros2/public/edit/page/sort/	Updated sort for 3 pages
