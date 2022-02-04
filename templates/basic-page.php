@@ -7,3 +7,19 @@
 
 	</body>
 </html>
+
+
+<?php 
+
+/**
+	 * fields
+
+# extra_titles - COMBO
+titolo
+sottotitolo
+footer
+bottone
+id_pagina
+
+	 */	
+ ?>

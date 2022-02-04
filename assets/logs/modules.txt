@@ -63,3 +63,19 @@
 2022-01-26 18:00:50	giulio	http://localhost/perros2/public/edit/module/download/	Saved module info caches
 2022-01-26 18:00:52	giulio	http://localhost/perros2/public/edit/module/	Installed module 'FileValidatorSvgSanitizer'
 2022-01-26 18:00:52	giulio	http://localhost/perros2/public/edit/module/	Saved module info caches
+2022-02-03 15:57:28	giulio	http://localhost/perros2/public/edit/module/	Installed module 'ProcessLanguage'
+2022-02-03 15:57:28	giulio	http://localhost/perros2/public/edit/module/	Saved module info caches
+2022-02-03 15:57:28	giulio	http://localhost/perros2/public/edit/module/	Installed module 'ProcessLanguageTranslator'
+2022-02-03 15:57:28	giulio	http://localhost/perros2/public/edit/module/	Saved module info caches
+2022-02-03 15:57:28	giulio	http://localhost/perros2/public/edit/module/	Installed module 'LanguageSupport'
+2022-02-03 15:57:28	giulio	http://localhost/perros2/public/edit/module/	Saved module info caches
+2022-02-03 15:57:42	giulio	http://localhost/perros2/public/edit/module/	Installed module 'FieldtypeTextLanguage'
+2022-02-03 15:57:42	giulio	http://localhost/perros2/public/edit/module/	Saved module info caches
+2022-02-03 15:57:42	giulio	http://localhost/perros2/public/edit/module/	Installed module 'FieldtypePageTitleLanguage'
+2022-02-03 15:57:42	giulio	http://localhost/perros2/public/edit/module/	Installed module 'FieldtypeTextareaLanguage'
+2022-02-03 15:57:42	giulio	http://localhost/perros2/public/edit/module/	Installed module 'LanguageSupportFields'
+2022-02-03 15:57:42	giulio	http://localhost/perros2/public/edit/module/	Saved module info caches
+2022-02-03 15:57:50	giulio	http://localhost/perros2/public/edit/module/	Installed module 'LanguageSupportPageNames'
+2022-02-03 15:57:50	giulio	http://localhost/perros2/public/edit/module/	Saved module info caches
+2022-02-03 15:57:58	giulio	http://localhost/perros2/public/edit/module/	Installed module 'LanguageTabs'
+2022-02-03 15:57:58	giulio	http://localhost/perros2/public/edit/module/	Saved module info caches

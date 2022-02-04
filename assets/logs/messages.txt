@@ -25,3 +25,6 @@
 2022-02-02 11:36:14	giulio	http://localhost/perros2/public/edit/page/sort/	Updated sort for 3 pages
 2022-02-02 11:39:20	giulio	http://localhost/perros2/public/edit/setup/template/removeFields	Deleted field "infotext" data in 0 row(s) from 0 page(s) using template "basic-page". [page-by-page]
 2022-02-02 11:45:30	giulio	http://localhost/perros2/public/edit/page/sort/	Updated sort for 3 pages
+2022-02-03 15:56:28	giulio	http://localhost/perros2/public/edit/setup/template/removeFields	Deleted field "codice" data in 0 row(s) from 0 page(s) using template "traduzioni". [page-by-page]
+2022-02-03 15:57:28	giulio	http://localhost/perros2/public/edit/module/	Populated initial created/modified dates for 'language_files_site'
+2022-02-03 15:57:28	giulio	http://localhost/perros2/public/edit/module/	Populated initial created/modified dates for 'language_files'

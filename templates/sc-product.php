@@ -38,6 +38,7 @@
 
 	// Range Prezzo
 		if ($tagliaOK) {
+			//prezzo giusto
 			$prezzo = $itemOK->product_variations->price;
 			if ($minuteriaOK) {
 				if ($minuteriaOK != "tradizionale") {
@@ -47,13 +48,14 @@
 			$totale = $prezzo;
 			$prezzo = '&euro;'. (number_format($prezzo, 2, ',', ''));
 		}else{
+			//prezzo range
 			$minmaxPrice = array();
 			foreach ($page->snipcart_item_variations as $findPrice) {
 				$minmaxPrice[] = $findPrice->product_variations->price;
 			}
 			$priceMin = min($minmaxPrice);
 			$priceMax = max($minmaxPrice);
-			$prezzo = '&euro;'. number_format($priceMin, 2, ','). ' - &euro;'. number_format($priceMax, 2, ',');
+			$prezzo = '&euro;'. number_format($priceMin, 2, ',', ''). ' - &euro;'. number_format($priceMax, 2, ',', '');
 		}
 
 
@@ -75,7 +77,7 @@
 				$minmax = explode('/', $titolo);
 				$testo .= $minmax[0] . " &#187; " . $minmax[1] . " $unita";
 			}else{
-				$testo .= $titolo . $unita;
+				$testo .= "&gt; " . $titolo . " " .$unita;
 			}
 
 			$td = "
@@ -628,7 +630,7 @@
 
 
 								//SnipCart button
-								$snipJson = $config->paths->httpAssets . "files/" . $page->id . "/snipcart.json";
+								$snipJson = $config->urls->httpAssets . "files/" . $page->id . "/snipcart.json";
 								$snipButton = "
 									data-item-id='$tagliaOK'
 									data-item-price='$totale'
@@ -636,8 +638,7 @@
 									data-item-description='$page->snipcart_item_description'
 									data-item-image='$image->url'
 									data-item-name='$checkoutTitolo'
-									'hasTaxesIncluded': true,
-									";
+									data-item-has-taxes-included='true'";
 
 								//echo "<p class='mt-3 text-sm text-perros-brown'><a href='$page->url'>Cancella selezione</a></p>";
 

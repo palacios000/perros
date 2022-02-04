@@ -252,11 +252,11 @@
 table template & fields
 
 HOME
-|============|==========|=====================|
-| slider     | repeater | title, images, body |
-| titleH1    | text     |                     |
-| subtitleH1 | text     |                     |
-| homebox    | repeater | vedi sotto          |
+|============|==========|====================================================================|
+| slider     | repeater | title, images, body, titleH1 (bottone), codice (id pagina bottone) |
+| titleH1    | text     |                                                                    |
+| subtitleH1 | text     |                                                                    |
+| homebox    | repeater | vedi sotto                                                         |
 
 
 

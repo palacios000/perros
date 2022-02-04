@@ -1282,3 +1282,15 @@
 2022-02-02 12:02:32	guest	http://localhost/perros2/public/	Compiled file: /site/templates/home.php
 2022-02-02 12:02:51	guest	http://localhost/perros2/public/	Compiled file: /site/templates/home.php
 2022-02-02 12:03:02	guest	http://localhost/perros2/public/	Compiled file: /site/templates/home.php
+2022-02-03 15:46:37	guest	http://localhost/perros2/public/	Compiled file: /site/templates/home.php
+2022-02-03 17:26:07	guest	http://localhost/perros2/public/pettorine/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-02-03 18:34:27	guest	http://localhost/perros2/public/pettorine/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-02-03 18:35:59	guest	http://localhost/perros2/public/pettorine/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-02-03 18:36:40	guest	http://localhost/perros2/public/pettorine/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-02-04 08:24:05	guest	http://localhost/perros2/public/pettorine/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-02-04 08:24:52	guest	http://localhost/perros2/public/pettorine/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-02-04 08:25:23	guest	http://localhost/perros2/public/pettorine/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-02-04 09:26:40	guest	http://localhost/perros2/public/pettorine/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-02-04 09:30:25	guest	http://localhost/perros2/public/pettorine/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-02-04 09:31:08	guest	http://localhost/perros2/public/pettorine/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-02-04 09:32:58	guest	http://localhost/perros2/public/pettorine/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
