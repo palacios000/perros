@@ -19,7 +19,8 @@
 
 	// Immagine
 		if (!$coloreOK) {
-			if ($image = $page->snipcart_item_image->getrandom()->width(640)) {
+			if (count($page->snipcart_item_image)) {
+				$image = $page->snipcart_item_image->getrandom()->width(640);
 				$imageDesc = $image->description ? $image->description : $page->title;
 				if (count($page->snipcart_item_image)) {
 					//devo ritagliare le immagini via API altrimenti il JS prende quelle grandi
@@ -77,7 +78,11 @@
 				$minmax = explode('/', $titolo);
 				$testo .= $minmax[0] . " &#187; " . $minmax[1] . " $unita";
 			}else{
-				$testo .= "&gt; " . $titolo . " " .$unita;
+				if (is_numeric($titolo)) {
+					$testo .= "&gt; " . $titolo . " " .$unita;
+				}else{
+					$testo .= $titolo;
+				}
 			}
 
 			$td = "
@@ -258,13 +263,17 @@
 											<img class="absolute top-1 right-1 h-10 w-10" src="<?php echo $config->urls->templates ?>styles/images/crocetta-verde.svg" alt="chiudi finestra">
 											</a>
 
-											<div id="modalTaglia" class="bg-white p-4 border-4 border-white rounded-2xl">
+											<div :id="$id('modal-title')" class="bg-white p-4 border-4 border-white rounded-2xl">
 
 												<div class="grid grid-cols-3">
 													<div>
-														<img src="<?php echo $page->images_details->first->url ?>" alt="Come misurare il cane">
-														<p class="text-xs text-gray-500 mt-4 mx-10 text-center"><?php echo $page->images_details->first->description  ?></p>
-													<div :id="$id('modal-title')" class="px-3">
+														<?php if (count($page->images_details)){
+															echo "
+															<img src='{$page->images_details->first->url}' alt='Come misurare il cane'>
+															<p class='text-xs text-gray-500 mt-4 mx-10 text-center'>{$page->images_details->first->description}</p>";
+														} ?>
+														
+													<div  class="px-3">
 														<?php echo $page->body_extra ?>
 													</div>
 
@@ -774,24 +783,8 @@
 		</section>
 
 
-		<!-- images -->
-			<section id="immagini" class="flex flex-row container mx-auto">
-				<!-- 1 -->
-				<?php 
-				echo "
-				<div>
-					<img src='{$page->images_bg->eq(1)->size(1055,614)->url}' alt='{$page->images_bg->eq(1)->description}'>
-				</div>
-				<!-- 2 -->
-				<div>
-					<div class='relative'>
-					<img src='{$page->images_bg->eq(2)->size(633,614)->url}' alt='{$page->images_bg->eq(2)->description}'>
-						<img class='absolute top-0 left-0' src='{$config->urls->templates}styles/images/linguetta-perros.png' alt='etichetta Perros Life'>
-					</div>
-				</div>    
-				";
-				 ?>
-			</section>
+		<!-- 2 images bottom -->
+			<?php include 'inc/images_2bottom.php' ?>
 
 </div>
 

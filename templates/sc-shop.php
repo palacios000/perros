@@ -51,7 +51,6 @@
 			$dots .= '
 		</div>
 	</div>';
-	$item = $page->children->first
 	?>
 
 	<section id="products" class="container mx-auto">
@@ -59,12 +58,13 @@
 			<!-- colonna prodotti -->
 			<div class="w-auto">
 				<!-- prodotto start -->
+				<?php foreach ($page->children as $item): ?>
 				<div class="flex flex-row my-12">
 					<div class="w-1/3">
 						<!-- img + colori -->
 						<a href="<?php echo $item->url ?>">
-						<img src="<?php echo $item->snipcart_item_image->first->url ?>" alt="">
-						<?php echo $dots ?>
+						<?php if (count($item->snipcart_item_image)) echo "<img src='{$item->snipcart_item_image->first->url}' alt='$item->title'>";
+						echo $dots ?>
 						</a>
 					</div>
 					<div class="w-full mx-5">
@@ -95,8 +95,10 @@
 						  </div>
 					</div>
 				</div>
-				<!-- prodotto end -->
 				<hr class="dottedLineBig">
+				<?php endforeach ?>
+				<!-- prodotto end -->
+
 			</div>
 
 
@@ -142,24 +144,8 @@
 	</section>
 
 
-	<!-- images -- copiato da sc-product (tranne che qui le images & images_bg sono invertiti...) -->
-		<section id="immagini" class="flex flex-row container mx-auto">
-			<!-- 1 -->
-			<?php 
-			echo "
-			<div>
-				<img src='{$page->images->eq(1)->size(1055,614)->url}' alt='{$page->images->eq(1)->description}'>
-			</div>
-			<!-- 2 -->
-			<div>
-				<div class='relative'>
-				<img src='{$page->images->eq(2)->size(633,614)->url}' alt='{$page->images->eq(2)->description}'>
-					<img class='absolute top-0 left-0' src='{$config->urls->templates}styles/images/linguetta-perros.png' alt='etichetta Perros Life'>
-				</div>
-			</div>    
-			";
-			 ?>
-		</section>
+	<!-- images footer -->
+<?php include 'inc/images_2bottom.php'  ?>
 
 <?php include 'inc/footer.php' ?>
 

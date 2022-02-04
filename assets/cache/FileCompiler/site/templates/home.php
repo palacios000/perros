@@ -54,13 +54,17 @@
     </div>
     <div class="bg-ossi-pattern">
       <div class="p-16 flex flex-row">
-        <?php $cat = $pages->findOne("template=sc-shop, name=pettorine"); ?>
-        <div class="w-1/4">
-          <div class="rounded-full bg-white w-32 h-32 mx-auto">
-            <img src="<?php echo $cat->images->last->url ?>" class="w-32 h-32" alt="">
+        <?php 
+        foreach ($page->children("template=sc-shop") as $cat) {
+          echo "
+          <div class='w-1/4'>
+            <div class='rounded-full bg-white w-32 h-32 mx-auto'>
+              <img src='{$cat->images->last->url}'' class='w-32 h-32' alt='$cat->title'>
+            </div>
+            <a href='$cat->url' class='bg-perros-brown font-oswald text-3ll text-white uppercase w-full py-2 block text-center'>$cat->title</a>
           </div>
-          <a href="" class="bg-perros-brown font-oswald text-3ll text-white uppercase w-full py-2 block text-center"><?php echo $page->title ?></a>
-        </div>
+          ";
+        } ?>
       </div>
     </div>
     <hr class="dottedLineBig my-12">

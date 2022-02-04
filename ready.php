@@ -43,8 +43,8 @@ $wire->addHookAfter('SeoMaestro::renderSeoDataValue', function (HookEvent $event
       $config = wire('config');
       $pages  = wire('pages');
 
-      // if ($page->template == "sc-product") {
-      if ($page->template == "cambia-questo") {
+      if ($page->template == "sc-product") {
+      // if ($page->template == "cambia-questo") {
 
         // imposta file sul server
         $jsonName = "snipcart.json";
@@ -100,7 +100,7 @@ $wire->addHookAfter('SeoMaestro::renderSeoDataValue', function (HookEvent $event
         // wire('log')->save('notifiche', "$page->title : salvata!");
 
         // 3 spara un messaggio di notifica sulla pagina
-        throw new WireException("$filePath");
+        throw new WireException("Aggiornato JSon per Snipcart $filePath");
       }
 
     });

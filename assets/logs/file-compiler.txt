@@ -1294,3 +1294,10 @@
 2022-02-04 09:30:25	guest	http://localhost/perros2/public/pettorine/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
 2022-02-04 09:31:08	guest	http://localhost/perros2/public/pettorine/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
 2022-02-04 09:32:58	guest	http://localhost/perros2/public/pettorine/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-02-04 09:55:03	guest	http://localhost/perros2/public/pettorine/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-02-04 09:57:56	guest	http://localhost/perros2/public/pettorine/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-02-04 10:36:40	guest	http://localhost/perros2/public/pettorine/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-02-04 11:25:48	guest	http://localhost/perros2/public/edit/login/	Compiled file: /site/ready.php
+2022-02-04 11:33:25	guest	http://localhost/perros2/public/	Compiled file: /site/templates/home.php
+2022-02-04 11:33:27	guest	http://localhost/perros2/public/pettorine/	Compiled file: /site/templates/sc-shop.php
+2022-02-04 14:37:11	guest	http://localhost/perros2/public/pettorine/guinzaglio-test/?taglia=G15m&checkout=go&colore=nero&minuteria=acciaio-inox-304	Compiled file: /site/templates/sc-product.php
