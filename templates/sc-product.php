@@ -191,7 +191,7 @@
 												aria-modal="true"
 												x-id="['modal-title']"
 												:aria-labelledby="$id('modal-title')"
-												class="fixed inset-0 overflow-y-auto"
+												class="fixed inset-0 overflow-y-auto z-50"
 											 >
 												<!-- Overlay -->
 												<div x-show="open" x-transition.opacity class="fixed inset-0 bg-black bg-opacity-50"></div>
@@ -353,15 +353,25 @@
 								<!-- ### 03 selezione Opzioni ##################################### -->
 								<?php }else{ ?>
 									<!-- TW Riepilogo TAGLIA (ovvero mostro taglia selezionata) -->
-									<fieldset>
+									<div class="fase1 border border-perros-green-700 rounded rounded-2xl border-2 relative pl-16 pr-4">
+											<!-- cerchiolino 11 -->
+												<div class="absolute top-3 left-3">
+												<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600">
+													<!-- checked -->
+													<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-perros-green rounded-full">
+														<svg class="w-6 h-6 text-white " x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+													  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+													</svg>
+													</span>
+												</span>
+												</div>
 										
-										<div class="space-y-4">
+										<div class="">
+
+											<h4 class="text-perros-green font-oswald font-bold text-xxl my-3 ">Taglia OK</h4>
 										 
-											<label 
-											class="relative block bg-white border px-6 my-1  cursor-pointer flex justify-between font-oswald focus:outline-none"
+											<div class=" border px-6 mb-4 cursor-pointer flex justify-between font-oswald focus:outline-none"
 											>
-												<input
-												type="radio" name="taglia" value="" class="sr-only" required>
 												<!-- codice -->
 												<div class="w-1/5 flex items-center">
 													<div class="text-sm">
@@ -373,25 +383,30 @@
 												</div>
 
 												<?php 
-												if ($page->product_options->titolo1) echo tableCell($itemOK->product_variations->torace, 'bg-perros-green-100', 'cm', $page->product_options->titolo1); 
-												if ($page->product_options->titolo2) echo tableCell($itemOK->product_variations->addome, 'bg-perros-brown-100', 'cm', $page->product_options->titolo2); 
-												if ($page->product_options->titolo3) echo tableCell($itemOK->product_variations->gabbia, 'bg-gray-200', 'cm', $page->product_options->titolo3); 
-												if ($page->product_options->titolo4) echo tableCell($itemOK->product_variations->peso, 'bg-red-100', 'kg', $page->product_options->titolo4); 
+												if ($page->product_options->titolo1) echo tableCell($itemOK->product_variations->torace, 'text-perros-brown-500', 'cm', $page->product_options->titolo1); 
+												if ($page->product_options->titolo2) echo tableCell($itemOK->product_variations->addome, 'text-terra', 'cm', $page->product_options->titolo2); 
+												if ($page->product_options->titolo3) echo tableCell($itemOK->product_variations->gabbia, 'text-acqua', 'cm', $page->product_options->titolo3); 
+												if ($page->product_options->titolo4) echo tableCell($itemOK->product_variations->peso, 'text-neutral-600', 'kg', $page->product_options->titolo4); 
 												?>
 
-												<div 
-												:class="expanded ? 'border-indigo-500' : 'border-transparent' "
-												class="absolute -inset-px border-2 pointer-events-none" aria-hidden="true"></div>
-											</label>
+											</div>
 
 										</div>
-									</fieldset>
+
+									</div>
 									<!-- TW Riepilogo TAGLIA END -->
 
 
 									<!-- opzioni colore & minuteria -->
 									<?php if ($page->product_options->colours && !$checkoutOK) { ?>
+									<div class="fase2 border border-perros-green-700 rounded rounded-2xl border-2 relative pl-16 pr-4 mt-4">
+											<!-- cerchiolino 22 -->
+												<div class="absolute top-3 left-3">
+												<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600"><span>2</span></span>
+												</div>
 
+												<h4 class="text-perros-green font-oswald font-bold text-xxl my-3 ">Scelta Colore</h4>
+										
 										<form action="" method="get">
 
 											<input type="hidden" name="taglia" value="<?php echo $tagliaOK ?>">
@@ -399,7 +414,6 @@
 
 											<!-- Colors -->
 												<div>
-													<h3 class="font-oswald font-bold text-3xl mt-10 mb-5">Scegli il colore</h3>
 													<fieldset id="colordots" class="mt-2" >
 														<div class="flex items-center space-x-3">
 															<!--
@@ -446,12 +460,16 @@
 
 											<?php if ($page->product_options->minuteria) { ?>
 											<!-- Minuteria -->
+											<hr class="dottedLineSmall my-8 mr-12">
 												<div>
-													<h3 class="font-oswald font-bold text-3xl mt-10 mb-5">Scegli la minuteria</h3>
+													<h4 class="text-perros-green font-oswald font-bold text-xxl my-3 ">Scelta Minuteria</h4>
 
 													<?php 
 													$nItem = $nColors + 1;
-													foreach ($pages->findOne("template=variabili, name=minuteria")->children("sort=-name") as $itm) { ?>
+													foreach ($pages->findOne("template=variabili, name=minuteria")->children("sort=-name") as $itm) { 
+														//calcola prezzo minuteria
+														$prezzoMinu = ($itm->name == "tradizionale") ? "incluso" : '+ &euro; ' . (number_format($page->product_options->price_extra, 2, ',', ''));
+														?>
 
 													<!-- TW radio buttons -->
 													<fieldset >
@@ -470,36 +488,21 @@
 														 
 															<label 
 															:class="expa ? 'border-transparent' : 'border-gray-300' "
-															class="relative block bg-white border px-2 my-1 cursor-pointer flex justify-between font-oswald py-2 focus:outline-none hover:border-perros-green"
+															class="relative block bg-white px-2 my-1 cursor-pointer flex justify-between font-oswald py-2 focus:outline-none hover:bg-gray-50"
 															id="minuteria-<?php echo $nItem ?>">
 																<input
 																@click="expa = !expa"
 																id="minuteria-<?php echo $nItem ?>"
-																type="radio" name="minuteria" value="<?php echo $itm->name ?>" class="text-red-500" required>
-
-																<!-- titolo  -->
-																<div class="w-1/6 flex items-center ">
-																	<div class="text-sm text-center font-medium text-gray-900 uppercase w-full">
-																		<img class="h-12 mx-auto"  src="<?php echo $itm->images->first->url ?>" alt="">
-																	</div>
-																</div>
+																type="radio" name="minuteria" value="<?php echo $itm->name ?>" class="text-perros-green mt-4" required>
 																
 																<!-- testo -->
-																<div class="w-2/3 flex items-center">
-																	<div class="text-sm">
-																		<h3 class="text-xl"><?php echo $itm->title ?></h3>
-																		<p class=""><?php echo $itm->infotext ?></p>
+																<div class="pl-4 flex items-center">
+																	<div class="pr-12">
+																		<h3 class="text-xl mb-2"><?= $itm->title ?><span class="text-neutral-600 pl-4"> <?= $prezzoMinu ?></span></h3>
+																		<p class="text-neutral-600"><?= $itm->infotext ?></p>
 																	</div>
 																</div>
-																
-																<!-- prezzo -->
-																<div class="w-1/6 mt-2 flex text-sm sm:mt-0 sm:block sm:ml-4 sm:text-right">
-																	<div class="text-2xl text-gray-900"><?php echo ($itm->name == "tradizionale") ? "incluso" : '+ &euro; ' . (number_format($page->product_options->price_extra, 2, ',', ''))  ?></div>
-																</div>
-
-																<div 
-																:class="expa ? 'border-red-500' : 'border-transparent' "
-																class="absolute -inset-px border-2 pointer-events-none" aria-hidden="true"></div>
+																											
 															</label>
 
 														</div>
@@ -557,10 +560,10 @@
 														<span class="ml-2">Carrello</span>
 													</button>
 												</div>
-
-
-
 										</form>
+
+									</div>
+
 									<?php }else{ 
 									// Ho la taglia + scelta opzioni
 										echo "<div class='pt-6 pb-8'>";
