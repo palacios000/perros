@@ -231,7 +231,7 @@
 															<!-- Table -->
 																<div class="col-span-2">
 																	<h3 class="py-16 text-3xl font-bold tracking-tight font-oswald">Seleziona la taglia</h3>
-																	<form action="" method="get" x-data="{ active: 1 }">
+																	<form action="" method="get" >
 
 																		<!-- column title -->
 																		<div class="px-6 my-1 flex justify-between focus:outline-none">
@@ -322,6 +322,7 @@
 												</div>
 											</div>
 										</div>
+										
 									</div>
 
 									<div class="fase2 border border-neutral-400 border-dotted rounded rounded-2xl border-2 relative pl-16 pr-4 mt-4">
