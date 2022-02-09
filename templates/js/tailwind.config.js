@@ -29,11 +29,13 @@ module.exports = {
         'ossi-pattern': "url('images/ossi-pattern-opacity10.svg')",
       },
       height: {
+        '81': '21.5rem',
         '620': '31rem',
         '720': '36rem'
       },
       width: {
         '58': '14.5rem',
+        '65': '17rem',
       }
     },
   },

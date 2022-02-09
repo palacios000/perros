@@ -48,6 +48,9 @@
 
 
 	.homebox{
+	  h2{ /* pagina 'tutto su ...' */
+	    @apply text-3ll font-oswald font-bold mb-7;
+	  },
 	  h3{
 	    @apply text-5xl font-oswald mb-8;
 	  }
@@ -57,9 +60,9 @@
 	  hr{
 	  	@apply mt-12 border-dotted border-t-8 border-neutral-300;
 	  }
-	  .colonnina p{
-	  	@apply pb-10;
-	  }
+	}
+	.colonnina p{
+		@apply pb-10;
 	}
 
 

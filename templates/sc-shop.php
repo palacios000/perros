@@ -109,9 +109,17 @@
 				<div class="bg-perros-brown p-5 my-12 text-white font-oswald w-full text-center uppercase">
 					<h2 class="text-3ll my-2">Prodotti</h2>
 					<ul class="text-2xl font-light">
-						<li class="py-2">Pettorine</li>
-						<li class="py-2 dottedLineSmall">Guinzagli</li>
+						<?php 
+						$sibC = 1;
+						foreach ($page->siblings("template=sc-shop, id!=$page->id") as $sibling) {
+							$dottedLine = ($sibC != 1) ? 'dottedLineSmall' : '';
+							echo "<li class='py-2 $dottedLine'><a href='$sibling->url'>$sibling->title</a></li>";
+							$sibC++;
+						} ?>
+						
+						<!-- <li class="py-2 dottedLineSmall">Guinzagli</li>
 						<li class="py-2 dottedLineSmall">altro</li>
+						 -->
 					</ul>
 				</div>
 
@@ -124,14 +132,12 @@
 				      <!-- etichetta -->
 				      <img class="absolute top-0 -right-8" src="<?php echo $config->urls->templates ?>styles/images/linguetta-perros.png" alt="etichetta Perros Life">
 
-				      <!-- testo -->
-				      <?php $tuttoSu = $pages->get(1089); ?>
+				      <!-- testo //   -->
 				      <div class="colonnina mx-4 text-white pb-8">
-				        <h3 class="mt-36 mb-6 text-4xl font-oswald "><?php echo $tuttoSu->title ?></h3>
+				        <h3 class="mt-36 mb-6 text-4xl font-oswald "><?php echo $qualitapage->title ?></h3>
 				        <ul>
-				        	<?php foreach ($tuttoSu->children as $tutto){#
-				        		$tuttoLink = $pages->get($tutto->codice)->url;
-				        		echo "<li><a class='uppercase font-oswald font-light text-xl' href='$tuttoLink'>&gt; $tutto->title</a></li>";	
+				        	<?php foreach ($qualitapage->children->find("title%^=tutto") as $tutto){
+				        		echo "<li><a class='uppercase font-oswald font-light text-xl' href='$tutto->url'>&gt; $tutto->title</a></li>";	
 				        	} ?>
 				        </ul>
 				      </div>

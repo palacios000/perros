@@ -57,9 +57,11 @@
         <?php 
         foreach ($page->children("template=sc-shop") as $cat) {
           echo "
-          <div class='w-1/4'>
+          <div class='w-1/3'>
             <div class='rounded-full bg-white w-32 h-32 mx-auto'>
+              <a href='$cat->url'>
               <img src='{$cat->images->last->url}'' class='w-32 h-32' alt='$cat->title'>
+              </a>
             </div>
             <a href='$cat->url' class='bg-perros-brown font-oswald text-3ll text-white uppercase w-full py-2 block text-center'>$cat->title</a>
           </div>
@@ -70,6 +72,7 @@
     <hr class="dottedLineBig my-12">
     
   </div>
+
 <!-- info boxes -->
   <section id="info">
     <?php 
