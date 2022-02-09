@@ -117,9 +117,6 @@
 							$sibC++;
 						} ?>
 						
-						<!-- <li class="py-2 dottedLineSmall">Guinzagli</li>
-						<li class="py-2 dottedLineSmall">altro</li>
-						 -->
 					</ul>
 				</div>
 

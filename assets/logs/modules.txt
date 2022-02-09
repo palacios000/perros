@@ -79,3 +79,7 @@
 2022-02-03 15:57:50	giulio	http://localhost/perros2/public/edit/module/	Saved module info caches
 2022-02-03 15:57:58	giulio	http://localhost/perros2/public/edit/module/	Installed module 'LanguageTabs'
 2022-02-03 15:57:58	giulio	http://localhost/perros2/public/edit/module/	Saved module info caches
+2022-02-09 12:47:17	giulio	http://localhost/perros2/public/edit/module/?reset=1	Saved module info caches
+2022-02-09 12:47:28	giulio	http://localhost/perros2/public/edit/module/	Installed module 'InputfieldFunctional'
+2022-02-09 12:47:28	giulio	http://localhost/perros2/public/edit/module/	Installed module 'FieldtypeFunctional'
+2022-02-09 12:47:28	giulio	http://localhost/perros2/public/edit/module/	Saved module info caches

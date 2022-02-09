@@ -1,4 +1,40 @@
 <?php 
+// funzioni pagina prodotto
+
+	//tabella
+	function tableTitle($titolo, $colore){
+		$th = "
+		<div class='w-1/6 text-center font-oswald uppercase font-bold $colore'>
+			$titolo
+		</div>";
+		return $th;
+	}
+
+	function tableCell($titolo, $colore, $unita, $tableTitle = ''){
+		$testo = ($tableTitle) ? "<p class='text-sm'>$tableTitle<p>" : "";
+		// un po' di calcoli per min. max.
+		if ( strstr($titolo, '/')) {
+			$minmax = explode('/', $titolo);
+			$testo .= $minmax[0] . " &#187; " . $minmax[1] . " $unita";
+		}else{
+			if (is_numeric($titolo)) {
+				$testo .= "&gt; " . $titolo . " " .$unita;
+			}else{
+				$testo .= $titolo;
+			}
+		}
+
+		$td = "
+		<div class='w-1/6 flex items-center '>
+			<div class='text-sm text-center font-medium $colore w-full'>
+				$testo
+			</div>
+		</div>
+		";
+		return $td;
+	}
+
+
 //h1 title
 function getH1($page){
 	$h1 = ($page->titleH1) ? $page->titleH1 : $page->title;

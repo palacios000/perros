@@ -67,15 +67,15 @@
 
 
 /* prodotto modal */
-	#modalTaglia{
+	#istruzioniTaglia{
 		h2, h3{
 			@apply font-oswald font-bold text-base uppercase;
 		}
 		h2{
-			@apply  my-4;
+			@apply my-4;
 		}
 		h3{
-			@apply text-perros-green my-1;
+			@apply text-neutral-500 my-1;
 		}
 		p{
 			@apply font-oswald font-light pb-0.5;

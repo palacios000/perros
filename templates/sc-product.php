@@ -3,19 +3,19 @@
 	
 <?php include 'inc/menu.php'; ?>
 
-<div id="content"> <!-- The content element holds your product detail view. -->
+<div id="content">
 	<?php
 
 	// Get values
-	$tagliaOK = ($input->get->taglia) ? $sanitizer->name($input->get->taglia) : '';
-	$coloreOK = ($input->get->colore) ? $sanitizer->name($input->get->colore) : '';
-	$minuteriaOK = ($input->get->minuteria) ? $sanitizer->name($input->get->minuteria) : '';
-	$checkoutOK = ($input->get->minuteria);
+		$tagliaOK = ($input->get->taglia) ? $sanitizer->name($input->get->taglia) : '';
+		$coloreOK = ($input->get->colore) ? $sanitizer->name($input->get->colore) : '';
+		$minuteriaOK = ($input->get->minuteria) ? $sanitizer->name($input->get->minuteria) : '';
+		$checkoutOK = ($input->get->minuteria);
 
-	// taglia selezionata
-	if ($tagliaOK) {
-		$itemOK = $page->snipcart_item_variations->findOne("product_variations.code=$tagliaOK");
-	}
+		// taglia selezionata
+		if ($tagliaOK) {
+			$itemOK = $page->snipcart_item_variations->findOne("product_variations.code=$tagliaOK");
+		}
 
 	// Immagine
 		if (!$coloreOK) {
@@ -58,45 +58,9 @@
 			$priceMax = max($minmaxPrice);
 			$prezzo = '&euro;'. number_format($priceMin, 2, ',', ''). ' - &euro;'. number_format($priceMax, 2, ',', '');
 		}
-
-
-	// funzioni 
-
-		//tabella
-		function tableTitle($titolo, $colore){
-			$th = "
-			<div class='w-1/5 text-center font-oswald uppercase font-bold $colore'>
-				$titolo
-			</div>";
-			return $th;
-		}
-
-		function tableCell($titolo, $colore, $unita, $tableTitle = ''){
-			$testo = ($tableTitle) ? "<p class='text-sm'>$tableTitle<p>" : "";
-			// un po' di calcoli per min. max.
-			if ( strstr($titolo, '/')) {
-				$minmax = explode('/', $titolo);
-				$testo .= $minmax[0] . " &#187; " . $minmax[1] . " $unita";
-			}else{
-				if (is_numeric($titolo)) {
-					$testo .= "&gt; " . $titolo . " " .$unita;
-				}else{
-					$testo .= $titolo;
-				}
-			}
-
-			$td = "
-			<div class='w-1/5 flex items-center '>
-				<div class='text-sm text-center font-medium $colore w-full'>
-					$testo
-				</div>
-			</div>
-			";
-			return $td;
-		}
 		?>
 
-		<!-- ### PRODUCT DETAILS inizio  -->
+	<!-- ### PRODUCT DETAILS inizio  -->
 		<main class="max-w-7xl mx-auto sm:pt-16 sm:px-6 lg:px-8 z-10" x-data="{imageUrl: '<?php echo $image->url ?>'}">
 			<div class="max-w-2xl mx-auto lg:max-w-none">
 				<!-- Product -->
@@ -136,7 +100,7 @@
 
 					<!-- Product info -->
 					<div class="mt-10 px-4 sm:px-0 sm:mt-16 lg:mt-0 col-span-2">
-						<h1 class="text-3xl font-bold tracking-tight font-oswald text-4ll leading-tight">
+						<h1 class="text-3xl font-bold tracking-tight font-oswald leading-tight">
 							<?php echo $page->title; if ($tagliaOK) echo " - " . $tagliaOK ?>
 						</h1>
 
@@ -265,7 +229,7 @@
 
 											<div :id="$id('modal-title')" class="bg-white p-4 border-4 border-white rounded-2xl">
 
-												<div class="grid grid-cols-3">
+												<div class="grid grid-cols-3 gap-5">
 													<div>
 														<?php if (count($page->images_details)){
 															echo "
@@ -273,120 +237,105 @@
 															<p class='text-xs text-gray-500 mt-4 mx-10 text-center'>{$page->images_details->first->description}</p>";
 														} ?>
 														
-													<div  class="px-3">
-														<?php echo $page->body_extra ?>
-													</div>
+														<div id="istruzioniTaglia" class="py-6">
+															<?php echo $page->body_extra ?>
+														</div>
 
 													</div>
 
 													<!-- Table -->
-												<div class="mt-12 col-span-2">
-													<form action="" method="get" x-data="{ active: 1 }">
+														<div class="col-span-2">
+															<h3 class="py-16 text-3xl font-bold tracking-tight font-oswald">Seleziona la taglia</h3>
+															<form action="" method="get" x-data="{ active: 1 }">
 
-														<!-- column title -->
-														<div class="px-6 my-1 flex justify-between focus:outline-none">
-															<div class="w-1/5"><!--empty--></div>
-															<?php 
-															if ($page->product_options->titolo1) echo tableTitle($page->product_options->titolo1, 'text-perros-green');
-															if ($page->product_options->titolo2) echo tableTitle($page->product_options->titolo2, 'text-perros-brown');
-															if ($page->product_options->titolo3) echo tableTitle($page->product_options->titolo3, 'text-gray-500');
-															if ($page->product_options->titolo4) echo tableTitle($page->product_options->titolo4, 'text-red-300');
-															?>
-															<div class="w-1/5 text-right"><!--empty--></div>
-														</div>
-
-														<?php 
-														$nItem = 1;
-														foreach ($page->snipcart_item_variations as $itm) { ?>
-
-														<!-- TW radio buttons -->
-														<fieldset>
-															
-															<div class="space-y-4"
-																x-data="{ 
-																	id: <?php echo $nItem ?>,
-																	get expanded(){
-																		return this.checked === this.id
-																	},
-																	set expanded(value){
-																		this.checked = value ? this.id : null
-																	},
-																}"
-															>
-															 
-																<label 
-																:class="expanded ? '' : 'border-gray-300' "
-																class="relative block bg-white border px-6 my-1 cursor-pointer flex justify-between font-oswald focus:outline-none hover:boder-1 hover:border-perros-green hover:opacity-95"
-																id="taglia-<?php echo $nItem ?>">
-																	<input
-																	@click="expanded = !expanded"
-																	id="taglia-<?php echo $nItem ?>"
-																	type="radio" name="taglia" value="<?php echo $itm->product_variations->code ?>" class="" required>
-																	<!-- codice -->
-																	<div class="w-1/5 flex items-center">
-																		<div>
-																			<p class="text-lg text-gray-900 uppercase"><?php echo $itm->product_variations->code ?></p>
-																			<div class="text-gray-500">
-																				<p class="text-sm"><?php echo $itm->product_variations->nastro ?></p>
-																			</div>
-																		</div>
-																	</div>
-
-																<!-- titolo 1 - circ toracica/collo
-																	<div class="w-1/5 flex items-center bg-perros-green-100">
-																		<div class="text-sm text-center font-medium text-gray-900 uppercase w-full">
-																			valori
-																		</div>
-																	</div>
-																	 -->
-
+																<!-- column title -->
+																<div class="px-6 my-1 flex justify-between focus:outline-none">
+																	<div class="w-1/6"><!--empty--></div>
 																	<?php 
-																	if ($page->product_options->titolo1) echo tableCell($itm->product_variations->torace, 'text-perros-green', 'cm'); 
-																	if ($page->product_options->titolo2) echo tableCell($itm->product_variations->addome, 'text-perros-brown', 'cm'); 
-																	if ($page->product_options->titolo3) echo tableCell($itm->product_variations->gabbia, 'text-gray-600', 'cm'); 
-																	if ($page->product_options->titolo4) echo tableCell($itm->product_variations->peso, 'text-red-700', 'kg'); 
+																	if ($page->product_options->titolo1) echo tableTitle($page->product_options->titolo1, 'text-perros-brown-500');
+																	if ($page->product_options->titolo2) echo tableTitle($page->product_options->titolo2, 'text-terra');
+																	if ($page->product_options->titolo3) echo tableTitle($page->product_options->titolo3, 'text-acqua');
+																	if ($page->product_options->titolo4) echo tableTitle($page->product_options->titolo4, 'text-neutral-600');
 																	?>
+																	<div class="w-1/6 ml-2"><!--empty--></div>
+																</div>
 
-																	<!-- prezzo -->
-																	<div class="w-1/5 mt-2 flex text-sm sm:mt-0 sm:block sm:ml-4 sm:text-right">
-																		<div class="text-xl text-gray-900">&euro; <?php echo (number_format($itm->product_variations->price, 2, ',', '')) ?></div>
+																<?php 
+																$nItem = 1;
+																foreach ($page->snipcart_item_variations as $itm) { ?>
+
+																<!-- TW radio buttons -->
+																<fieldset>
+																	
+																	<div class="space-y-4"
+																		x-data="{ 
+																			id: <?php echo $nItem ?>,
+																			get expanded(){
+																				return this.checked === this.id
+																			},
+																			set expanded(value){
+																				this.checked = value ? this.id : null
+																			},
+																		}"
+																	>
+																	 
+																		<label 
+																		:class="expanded ? '' : 'border-gray-300' "
+																		class="relative block bg-white border px-6 my-1 cursor-pointer flex justify-between font-oswald focus:outline-none hover:boder-1 hover:border-perros-green hover:opacity-95"
+																		id="taglia-<?php echo $nItem ?>">
+																			<input
+																			@click="expanded = !expanded"
+																			id="taglia-<?php echo $nItem ?>" type="radio" name="taglia" value="<?php echo $itm->product_variations->code ?>" class="text-perros-green absolute top-3 left-3 mr-3" required>
+																			<!-- codice -->
+																			<div class="w-1/6 flex items-center">
+																				<div>
+																					<p class="text-lg text-gray-900 uppercase ml-4"><?php echo $itm->product_variations->code ?></p>
+																					<p class="text-sm text-gray-500 ml-4"><?php echo $itm->product_variations->nastro ?></p>
+																				</div>
+																			</div>
+
+																			<?php 
+																			if ($page->product_options->titolo1) echo tableCell($itm->product_variations->torace, 'text-perros-brown-500', 'cm'); 
+																			if ($page->product_options->titolo2) echo tableCell($itm->product_variations->addome, 'text-terra', 'cm'); 
+																			if ($page->product_options->titolo3) echo tableCell($itm->product_variations->gabbia, 'text-acqua', 'cm'); 
+																			if ($page->product_options->titolo4) echo tableCell($itm->product_variations->peso, 'text-neutral-600', 'kg'); 
+																			?>
+
+																			<!-- prezzo -->
+																			<div class="w-1/6 flex text-sm sm:mt-0 sm:block sm:ml-2 text-right">
+																				<div class="text-xl text-gray-900 mt-2">&euro; <?php echo (number_format($itm->product_variations->price, 2, ',', '')) ?></div>
+																			</div>
+			
+																			<div 
+																			:class="expanded ? 'border-perros-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-perros-green-500' : 'border-transparent' "
+																			class="absolute -inset-px border-2 ring-offset-2 pointer-events-none " aria-hidden="true"></div>
+																		</label>
+
 																	</div>
-	
-																	<div 
-																	:class="expanded ? 'border-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-perros-green-500' : 'border-transparent' "
-																	class="absolute -inset-px border-2 ring-offset-2 pointer-events-none " aria-hidden="true"></div>
-																</label>
-																<!-- focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-perros-green-500 -->
+																</fieldset>
+																<!-- TW buttons END -->
 
-															</div>
-														</fieldset>
-														<!-- TW buttons END -->
-
-														<?php 
-															$nItem++;
-														} ?>
+																<?php 
+																	$nItem++;
+																} ?>
 
 
-														<button type="submit" class="bottone-green max-w-xs mt-8">
-															Seleziona & Conferma
-														</button>
-														
-													</form>
-												</div>
-
-
-
-
+																<button type="submit" class="bottone-green max-w-xs mt-8">
+																	Seleziona & Conferma
+																</button>
+																
+															</form>
+														</div>
 
 												</div>
 
 												
 											</div>
-											</div>
-
-
 										</div>
+
+
 									</div>
+								</div>
 						</div>
 
 
@@ -789,28 +738,33 @@
 </div>
 
 <!-- questi mi servono a taildind per generare il codice colore nel css , altrimenti non si attivano tramite php  -->
-<!-- 
-<span class="h-8 w-8 bg-gray-200 "></span>
-<span class="h-8 w-8 bg-orange-500 "></span>
-<span class="h-8 w-8 bg-perros-brown-400 "></span>
-<span class="h-8 w-8 bg-blue-500 "></span>
-<span class="h-8 w-8 bg-yellow-800 "></span>
-<span class="h-8 w-8 bg-stone-700 "></span>
-<span class="h-8 w-8 bg-pink-200 "></span>
-<span class="h-8 w-8 bg-red-500 "></span>
-<span class="h-8 w-8 bg-lime-500 "></span>
-<span class="h-8 w-8 bg-violet-500 "></span>
+<div class="hidden">
+<span class="text-perros-brown-500 "></span>
+<span class="text-neutral-600 "></span>
+<span class="text-acqua "></span>
+<span class="text-terra "></span>
 
-<span class="h-8 w-8 ring-orange-500 "></span>
-<span class="h-8 w-8 ring-perros-brown-400 "></span>
-<span class="h-8 w-8 ring-blue-500 "></span>
-<span class="h-8 w-8 ring-yellow-800 "></span>
-<span class="h-8 w-8 ring-stone-700 "></span>
-<span class="h-8 w-8 ring-pink-200 "></span>
-<span class="h-8 w-8 ring-red-500 "></span>
-<span class="h-8 w-8 ring-lime-500 "></span>
-<span class="h-8 w-8 ring-violet-500 "></span>
- -->
+<span class="bg-gray-200 "></span>
+<span class="bg-orange-500 "></span>
+<span class="bg-perros-brown-400 "></span>
+<span class="bg-blue-500 "></span>
+<span class="bg-yellow-800 "></span>
+<span class="bg-stone-700 "></span>
+<span class="bg-pink-200 "></span>
+<span class="bg-red-500 "></span>
+<span class="bg-lime-500 "></span>
+<span class="bg-violet-500 "></span>
+
+<span class="ring-orange-500 "></span>
+<span class="ring-perros-brown-400 "></span>
+<span class="ring-blue-500 "></span>
+<span class="ring-yellow-800 "></span>
+<span class="ring-stone-700 "></span>
+<span class="ring-pink-200 "></span>
+<span class="ring-red-500 "></span>
+<span class="ring-lime-500 "></span>
+<span class="ring-violet-500 "></span>
+</div>
 
 <?php include 'inc/footer.php' ?>
 
