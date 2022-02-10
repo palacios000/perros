@@ -26,7 +26,7 @@
                   </div>
                   <div class="mt-10 sm:mt-12">
                     
-                    <button type="submit" class="block w-1/2 py-3 px-4 rounded-md shadow bg-perros-brown text-white font-medium hover:bg-perros-green-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700 focus:ring-offset-gray-900">Bottone</button>
+                    <button type="submit" class="block w-1/2 py-3 px-4 rounded-md shadow bg-perros-brown text-white font-medium hover:bg-perros-green-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700 focus:ring-offset-gray-900"><?= $slider1->titleH1 ?></button>
                   </div>
                 </div>
               </div>

@@ -640,14 +640,25 @@
 
 											</div>
 
-											<div class="fase3 border border-perros-green-700 rounded rounded-2xl border-2 relative pl-16 pr-4 mt-4">
-											<!-- cerchiolino 33 -->
+											<div x-data="{ added2cart: false }" class="fase3 border border-perros-green-700 rounded rounded-2xl border-2 relative pl-16 pr-4 mt-4">
+											<!-- cerchiolino 333 -->
+												<!-- un-clicked -->
 												<div class="absolute top-3 left-3">
-												<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600"><span>3</span></span>
+													<span x-show="!added2cart" class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600">
+														<span>3</span>
+													</span>
+												<!-- clicked -->
+													<span x-show="added2cart" class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-perros-green rounded-full">
+														<svg class="w-6 h-6 text-white " x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+													  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+													</svg>
+													</span>
 												</div>
 
 												<!-- SNIPCART BUTTON ==================================================== -->
-													<button type="button" class="bottone-green ring-2 ring-offset-2 ring-offset-gray-50 ring-perros-green-500 snipcart-add-item w-2/5 my-8 mx-auto" <?= $snipButton ?> >
+													<button
+													@click="added2cart = !added2cart"
+													 type="button" class="bottone-green ring-2 ring-offset-2 ring-offset-gray-50 ring-perros-green-500 snipcart-add-item w-2/5 my-8 mx-auto" <?= $snipButton ?> >
 														<span class="ml-2">Aggiungi al carrello</span>
 														<!-- icona carrella -->
 														<svg class="flex-shrink-0 h-5 w-5 text-white group-hover:text-gray-500" x-description="Heroicon name: outline/shopping-cart" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 33 33" stroke="currentColor" aria-hidden="true">
@@ -655,54 +666,18 @@
 														</svg>
 													</button>
 												</div>
-											</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-												
-
 
 									<?php 
-									} ?>
-								<?php } ?>
+									} 
+								} 
+
+								if ($tagliaOK) echo "<a class='underline pt-4 block text-sm' href='$page->url'>Ri-seleziona taglia</a>";
+
+								?>
 
 
+
+								
 
 							</div>
 						</div>
