@@ -326,7 +326,7 @@
 									</div>
 
 									<div class="fase2 border border-neutral-400 border-dotted rounded rounded-2xl border-2 relative pl-16 pr-4 mt-4">
-										<!-- cerchiolino 1 -->
+										<!-- cerchiolino 2 -->
 											<div class="absolute top-3 left-3">
 											<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600"><span>2</span></span>
 											</div>
@@ -335,7 +335,7 @@
 									</div>
 
 									<div class="fase3 border border-neutral-400 border-dotted rounded rounded-2xl border-2 relative pl-16 pr-4 mt-4">
-										<!-- cerchiolino 1 -->
+										<!-- cerchiolino 3 -->
 											<div class="absolute top-3 left-3">
 											<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600"><span>3</span></span>
 											</div>
@@ -515,53 +515,24 @@
 												</div>
 											<?php } ?>
 
-											<!-- blocco 3 steps 2/3 - sono dentro un form -->
-												<div class="mt-10 flex ">
-													<button type="button" class="bottone-green bg-perros-green-400 cursor-default">
-														<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full">
-															<!-- checked -->
-															<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-white rounded-full">
-																<svg class="w-6 h-6 text-perros-green " x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-															  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-															</svg>
-															</span>
-											       <!-- cheked end -->
-														</span>
-													<a href="<?php echo $page->url ?>">
-														<span class="ml-2">Taglia selezionata</span>
-													</a>
-													</button>
-
-													<!-- Arrow separator for lg screens and up -->
-													<div class="hidden md:block h-full w-8 mx-2" aria-hidden="true">
-														<svg class="h-full w-full text-gray-500 pt-3" viewBox="0 0 22 80" fill="none" preserveAspectRatio="none">
-															<path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor" stroke-linejoin="round" />
-														</svg>
-													</div>
-
-													<button type="submit" class="bottone-green ">
-														<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full">
-															<span class="">02</span>
-														</span>
-														<span class="ml-2">Conferma colore e minuteria</span>
-													</button>
-
-													<!-- Arrow separator for lg screens and up -->
-													<div class="hidden md:block h-full w-8 mx-2" aria-hidden="true">
-														<svg class="h-full w-full text-gray-500 pt-3" viewBox="0 0 22 80" fill="none" preserveAspectRatio="none">
-															<path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor" stroke-linejoin="round" />
-														</svg>
-													</div>
-
-													<button type="button" class="bottone-white cursor-default">
-														<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full">
-															<span class="">03</span>
-														</span>
-														<span class="ml-2">Carrello</span>
+												<div class="my-8">
+													<button type="submit" class="bottone-green py-2 w-2/5 ">
+														Conferma colore e minuteria
 													</button>
 												</div>
 										</form>
 
+
+
+									</div>
+
+									<div class="fase3 border border-neutral-400 border-dotted rounded rounded-2xl border-2 relative pl-16 pr-4 mt-4">
+									<!-- cerchiolino 33 -->
+										<div class="absolute top-3 left-3">
+										<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600"><span>3</span></span>
+										</div>
+
+										<h4 class="text-perros-green font-oswald font-bold text-xxl my-3 ">Riepilogo</h4>
 									</div>
 
 									<?php }else{ 
