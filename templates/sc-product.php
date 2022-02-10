@@ -400,12 +400,12 @@
 									<!-- opzioni colore & minuteria -->
 									<?php if ($page->product_options->colours && !$checkoutOK) { ?>
 									<div class="fase2 border border-perros-green-700 rounded rounded-2xl border-2 relative pl-16 pr-4 mt-4">
-											<!-- cerchiolino 22 -->
-												<div class="absolute top-3 left-3">
-												<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600"><span>2</span></span>
-												</div>
+										<!-- cerchiolino 22 -->
+											<div class="absolute top-3 left-3">
+											<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600"><span>2</span></span>
+											</div>
 
-												<h4 class="text-perros-green font-oswald font-bold text-xxl my-3 ">Scelta Colore</h4>
+											<h4 class="text-perros-green font-oswald font-bold text-xxl my-3 ">Scelta Colore</h4>
 										
 										<form action="" method="get">
 
@@ -536,12 +536,9 @@
 									</div>
 
 									<?php }else{ 
-									// Ho la taglia + scelta opzioni
-										echo "<div class='pt-6 pb-8'>";
-
-										echo "<h3 class='font-oswald font-bold text-2xl'>Colore: $coloreOK </h3>";
-										echo "<h3 class='font-oswald font-bold text-2xl'>minuteria: $minuteriaOK </h3>";
-										echo "</div>";
+									/* Ho la taglia + scelta opzioni #################################
+										fase 3/3 - SnipCart
+									*/
 
 										$checkoutTitolo = $page->title;
 										if ($coloreOK) {
@@ -571,57 +568,134 @@
 
 											?>
 
-											<!-- blocco 3 steps - 3/3  -->
-												<div class="mt-10 flex ">
-													<button type="button" class="bottone-green bg-perros-green-400 cursor-default">
-														<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full">
-															<!-- checked -->
-															<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-white rounded-full">
-																<svg class="w-6 h-6 text-perros-green " x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-															  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-															</svg>
-															</span>
-											       <!-- cheked end -->
-														</span>
-													<a href="<?php echo $page->url ?>">
-														<span class="ml-2">Taglia selezionata</span>
-													</a>
-													</button>
 
-													<!-- Arrow separator for lg screens and up -->
-													<div class="hidden md:block h-full w-8 mx-2" aria-hidden="true">
-														<svg class="h-full w-full text-gray-500 pt-3" viewBox="0 0 22 80" fill="none" preserveAspectRatio="none">
-															<path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor" stroke-linejoin="round" />
+											<div class="fase2 border border-perros-green-700 rounded rounded-2xl border-2 relative pl-16 pr-4 mt-4">
+												<!-- cerchiolino 222 -->
+													<div class="absolute top-3 left-3">
+													<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600">
+														<!-- checked -->
+														<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-perros-green rounded-full">
+															<svg class="w-6 h-6 text-white " x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+														  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
 														</svg>
+														</span>
+													</span>
 													</div>
 
-													<button type="submit" class="bottone-green bg-perros-green-400 cursor-default">
-														<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full">
-															<!-- checked -->
-															<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-white rounded-full">
-																<svg class="w-6 h-6 text-perros-green " x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-															  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-															</svg>
-															</span>
-											       <!-- cheked end -->
-														</span>
-														<span class="ml-2">Opzioini selezionate</span>
-													</button>
+													<h4 class="text-perros-green font-oswald font-bold text-xxl my-3 ">Scelta Colore</h4>
 
-													<!-- Arrow separator for lg screens and up -->
-													<div class="hidden md:block h-full w-8 mx-2" aria-hidden="true">
-														<svg class="h-full w-full text-gray-500 pt-3" viewBox="0 0 22 80" fill="none" preserveAspectRatio="none">
-															<path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor" stroke-linejoin="round" />
-														</svg>
-													</div>
 
-													<button type="button" class="bottone-green ring-2 ring-offset-2 ring-offset-gray-50 ring-perros-green-500 snipcart-add-item" <?php echo $snipButton ?>>
-														<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full">
-															<span class="">03</span>
-														</span>
+													<!-- Colors (selezionato) -->
+													<?php $colordotSelected = $colorspage->children->findOne("name=$coloreOK") ?>
+														<div>
+															<fieldset id="colordots" class="mt-2" >
+																<div class="flex items-center space-x-3">
+																	<div>
+																		<label 
+																		class="-m-0.5 relative rounded-full ring-offset-2 flex items-center justify-center cursor-pointer focus:outline-none ring-<?php echo $colordot->codice ?>">
+																			<span aria-hidden="true" class="h-6 w-6 bg-<?php echo $colordotSelected->codice ?> border border-black border-opacity-10 rounded-full"></span>
+																			<p id="<?php echo $colordot->name ?>" class="pl-2 uppercase"> <?php echo $coloreOK ?></p>
+																		</label>
+																	</div>
+																	
+																</div>
+															</fieldset>
+														</div>
+
+													<?php if ($page->product_options->minuteria) { ?>
+													<!-- Minuteria -->
+													<hr class="dottedLineSmall my-6 mr-12">
+														<div>
+															<h4 class="text-perros-green font-oswald font-bold text-xxl my-2 ">Scelta Minuteria</h4>
+
+															<?php 
+															$selectedMinu = $pages->findOne("template=variabili, name=minuteria")->children->findOne("name=$minuteriaOK"); 
+																//calcola prezzo minuteria
+																$prezzoMinuSel = ($minuteriaOK == "tradizionale") ? "incluso" : '+ &euro; ' . (number_format($page->product_options->price_extra, 2, ',', ''));
+																?>
+
+															<!-- TW radio buttons -->
+															<fieldset >
+																
+																<div>
+																	<div class="relative block bg-white px-2 my-1 flex justify-between font-oswald">
+																		
+																		<!-- testo -->
+																		<div class="flex items-center">
+																			<div class="pr-12">
+																				<h3 class="text-xl mb-2"><?= $selectedMinu->title ?><span class="text-neutral-600 pl-4"> <?= $prezzoMinuSel ?></span></h3>
+																			</div>
+																		</div>
+																													
+																	</div>
+
+																</div>
+															</fieldset>
+															<!-- TW buttons END -->
+
+														</div>
+													<?php } ?>
+
+
+
+											</div>
+
+											<div class="fase3 border border-perros-green-700 rounded rounded-2xl border-2 relative pl-16 pr-4 mt-4">
+											<!-- cerchiolino 33 -->
+												<div class="absolute top-3 left-3">
+												<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600"><span>3</span></span>
+												</div>
+
+												<!-- SNIPCART BUTTON ==================================================== -->
+													<button type="button" class="bottone-green ring-2 ring-offset-2 ring-offset-gray-50 ring-perros-green-500 snipcart-add-item w-2/5 my-8 mx-auto" <?= $snipButton ?> >
 														<span class="ml-2">Aggiungi al carrello</span>
+														<!-- icona carrella -->
+														<svg class="flex-shrink-0 h-5 w-5 text-white group-hover:text-gray-500" x-description="Heroicon name: outline/shopping-cart" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 33 33" stroke="currentColor" aria-hidden="true">
+															<path d="M8.41,14.28H29.72m-18-6.06,2.15,12.12m3.09-12,.51,12.12M22.11,8.32,21.06,20.44M26.91,8.32,24.58,20.44m3.78,8.26a2.16,2.16,0,1,1-2.16-2.16A2.16,2.16,0,0,1,28.36,28.7ZM15,28.7a2.16,2.16,0,1,1-2.16-2.16A2.16,2.16,0,0,1,15,28.7Zm-4.73-8.26H27.15a.84.84,0,0,0,.79-.56L31.77,9.19a.63.63,0,0,0-.58-.84L6.78,8.12m21.65,16.3H12.09A1.13,1.13,0,0,1,11,23.6L6,5.7a1.11,1.11,0,0,0-.86-.8l-4.1-.8"></path>
+														</svg>
 													</button>
 												</div>
+											</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+												
 
 
 									<?php 
