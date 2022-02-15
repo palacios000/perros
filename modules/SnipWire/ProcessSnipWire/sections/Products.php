@@ -317,7 +317,11 @@ trait Products {
                 '</a>';
                 $thumb = $this->getProductImg($item['image']);
 
-                $product = $pages->findOne('snipcart_item_id="' . $item['userDefinedId'] . '"');
+                // gm - crb: provo a trovare il mio prodotto
+                $productMyId = substr($item['url'], -18, 4);
+                $product = $pages->get($productMyId);
+
+                // $product = $pages->findOne('snipcart_item_id="' . $item['userDefinedId'] . '"');
                 if ($product->url) {
                     if ($product->editable()) {
                         $editLink =
@@ -388,6 +392,9 @@ trait Products {
             '</div>';
             return $out;
         }
+
+        // gm - get ID from URL
+        $productMyId = substr($item['url'], -18, 4);
         
         $out = '';
 
@@ -399,7 +406,7 @@ trait Products {
                 $item['name'] .
             '</h2>' .
             '<div class="ItemDetailActionButtons">' .
-                $this->_getProductDetailActionButtons($item['userDefinedId']) .
+                $this->_getProductDetailActionButtons($productMyId) .
             '</div>' .
         '</div>';
 
@@ -453,8 +460,10 @@ trait Products {
         $pages = $this->wire('pages');
 
         $out = '';
+        
+        // gm - cambio anche questo 
 
-        $product = $pages->findOne('snipcart_item_id="' . $userDefinedId . '"');
+        $product = $pages->get($userDefinedId);
         if ($product->url) {
             if ($product->editable()) {
                 $out .=

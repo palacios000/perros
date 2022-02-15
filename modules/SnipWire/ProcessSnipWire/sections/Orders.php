@@ -408,11 +408,39 @@ trait Orders {
                 $completionDate .= \ProcessWire\wireDate('relative', $item['completionDate']);
                 $completionDate .= '</span>';
 
+                /**
+                  * 
+                  * un po' di magia css -  gm crb
+                  * 
+                  *             
+                  * 'Processed' => $this->_('Processed'),
+                    'Disputed' => $this->_('Disputed'), - no
+                    'Shipped' => $this->_('Shipped'), -
+                    'Delivered' => $this->_('Delivered'), -
+                    'Pending' => $this->_('Pending'),
+                    'Cancelled' => $this->_('Cancelled'),
+                    'Dispatched' => $this->_('Dispatched'), -
+                */
+                $speditoArray = array('Shipped', 'Delivered', 'Dispatched');
+                $cssStatus = '';
+                if ($this->getOrderStatus($item['status']) == "Processed") {
+                   $cssStatus = "<span class='warning-color-dark'>Processed</span>";
+                }elseif (in_array($this->getOrderStatus($item['status']), $speditoArray) ) {
+                   $cssStatus = "<span class='success-color-dark'>".$this->getOrderStatus($item['status'])."</span>";
+                }elseif ($this->getOrderStatus($item['status']) == "Pending") {
+                   $cssStatus = "<span class='info-color-dark'>Pending</span>";
+                }elseif ($this->getOrderStatus($item['status']) == "Cancelled") {
+                   $cssStatus = "<span class='danger-color-dark'>Cancelled</span>";
+                }
+                else{
+                    $cssStatus = $this->getOrderStatus($item['status']);
+                }
+
                 $table->row(array(
                     $panelLink,
                     $completionDate,
                     $item['placedBy'],
-                    $this->getOrderStatus($item['status']),
+                    $cssStatus,
                     $this->getPaymentStatus($item['paymentStatus']),
                     $this->getPaymentMethod($item['paymentMethod']),
                     $total,

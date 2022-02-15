@@ -132,7 +132,7 @@
 		?>
 		<div class="flex flex-row">
 			<div class="w-65">
-				<?php echo "<img class='w-65' src='{$tipo->images->first->url}' alt='$tipo->images->first->description'>"; ?>
+				<?php echo "<img class='' src='{$tipo->images->first->url}' alt='$tipo->images->first->description'>"; ?>
 			</div>
 			<div class="w-auto ml-16">
 				<?php 

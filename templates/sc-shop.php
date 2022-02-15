@@ -10,7 +10,7 @@
 		</div>
 	  <div class="relative container mx-auto py-6 px-4 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:py-12 text-white">
 	    <div>
-	      <h1 class="font-bold font-oswald text-6xl"><?php echo $page->titleH1 ?></h1>
+	      <h1 class="font-bold font-oswald text-6xl"><?= $page->titleH1 ?></h1>
 		      <p class="mt-6 text-2ll  font-oswald font-light leading-tight"><?php echo $page->subtitleH1 ?></p>
 	    </div>
 	    <div>
@@ -53,7 +53,7 @@
 	</div>';
 	?>
 
-	<section id="products" class="container mx-auto">
+	<section id="products" class="container mx-auto pb-12">
 		<div class="flex flex-row gap-x-4">
 			<!-- colonna prodotti -->
 			<div class="w-auto">
@@ -62,17 +62,17 @@
 				<div class="flex flex-row my-12">
 					<div class="w-1/3">
 						<!-- img + colori -->
-						<a href="<?php echo $item->url ?>">
+						<a class="hover:opacity-95" href="<?php echo $item->url ?>">
 						<?php if (count($item->snipcart_item_image)) echo "<img src='{$item->snipcart_item_image->first->url}' alt='$item->title'>";
 						echo $dots ?>
 						</a>
 					</div>
 					<div class="w-full mx-5">
-						<h3 class="font-oswald font-bold text-4xl"><?php echo $item->title ?></h3>
-						<p class="mt-2 mb-6 text-perros-green text-xl font-oswald"><?php echo $item->subtitleH1 ?></p>
+						<h3 class="font-oswald font-bold text-4xl"><?php echo "<a class='' href='$item->url'>$item->title</a>" ?></h3>
+						<p class="mt-2 mb-6 text-perros-green text-xl font-oswald leading-tight"><?php echo $item->subtitleH1 ?></p>
 						  <div>
 						  	<!-- lista -->
-						    <dl class="space-y-1 grid grid-cols-1 gap-x-6 ">
+						    <dl class="space-y-1 grid grid-cols-1 gap-x-6 max-w-lg">
 									<?php foreach ($item->description_list as $list): ?>
 						      <div class="relative">
 						        <dt>
@@ -88,7 +88,7 @@
 						    <!-- prezzo -->
 						    <div class="w-full flex flex-row-reverse">
 						    	<div class="w-28 flex flex-col text-center font-oswald">
-						    		<div class="prezzo text-2ll text-perros-brown">da &euro; <?php echo $item->product_options->price_min ?></div>
+						    		<div class="prezzo text-2ll text-perros-brown">da &euro; <?= (number_format($item->product_options->price_min, 2, ',', '')) ?></div>
 						    		<a href="<?php echo $item->url ?>" class="button block max-w-xs bottone-green uppercase">Visualizza</a>
 						    	</div>
 						    </div>

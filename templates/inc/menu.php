@@ -50,7 +50,7 @@
 
 					            type="button" class="bg-white relative w-full border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-perros-green focus:border-perros-green text-xxs" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
 							      <span class="block">
-							        Italiano S
+							        <?php echo $user->language->title  ?>
 							      </span>
 							      <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
 							        <!-- Heroicon name: solid/selector -->
@@ -80,19 +80,15 @@
 
 							        Highlighted: "text-white bg-indigo-600", Not Highlighted: "text-gray-900"
 							      -->
+							      <?php foreach ($languages as $language) {
+							      	echo '
 							      <li class="text-gray-900 cursor-default select-none relative py-1 pl-3 pr-9 text-xs" id="listbox-option-0" role="option">
 							        <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
-							        <a href="" class="font-normal block hover:text-perros-green">
-							          Italiano
+							        <a href="'.$page->localUrl($language).'" class="font-normal block hover:text-perros-green">
+							          '.$language->title.'
 							        </a>
-							      </li>
-
-							      <li class="text-gray-900 cursor-default select-none relative py-1 pl-3 pr-9 text-xs" id="listbox-option-0" role="option">
-							        <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
-							        <a href="" class="font-normal block hover:text-perros-green">
-							          Spagnolo
-							        </a>
-							      </li>
+							      </li>';
+							      } ?>
 
 							    </ul>
 							  </div>
@@ -129,7 +125,8 @@
 								echo "<a class='font-oswald' href='$page->editURL'>Modifica Pagina</a>";
 							} 
 							foreach ($homepage->children("template=sc-shop") as $menu) {
-								echo "<a class='font-oswald uppercase text-xxl' href='$menu->url'>$menu->title</a>";
+								$active = ($page->id == $menu->id || $page->parent->id == $menu->id) ? 'text-perros-brown' : 'text-black';
+								echo "<a class='font-oswald uppercase text-xxl $active' href='$menu->url'>$menu->title</a>";
 							}
 							//la pagina Perros la chiamo a parte
 							$perrosMenu = $homepage->children->first();

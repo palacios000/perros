@@ -11,6 +11,15 @@
 		}
 	}*/
 
+	.snipcart-input, .snipcart-form__label{
+		font-size: 18px;
+	}
+	.snipcart__font--small{
+		font-size: 14px;
+		color: #333;
+		letter-spacing: 0.3px	;
+	}
+
 	#snipcart{
 		--bgColor-buttonPrimary: rgb(100 181 158);
 	}
