@@ -52,7 +52,7 @@
 <!-- categorie  -->
   <div class="container mx-auto">
     <div class="text-center">
-      <h1 class="font-bold text-black font-oswald sm:mt-5 lg:mt-6 text-3xl md:text-4xl xl:text-5xl mx-8 lg:mx-56 mt-16"><?php echo $page->titleH1 ?></h1>
+      <h1 class="font-bold text-black font-oswald sm:mt-5 lg:mt-16 text-3xl md:text-4xl xl:text-5xl mx-8 lg:mx-56"><?php echo $page->titleH1 ?></h1>
       <p class="text-2xl md:text-3xl text-perros-green sm:mt-5 font-oswald font-light mx-8 lg:mx-56 my-9"><?php echo $page->subtitleH1 ?></p>
     </div>
     <div class="bg-ossi-pattern">
@@ -187,18 +187,18 @@
 <!-- pre footer -->
 <?php $varsContatti = $pages->findOne("template=variabili, name=contattaci, parent=1055"); ?>
   <div id="prefooter" class="bg-white">
-    <div class="container mx-auto grid grid-cols-2 gap-x-24 pt-32 pb-28">
+    <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-24 pt-32 pb-28">
       <div class="text-center px-12">
         <h5 class="font-oswald text-perros-brown text-5xl mb-9">Recensioni</h5>
         <p>Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Quibusdam velit recusandae sed reiciendis voluptatum incidunt earum</p>
       </div>
-      <div class="text-center border-dotted border-l-8 border-neutral-300">
+      <div class="text-center border-dotted border-l-8 border-neutral-300 mt-8 lg:mt-0">
         <h5 class="font-oswald text-perros-brown text-5xl mb-9"><?php echo $varsContatti->title ?></h5>
         <div class="max-w-xs mx-auto space-y-10 md:space-y-0 md:grid md:grid-cols-1 md:gap-x-8 md:gap-y-10">
           
         <?php 
         foreach ($varsContatti->children as $iconsContact) {
-          echo '<div class="pl-8">';
+          echo '<div class="pl-8 ">';
            echo "<img class='absolute w-14 h-14' src='{$iconsContact->images->first->url}' alt='$iconsContact->title'>";
            echo "<p class='pt-4'><a href='$iconsContact->name:".str_replace(' ', '', $iconsContact->infotext)."'>$iconsContact->infotext</a></p>";
           echo '</div>';
@@ -211,7 +211,7 @@
 
 <!-- #2 quote -->
   <?php $quote = $pages->findOne("template=variabili, name=quotes")->children->getRandom();  ?>
-  <div id="citazione">
+  <div id="citazione" class="hidden lg:block">
     <div class="relative">
       <div class="relative py-24 px-8 bg-perros-100 overflow-hidden lg:px-16 lg:grid grid-cols-1 lg:gap-x-8">
         <div class="absolute inset-0 opacity-50">

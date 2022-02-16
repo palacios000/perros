@@ -115,3 +115,8 @@
 
 
 
+
+
+.swiper-button-prev, .swiper-button-next{
+	color: #2E2624 !important;
+}

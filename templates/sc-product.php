@@ -152,35 +152,33 @@
 							<?php } ?>
 
 						<!-- inizio finestra CheckOut -->
-						<div class="bg-ossi-pattern p-5 mt-8 mb-12">
-							<div class="bg-white p-7">
-								<div class="flex justify-between">
-									<div>
-									<h3 class="text-3xl font-bold tracking-tight font-oswald leading-none text-perros-green pb-7">Scegli il tuo prodotto su misura <br><!-- <span class="text-lg text-black font-normal">in tre semplici passaggi</span> --></h3>
-									</div>
+						<div class="bg-ossi-pattern p-3 lg:p-5 mt-8 mb-12">
+							<div class="bg-white p-1 md:p-7">
+								<div class="flex flex-col lg:flex-row lg:flex-row-reverse justify-between">
 									<div>
 										<p class="text-2xl text-gray-900 font-oswald"><?= $prezzo ?></p>
 									</div>
+									<h3 class="text-2xl lg:text-3xl font-bold tracking-tight font-oswald leading-none text-perros-green pb-7 mt-5 lg:mt-0">Scegli il tuo prodotto su misura</h3>
 									
 								</div>
 
 								<?php if (!$tagliaOK) { ?>
 								<!-- ### 01 selezione Taglia -->
 								<div class="treFasi">
-									<div class="fase1 border border-perros-green-700 rounded rounded-2xl border-2 relative pl-16 pr-4">
+									<div class="fase1 border border-perros-green-700 rounded rounded-2xl border-2 relative pl-8 sm:pl-16 pt-4 sm:pt-0 pr-4">
 										<!-- cerchiolino 1 -->
 											<div class="absolute top-2 left-2">
-											<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 rounded-full font-oswald font-light text-neutral-600"><span>1</span></span>
+											<span class="flex-shrink-0 w-5 h-5 sm:w-10 sm:h-10 flex items-center justify-center border-2 rounded-full font-oswald font-light text-neutral-600"><span>1</span></span>
 											</div>
 
 										<div x-data="{ open: false }">
 
 										<!-- blocco 3 steps - 1/3 -->
 											<div class="my-3">
-												<h4 class="text-perros-green font-oswald font-bold text-xxl my-3 ">Scegli la taglia</h4>
-												<button x-on:click="open = true" type="button" class="bottone-green w-1/2">
-													<span class="ml-2">Scegli la taglia</span>
-													<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center ">
+												<h4 class="text-perros-green font-oswald font-bold text-lg lg:text-xxl my-3 ">Scegli la taglia</h4>
+												<button x-on:click="open = true" type="button" class="bottone-green w-full lg:w-1/2">
+													<span class="ml-2">Apri catalogo</span>
+													<span class="flex-shrink-0 w-5 h-5 sm:w-10 sm:h-10 flex items-center justify-center ">
 														<img src="<?= $config->urls->templates ?>styles/images/popup.svg" alt="pop-up icon">
 													</span>
 												</button>
@@ -210,7 +208,7 @@
 													<div
 														x-on:click.stop
 														x-trap.noscroll.inert="open"
-														class="relative max-w-6xl w-full bg-perros-green border border-perros-green rounded-2xl p-4 overflow-y-auto"
+														class="relative max-w-6xl w-full bg-perros-green border border-perros-green rounded-2xl p-2 md:p-4 overflow-y-auto"
 													 >
 													<!-- bottoncino crocetta chiudi -->
 													<a href="#" x-on:click="open = false">
@@ -219,7 +217,7 @@
 
 													<div :id="$id('modal-title')" class="bg-white p-4 border-4 border-white rounded-2xl">
 
-														<div class="grid grid-cols-3 gap-5">
+														<div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
 															<?php if ($page->body_extra) { ?>
 															<div>
 																<?php if (count($page->images_details)){
@@ -272,7 +270,7 @@
 																			 
 																				<label 
 																				:class="expanded ? '' : 'border-gray-300' "
-																				class="relative block bg-white border px-6 my-1 cursor-pointer flex justify-between font-oswald focus:outline-none hover:boder-1 hover:border-perros-green hover:opacity-95"
+																				class="relative block bg-white border px-6 my-1 cursor-pointer flex flex-col sm:flex-row justify-between font-oswald focus:outline-none hover:boder-1 hover:border-perros-green hover:opacity-95"
 																				id="taglia-<?php echo $nItem ?>">
 																					<input
 																					@click="expanded = !expanded"
@@ -293,8 +291,8 @@
 																					?>
 
 																					<!-- prezzo -->
-																					<div class="w-1/6 flex text-sm sm:mt-0 sm:block sm:ml-2 text-right">
-																						<div class="text-xl text-gray-900 mt-2">&euro; <?php echo (number_format($itm->product_variations->price, 2, ',', '')) ?></div>
+																					<div class="w-full sm:w-1/6 flex text-sm sm:mt-0 sm:block sm:ml-2 text-right">
+																						<div class="text-base md:text-xl text-gray-900 mt-2">&euro; <?php echo (number_format($itm->product_variations->price, 2, ',', '')) ?></div>
 																					</div>
 					
 																					<div 
@@ -331,22 +329,22 @@
 										
 									</div>
 
-									<div class="fase2 border border-neutral-400 border-dotted rounded rounded-2xl border-2 relative pl-16 pr-4 mt-4">
+									<div class="fase2 border border-neutral-400 border-dotted rounded rounded-2xl border-2 relative pl-8 sm:pl-16 pt-4 sm:pt-0 pr-4 mt-4">
 										<!-- cerchiolino 2 -->
 											<div class="absolute top-2 left-2">
-											<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600"><span>2</span></span>
+											<span class="flex-shrink-0 w-5 h-5 sm:w-10 sm:h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600"><span>2</span></span>
 											</div>
 
-											<h4 class="text-perros-green font-oswald font-bold text-xxl my-3 ">Colore & Minuteria</h4>
+											<h4 class="text-perros-green font-oswald font-bold text-lg lg:text-xxl my-3 ">Colore & Minuteria</h4>
 									</div>
 
-									<div class="fase3 border border-neutral-400 border-dotted rounded rounded-2xl border-2 relative pl-16 pr-4 mt-4">
+									<div class="fase3 border border-neutral-400 border-dotted rounded rounded-2xl border-2 relative pl-8 sm:pl-16 pt-4 sm:pt-0 pr-4 mt-4">
 										<!-- cerchiolino 3 -->
 											<div class="absolute top-2 left-2">
-											<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600"><span>3</span></span>
+											<span class="flex-shrink-0 w-5 h-5 sm:w-10 sm:h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600"><span>3</span></span>
 											</div>
 
-											<h4 class="text-perros-green font-oswald font-bold text-xxl my-3 ">Riepilogo</h4>
+											<h4 class="text-perros-green font-oswald font-bold text-lg lg:text-xxl my-3 ">Riepilogo</h4>
 									</div>
 
 
@@ -359,12 +357,12 @@
 								<!-- ### 03 selezione Opzioni ##################################### -->
 								<?php }else{ ?>
 									<!-- TW Riepilogo TAGLIA (ovvero mostro taglia selezionata) -->
-									<div class="fase1 border border-perros-green-700 rounded rounded-2xl border-2 relative pl-16 pr-4">
+									<div class="fase1 border border-perros-green-700 rounded rounded-2xl border-2 relative pl-8 sm:pl-16 pt-4 sm:pt-0 pr-4">
 											<!-- cerchiolino 11 -->
 												<div class="absolute top-2 left-2">
-												<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600">
+												<span class="flex-shrink-0 w-5 h-5 sm:w-10 sm:h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600">
 													<!-- checked -->
-													<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-perros-green rounded-full">
+													<span class="flex-shrink-0 w-5 h-5 sm:w-10 sm:h-10 flex items-center justify-center bg-perros-green rounded-full">
 														<svg class="w-6 h-6 text-white " x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
 													  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
 													</svg>
@@ -374,9 +372,9 @@
 										
 										<div class="">
 
-											<h4 class="text-perros-green font-oswald font-bold text-xxl my-3 ">Taglia OK</h4>
+											<h4 class="text-perros-green font-oswald font-bold text-lg lg:text-xxl my-3 ">Taglia OK</h4>
 										 
-											<div class=" border px-6 mb-4 cursor-pointer flex justify-between font-oswald focus:outline-none"
+											<div class=" border px-6 mb-4 cursor-pointer flex flex-col sm:flex-row justify-between font-oswald focus:outline-none"
 											>
 												<!-- codice -->
 												<div class="w-1/5 flex items-center">
@@ -405,13 +403,13 @@
 
 									<!-- opzioni colore & minuteria -->
 									<?php if ($page->product_options->colours && !$coloreOK) { ?>
-									<div class="fase2 border border-perros-green-700 rounded rounded-2xl border-2 relative pl-16 pr-4 mt-4">
+									<div class="fase2 border border-perros-green-700 rounded rounded-2xl border-2 relative pl-8 sm:pl-16 pt-4 sm:pt-0 pr-4 mt-4">
 										<!-- cerchiolino 22 -->
 											<div class="absolute top-2 left-2">
-											<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600"><span>2</span></span>
+											<span class="flex-shrink-0 w-5 h-5 sm:w-10 sm:h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600"><span>2</span></span>
 											</div>
 
-											<h4 class="text-perros-green font-oswald font-bold text-xxl my-3 ">Scelta Colore</h4>
+											<h4 class="text-perros-green font-oswald font-bold text-lg lg:text-xxl my-3 ">Scelta Colore</h4>
 										
 										<form action="" method="get">
 
@@ -453,7 +451,7 @@
 																	id="colore-<?php echo $nColors ?>"
 																	 type="radio" name="colore" value="<?php echo $colordot->name ?>" class="sr-only"  aria-labelledby="<?php echo $colordot->name ?>" required>
 																	<p id="<?php echo $colordot->name ?>" class="sr-only"><?php echo $colordot->title ?></p>
-																	<span aria-hidden="true" class="h-6 w-6 bg-<?php echo $colordot->codice ?> border border-black border-opacity-10 rounded-full"></span>
+																	<span aria-hidden="true" class="h-4 w-4 sm:h-6 sm:w-6 bg-<?php echo $colordot->codice ?> border border-black border-opacity-10 rounded-full"></span>
 																</label>
 															</div>
 															<?php 
@@ -468,7 +466,7 @@
 											<!-- Minuteria -->
 											<hr class="dottedLineSmall mt-8 mr-12">
 												<div>
-													<h4 class="text-perros-green font-oswald font-bold text-xxl my-3 ">Scelta Minuteria</h4>
+													<h4 class="text-perros-green font-oswald font-bold text-lg lg:text-xxl my-3 ">Scelta Minuteria</h4>
 
 													<?php 
 													$nItem = $nColors + 1;
@@ -508,7 +506,7 @@
 																<!-- testo -->
 																<div class="pl-4 flex items-center">
 																	<div class="pr-12">
-																		<h3 class="text-xl mb-2"><?= $itm->title ?><span class="text-neutral-600 pl-4"> <?= $prezzoMinu ?></span></h3>
+																		<h3 class="text-xl mb-2"><?= $itm->title ?><span class="text-neutral-600 pl-1 sm:pl-4 text-lg sm:text-xl"> <?= $prezzoMinu ?></span></h3>
 																		<p class="text-neutral-600"><?= $itm->infotext ?></p>
 																	</div>
 																</div>
@@ -526,7 +524,7 @@
 											<?php } ?>
 
 												<div class="my-8">
-													<button type="submit" class="bottone-green py-2 w-2/5 ">
+													<button type="submit" class="bottone-green py-2 w-full sm:w-2/5 ">
 														Conferma colore e minuteria
 													</button>
 												</div>
@@ -536,13 +534,13 @@
 
 									</div>
 
-									<div class="fase3 border border-neutral-400 border-dotted rounded rounded-2xl border-2 relative pl-16 pr-4 mt-4">
+									<div class="fase3 border border-neutral-400 border-dotted rounded rounded-2xl border-2 relative pl-8 sm:pl-16 pt-4 sm:pt-0 pr-4 mt-4">
 									<!-- cerchiolino 33 -->
 										<div class="absolute top-2 left-2">
-										<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600"><span>3</span></span>
+										<span class="flex-shrink-0 w-5 h-5 sm:w-10 sm:h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600"><span>3</span></span>
 										</div>
 
-										<h4 class="text-perros-green font-oswald font-bold text-xxl my-3 ">Riepilogo</h4>
+										<h4 class="text-perros-green font-oswald font-bold text-lg lg:text-xxl my-3 ">Riepilogo</h4>
 									</div>
 
 									<?php }else{ 
@@ -577,12 +575,12 @@
 											?>
 
 
-											<div class="fase2 border border-perros-green-700 rounded rounded-2xl border-2 relative pl-16 pr-4 mt-4">
+											<div class="fase2 border border-perros-green-700 rounded rounded-2xl border-2 relative pl-8 sm:pl-16 pt-4 sm:pt-0 pr-4 mt-4">
 												<!-- cerchiolino 222 -->
 													<div class="absolute top-2 left-2">
-													<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600">
+													<span class="flex-shrink-0 w-5 h-5 sm:w-10 sm:h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600">
 														<!-- checked -->
-														<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-perros-green rounded-full">
+														<span class="flex-shrink-0 w-5 h-5 sm:w-10 sm:h-10 flex items-center justify-center bg-perros-green rounded-full">
 															<svg class="w-6 h-6 text-white " x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
 														  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
 														</svg>
@@ -590,7 +588,7 @@
 													</span>
 													</div>
 
-													<h4 class="text-perros-green font-oswald font-bold text-xxl my-3 ">Scelta Colore</h4>
+													<h4 class="text-perros-green font-oswald font-bold text-lg lg:text-xxl my-3 ">Scelta Colore</h4>
 
 
 													<!-- Colors (selezionato) -->
@@ -648,15 +646,15 @@
 
 											</div>
 
-											<div x-data="{ added2cart: false }" class="fase3 border border-perros-green-700 rounded rounded-2xl border-2 relative pl-16 pr-4 mt-4">
+											<div x-data="{ added2cart: false }" class="fase3 border border-perros-green-700 rounded rounded-2xl border-2 relative pl-8 sm:pl-16 pt-4 sm:pt-0 pr-4 mt-4">
 											<!-- cerchiolino 333 -->
 												<!-- un-clicked -->
 												<div class="absolute top-2 left-2">
-													<span x-show="!added2cart" class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600">
+													<span x-show="!added2cart" class="flex-shrink-0 w-5 h-5 sm:w-10 sm:h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600">
 														<span>3</span>
 													</span>
 												<!-- clicked -->
-													<span x-show="added2cart" class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-perros-green rounded-full">
+													<span x-show="added2cart" class="flex-shrink-0 w-5 h-5 sm:w-10 sm:h-10 flex items-center justify-center bg-perros-green rounded-full">
 														<svg class="w-6 h-6 text-white " x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
 													  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
 													</svg>
@@ -666,12 +664,12 @@
 												<!-- SNIPCART BUTTON ==================================================== -->
 													<button
 													@click="added2cart = !added2cart"
-													 type="button" class="bottone-green ring-2 ring-offset-2 ring-offset-gray-50 ring-perros-green-500 snipcart-add-item w-1/2 my-8 mx-auto" <?= $snipButton ?> >
+													 type="button" class="bottone-green ring-2 ring-offset-2 ring-offset-gray-50 ring-perros-green-500 snipcart-add-item w-full sm:w-fit my-8 mx-auto" <?= $snipButton ?> >
 														<!-- icona carrella -->
 														<svg class="flex-shrink-0 h-5 w-5 text-white group-hover:text-gray-500" x-description="Heroicon name: outline/shopping-cart" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 33 33" stroke="currentColor" aria-hidden="true">
 															<path d="M8.41,14.28H29.72m-18-6.06,2.15,12.12m3.09-12,.51,12.12M22.11,8.32,21.06,20.44M26.91,8.32,24.58,20.44m3.78,8.26a2.16,2.16,0,1,1-2.16-2.16A2.16,2.16,0,0,1,28.36,28.7ZM15,28.7a2.16,2.16,0,1,1-2.16-2.16A2.16,2.16,0,0,1,15,28.7Zm-4.73-8.26H27.15a.84.84,0,0,0,.79-.56L31.77,9.19a.63.63,0,0,0-.58-.84L6.78,8.12m21.65,16.3H12.09A1.13,1.13,0,0,1,11,23.6L6,5.7a1.11,1.11,0,0,0-.86-.8l-4.1-.8"></path>
 														</svg>
-														<span class="ml-2">Aggiungi al carrello -  <?php echo $prezzo ?></span>
+														<span class="ml-2 ">Aggiungi al carrello -  <?php echo $prezzo ?></span>
 													</button>
 												</div>
 

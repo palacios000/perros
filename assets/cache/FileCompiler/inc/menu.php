@@ -2,17 +2,17 @@
 <div hidden id="snipcart" data-api-key="ZGMzZTk0YmItMmU2OC00OGRjLTg3OTItYWY5ODBhZjRkNDM4NjM3Nzc0MDE2OTE4MzA0NzA2" data-config-modal-style="side"></div>
 
 <div id="navigation" class="w-full bg-white shadow-md">
-	<div class="container mx-auto">
+	<div class="container mx-auto px-4">
 		<div class="relative bg-white">
-			<div class="flex justify-between py-6 px-4 sm:px-0 sm:justify-start">
-				<div id="logo" class="w-1/3">
+			<div class="flex justify-between py-4">
+				<div id="logo" class="w-1/5 lg:w-1/3">
 					<a href="<?php echo $homepage->url ?>" class="flex">
 						<span class="sr-only">Perros Life - Tecnica Cinofila al guinzaglio</span>
 						<img class="w-60 hidden sm:block" src="<?= $config->urls->templates ?>styles/images/PERROSLIFE_logo-1.svg" alt="Perros Life - Tecnica Cinofila al guinzaglio">
 						<img class="block sm:hidden" src="<?= $config->urls->templates ?>styles/images/PERROSLIFE_logo-2.svg" alt="Perros Life - Tecnica Cinofila al guinzaglio">
 					</a>
 				</div>
-				<div id="menus" class="w-2/3 hidden sm:block">
+				<div id="menus" class="w-3/5 lg:w-2/3 hidden md:block">
 					<div class="grid justify-items-end content-between sm:h-full">
 
 						<!-- icone + carrello -->
@@ -112,16 +112,16 @@
 							</div>
 						</div>
 
-						<nav class="flex space-x-9 ">
+						<nav class="flex space-x-6 lg:space-x-9 ">
 
 
 							<?php if($page->editable()){
-								echo "<a class='font-oswald' href='$page->editURL'>Modifica Pagina</a>";
+								echo "<a class='buttone-green font-oswald' href='$page->editURL'>Modifica Pagina</a>";
 							}
 							$shopMenu = $homepage->children("template=sc-shop"); 
 							foreach ( $shopMenu as $menu) {
 								$active = ($page->id == $menu->id || $page->parent->id == $menu->id) ? 'text-perros-brown' : 'text-black';
-								echo "<a class='font-oswald uppercase text-xxl $active' href='$menu->url'>$menu->title</a>";
+								echo "<a class='font-oswald uppercase text-lg xl:text-xxl $active' href='$menu->url'>$menu->title</a>";
 							}
 							//la pagina Perros la chiamo a parte
 							$perrosMenu = $homepage->children->first();
@@ -156,8 +156,8 @@
 						        :aria-expanded="open"
 						        :aria-controls="$id('dropdown-button')"
 						        :class= "open ? 'text-perros-brown' : ''"
-								type="button" class="font-oswald text-xxl uppercase group bg-white rounded-md inline-flex items-center text-base hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-perros-green-300" aria-expanded="false">
-									<span class="text-xxl"><?php echo $perrosMenu->title ?></span>
+								type="button" class="font-oswald text-lg xl:text-xxl uppercase group bg-white rounded-md inline-flex items-center text-base hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-perros-green-300" aria-expanded="false">
+									<span class="text-lg xl:text-xxl"><?php echo $perrosMenu->title ?></span>
 									<svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
 										<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
 									</svg>
@@ -211,7 +211,6 @@
 					x-show="open"
 					x-cloak
 					class="z-50 absolute top-0 inset-x-0 p-2 transition transform origin-top-right sm:hidden">
-
 
 					    <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
 
@@ -296,7 +295,7 @@
 					    				<div class="flex">
 					    					<a
 					    					@click="open = ! open"
-					    					 href="#" class="snipcart-customer-signin -m-2 p-2 text-gray-400 hover:text-gray-500"> <span class="sr-only">Account</span>
+					    					 href="#" class="snipcart-customer-signin m-0 md:-m-2 p-2 text-gray-400 hover:text-gray-500"> <span class="sr-only">Account</span>
 					    						<svg class="h-5 w-5" x-description="Heroicon name: outline/user" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 33 33" stroke="currentColor" aria-hidden="true">
 					    							<path d="m23.17 22.83-3.63-1.33a5.4 5.4 0 0 1 -6.47 0l-3.64 1.33a6.5 6.5 0 0 0 -4.26 6.11v.66a.23.23 0 0 0 .23.23h21.81a.23.23 0 0 0 .23-.23v-.66a6.5 6.5 0 0 0 -4.27-6.11zm-13.47-12.4a7.08 7.08 0 0 0 3.37-2.83.09.09 0 0 1 .13 0 18.48 18.48 0 0 0 9.71 2.37m-3.34 11.53v-2.33a1.55 1.55 0 0 1 .5-1.17 9.75 9.75 0 0 0 2.88-7.21c0-4.83-3-6.86-6.62-6.86s-6.63 2.07-6.63 6.88a9.75 9.75 0 0 0 2.87 7.19 1.55 1.55 0 0 1 .49 1.15v2.35" fill="none" stroke="#8e7d6d" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.34"></path>
 					    						</svg>
@@ -306,7 +305,7 @@
 					    			<span class="mx-4 h-6 w-px bg-gray-200 lg:mx-6" aria-hidden="true"></span>
 					    			<div class="flow-root">
 					    				<a
-					    				@click="open = ! open" href="#" class="snipcart-checkout group -m-2 p-2 flex items-center">
+					    				@click="open = ! open" href="#" class="snipcart-checkout group m-0 md:-m-2 p-2 flex items-center">
 					    					<svg class="flex-shrink-0 h-5 w-5 text-gray-400 group-hover:text-gray-500" x-description="Heroicon name: outline/shopping-cart" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 33 33" stroke="currentColor" aria-hidden="true">
 					    						<path d="M8.41,14.28H29.72m-18-6.06,2.15,12.12m3.09-12,.51,12.12M22.11,8.32,21.06,20.44M26.91,8.32,24.58,20.44m3.78,8.26a2.16,2.16,0,1,1-2.16-2.16A2.16,2.16,0,0,1,28.36,28.7ZM15,28.7a2.16,2.16,0,1,1-2.16-2.16A2.16,2.16,0,0,1,15,28.7Zm-4.73-8.26H27.15a.84.84,0,0,0,.79-.56L31.77,9.19a.63.63,0,0,0-.58-.84L6.78,8.12m21.65,16.3H12.09A1.13,1.13,0,0,1,11,23.6L6,5.7a1.11,1.11,0,0,0-.86-.8l-4.1-.8"></path>
 					    					</svg> 
@@ -331,11 +330,13 @@
 					      <div class="pt-5 pb-6 px-5">
 					        <div class="flex items-center justify-between">
 					          <div>
+					          	<a href="<?= $homepage->url ?>">
 					            <img class="h-8 w-auto" src="<?= $config->urls->templates ?>styles/images/PERROSLIFE_logo-2.svg" alt="Perros Life - Tecnica Cinofila al guinzaglio">
+					          	</a>
 					          </div>
 					        </div>
 					        <div class="mt-6">
-					          <nav class="grid gap-6">
+					          <nav class="grid md:gap-6">
 					          	<?php 
 					          	foreach ($shopMenu as $mobileMenu) {
 					          	echo '
@@ -387,11 +388,6 @@
 					From: "opacity-100 scale-100"
 					To: "opacity-0 scale-95"
 			-->
-
-
-
-
-
 
 		</div>
 	</div>

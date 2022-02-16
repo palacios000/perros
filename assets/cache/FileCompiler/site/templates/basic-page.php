@@ -10,7 +10,7 @@
 		</div>
 	  <div class="h-81 relative container mx-auto py-6 px-4 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:py-12 text-white">
 	    <div>
-	      <h1 class="font-bold font-oswald text-6xl"><?php echo $page->titleH1 ?></h1>
+	      <h1 class="font-bold font-oswald text-4xl md:text-5xl xl:text-6xl"><?php echo $page->titleH1 ?></h1>
 	    </div>
 	    <div>
 	    </div>
@@ -25,7 +25,7 @@
 
     $tile .= '
     <div class="">
-      <div class="container mx-auto px-4 grid justyfy-between grid-cols-2 gap-y-16 pt-24 pb-36">
+      <div class="container mx-auto px-4 grid justyfy-between grid-cols-1 md:grid-cols-2 gap-y-16 pt-24 pb-36">
 
         <!-- COLONNA testo -->
         <div class="homebox">
@@ -48,11 +48,40 @@
 
               <!-- testo -->
               <div class="colonnina text-center mx-4">
-                <h3 class="mt-16 mb-12 text-4ll font-oswald text-perros-green leading-tight ">'. $box->homebox_aside->title .'</h3>
-                <div class="text-2xl pb-24 font-oswald font-light">'.  $box->homebox_aside->body .'</div>
-              </div>
+                <h3 class="mt-16 mb-12 text-2xl md:text-4ll font-oswald text-perros-green leading-tight ">'. $box->homebox_aside->title .'</h3>
+                <div class="text-lg md:text-2xl pb-24 font-oswald font-light">'.  $box->homebox_aside->body .'</div>
+              </div>';
+
+              $tile .= '
             </div>
-          </div>
+          </div>';
+
+          // aggiungo come sotto footer con immagine
+      		$bottonUrl = $pages->get($page->extra_titles->id_pagina)->url;
+          $tile .= '
+          <div class="flex flex-row-reverse">
+	          <div class="w-96 relative pt-12 mr-0">
+	            <div class="relative py-16 rounded rounded-2xl px-8 overflow-hidden lg:px-16 lg:grid grid-cols-1 lg:gap-x-8">
+	              <div class="absolute inset-0 opacity-50">
+	                <img src="'.$page->images_bg->last->url.'" alt="" class="w-full h-full object-cover">
+	              </div>
+	              <div class="relative col-span-1">
+	              	<div class="flex flex-column justify-center align-middle">
+	              		<a class=\'bottone-green rounded-none w-auto\' href="'.$bottonUrl.'">
+	          	    		<div class=\'flex flex-col justify-center text-center text-2xl mx-9\'>
+	          	    			<div class=\'uppercase font-bold\'>'.$page->extra_titles->sottotitolo.'</div>
+	          	    			<div class=\'font-oswald font-light\'>'.$page->extra_titles->bottone.'</div>
+	          	    		</div>
+	              		</a>
+	              	</div>
+	              </div>
+	            </div>
+            </div>
+          </div>';
+          // aggiungo come sotto footer con immagine -- end
+
+
+          $tile .= '
         </div>
       </div>
     </div>';
@@ -63,15 +92,17 @@
   </section>
 
 <!-- accordion esempi -->
+<?php if (count($page->description_list)){ ?>
 	<section id="accordion" class="bg-gray-200">
 		<div class="container mx-auto">
-			<h2 class="text-3ll font-oswald font-bold pt-16 pb-8"><?php echo $page->description_list->first->title ?></h2>
+			<h2 class="text-2ll md:text-3ll text-center md:text-left font-oswald font-bold pt-16 pb-8 mx-4 sm:mx-0"><?php echo $page->description_list->first->title ?></h2>
 
 			<!-- acordion -->
-			<div x-data="{ active: 1 }" class="boder border-t border-gray-500 pb-24">
+			<div x-data="{ active: 1 }" class="boder border-t border-gray-500 pb-24 mx-4 sm:mx-0">
 
 				<?php 
 				$counter = 0;
+				$faqPage = ($page->name == "info-pettorina" || $page->name == "info-collare") ? $pages->findOne("name=info-pettorina, template=basic-page") : $page; 
 				foreach ($page->description_list as $faq) { 
 					$counter++;
 					if($counter == 1) continue;
@@ -116,41 +147,43 @@
 
 		</div>
 	</section>
-
+<?php } ?>
 <!-- pallini spiegazione prodotti -->
 	<section id="informazioni" class="container mx-auto">
 		<div class="pt-32 pb-20 text-center">
-			<h2 class="text-3ll font-oswald font-bold pb-8"><?php echo $page->slider->first->title ?></h2>
-			<p class="font-oswald font-light text-perros-green text-2xl leading-tight"><?php echo $page->slider->first->subtitle ?></p>
+			<h2 class="text-2ll md:text-3ll font-oswald font-bold pb-8"><?php echo $page->slider->first->title ?></h2>
+			<p class="font-oswald font-light text-perros-green text-xl md:text-2xl leading-tight"><?php echo $page->slider->first->subtitle ?></p>
 		</div>
-		<?php 
-		$nTipo = 0;
-		foreach ($page->slider as $tipo) {
-			$nTipo++;
-			if ($nTipo == 1) continue;
-			$tipoUrl = $pages->get($tipo->codice)->url;
-		?>
-		<div class="flex flex-row">
-			<div class="w-65">
-				<?php echo "<img class='' src='{$tipo->images->first->url}' alt='$tipo->images->first->description'>"; ?>
+		<div>
+			<?php 
+			$nTipo = 0;
+			foreach ($page->slider as $tipo) {
+				$nTipo++;
+				if ($nTipo == 1) continue;
+				$tipoUrl = $pages->get($tipo->codice)->url;
+			?>
+			<div class="flex flex-col sm:flex-row">
+				<div class="w-65 mx-auto sm:mx-0">
+					<?php echo "<img class='w-full' src='{$tipo->images->first->url}' alt='$tipo->images->first->description'>"; ?>
+				</div>
+				<div class="w-auto ml-4 sm:ml-16">
+					<?php 
+					echo "
+					<h3 class='font-oswald text-3ll pb-2'>$tipo->title</h3>
+					<p class='font-oswald font-light text-perros-green text-2xl leading-tight pb-4'>$tipo->subtitle</p>
+					$tipo->body
+					<a class='bottone-green-neg w-28' href='$tipoUrl'>$tipo->titleH1</a>";
+					?>
+				</div>
 			</div>
-			<div class="w-auto ml-16">
-				<?php 
-				echo "
-				<h3 class='font-oswald text-3ll pb-2'>$tipo->title</h3>
-				<p class='font-oswald font-light text-perros-green text-2xl leading-tight pb-4'>$tipo->subtitle</p>
-				$tipo->body
-				<a class='bottone-green-neg w-28' href='$tipoUrl'>$tipo->titleH1</a>";
-				?>
+			<hr class="dottedLineBig my-12">
+			<?php } ?>
 			</div>
-		</div>
-		<hr class="dottedLineBig my-12">
-		<?php } ?>
 	</section>
 
 <!-- pre-footer con bottone -->
 	<section id="prefooter" class="container mx-auto">
-		<p class="font-oswald text-2xl leading-tight text-perros-brown text-center px-28 my-20"><?php echo $page->extra_titles->titolo ?></p>
+		<p class="font-oswald text-2xl leading-tight text-perros-brown text-center px-8 md:px-28 my-20 hidden md:block"><?php echo $page->extra_titles->titolo ?></p>
 
 		<div class="relative pb-12">
 		  <div class="relative py-24 px-8 overflow-hidden lg:px-16 lg:grid grid-cols-1 lg:gap-x-8">
@@ -174,6 +207,7 @@
 		  </div>
 		</div>
 	</section>
+
 <?php include(\ProcessWire\wire('files')->compile('inc/footer.php',array('includes'=>true,'namespace'=>true,'modules'=>true,'skipIfNamespace'=>true)))?>
 
 </body>

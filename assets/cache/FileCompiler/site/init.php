@@ -4,7 +4,7 @@
 	//tabella
 	function tableTitle($titolo, $colore){
 		$th = "
-		<div class='w-1/6 text-center font-oswald uppercase font-bold $colore'>
+		<div class='-rotate-90 md:transform-none w-1/6 text-center font-oswald uppercase font-bold $colore'>
 			$titolo
 		</div>";
 		return $th;
@@ -25,7 +25,7 @@
 		}
 
 		$td = "
-		<div class='w-1/6 flex items-center '>
+		<div class='w-full sm:w-1/6 flex items-center '>
 			<div class='text-sm text-center font-medium $colore w-full'>
 				$testo
 			</div>

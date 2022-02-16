@@ -42,8 +42,8 @@
 <!-- prodotti -->
 <?php 
 	$dots = '
-	<div class="mt-2 p-2">
-		<div class="flex items-center space-x-2">';
+	<div class="mt-2 p-2 ">
+		<div class="flex items-center space-x-2 ">';
 			foreach ($colorspage->children as $colordot) {
 				$dots .= '
 				<span aria-hidden="true" class="h-5 w-5 bg-'.$colordot->codice.' border border-black border-opacity-10 rounded-full"></span>';
@@ -54,26 +54,26 @@
 	?>
 
 	<section id="products" class="container mx-auto pb-12">
-		<div class="flex flex-row gap-x-4">
+		<div class="flex flex-col md:flex-row gap-x-4">
 			<!-- colonna prodotti -->
 			<div class="w-auto">
 				<!-- prodotto start -->
 				<?php foreach ($page->children as $item): ?>
-				<div class="flex flex-row my-12 group rounded hover:shadow-lg">
-					<div class="w-1/3">
+				<div class="flex flex-col md:flex-row my-12 group rounded hover:shadow-lg">
+					<div class="w-full md:w-1/4 lg:w1/3">
 						<!-- img + colori -->
 						<a href="<?php echo $item->url ?>">
 						<?php if (count($item->snipcart_item_image)) echo "<img class='brightness-95' src='{$item->snipcart_item_image->first->url}' alt='$item->title'>";
 						echo $dots ?>
 						</a>
 					</div>
-					<div class="w-full mx-5">
+					<div class="w-full mx-5 pr-4 md:pr-0">
 						<a class="" href="<?php echo $item->url ?>">
 						<h3 class="font-oswald font-bold text-2xl md:text-3xl xl:text-4xl"><?php echo "$item->title" ?></h3>
 						<p class="mt-2 mb-6 text-perros-green text-xl font-oswald leading-tight"><?php echo $item->subtitleH1 ?></p>
 						  <div>
 						  	<!-- lista -->
-						    <dl class="space-y-1 grid grid-cols-1 gap-x-6 max-w-lg">
+						    <dl class="space-y-1 grid grid-cols-1 gap-x-6 w-full md:max-w-lg">
 									<?php foreach ($item->description_list as $list): ?>
 						      <div class="relative">
 						        <dt>
@@ -81,7 +81,7 @@
 						          <svg class="absolute h-6 w-6 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
 						            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 						          </svg>
-						          <p class="ml-9 text-lg leading-5 font-medium font-oswald"><?php echo $list->title ?></p>
+						          <p class="ml-9 text-sm md:text-base lg:text-lg leading-5 font-medium font-oswald"><?php echo $list->title ?></p>
 						        </dt>
 						      </div>
 									<?php endforeach ?>
@@ -90,7 +90,7 @@
 						    <div class="w-full mt-12 mb-4">
 						    	<div class="flex flex-row justify-between text-center font-oswald">
 						    		<div class="prezzo text-2ll text-perros-brown">da &euro; <?= (number_format($item->product_options->price_min, 2, ',', '')) ?></div>
-						    		<a href="<?php echo $item->url ?>" class="button block max-w-xs bottone-green uppercase">Visualizza</a>
+						    		<a href="<?php echo $item->url ?>" class="button block max-w-xs bottone-green uppercase mr-4 md:mr-0">Visualizza</a>
 						    	</div>
 						    </div>
 						  </div>
@@ -105,7 +105,7 @@
 
 
 			<!-- colonna info sinistra -->
-			<div class="w-58 flex-none">
+			<div class="w-58 flex-none mx-auto">
 
 				<!-- menu prodotti -->
 				<div class="bg-perros-brown p-5 my-12 text-white font-oswald w-full text-center uppercase">
@@ -129,7 +129,7 @@
 				      <!-- 1st image circle-->
 				      <img class="w-58 absolute -top-28" src="<?php echo $page->images_bg->last->url ?>" alt="" >
 				      <!-- etichetta -->
-				      <img class="absolute top-0 -right-8" src="<?php echo $config->urls->templates ?>styles/images/linguetta-perros.png" alt="etichetta Perros Life">
+				      <img class="absolute top-0 -right-8 hidden 2xl:block" src="<?php echo $config->urls->templates ?>styles/images/linguetta-perros.png" alt="etichetta Perros Life">
 
 				      <!-- testo //   -->
 				      <div class="colonnina mx-4 text-white pb-8">
