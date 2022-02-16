@@ -4,22 +4,23 @@
 <div id="navigation" class="w-full bg-white shadow-md">
 	<div class="container mx-auto">
 		<div class="relative bg-white">
-			<div class="flex justify-between py-6 px-4 md:px-0 md:justify-start">
+			<div class="flex justify-between py-6 px-4 sm:px-0 sm:justify-start">
 				<div id="logo" class="w-1/3">
 					<a href="<?php echo $homepage->url ?>" class="flex">
 						<span class="sr-only">Perros Life - Tecnica Cinofila al guinzaglio</span>
-						<img class="w-60" src="<?php echo $config->urls->templates ?>styles/images/PERROSLIFE_logo-1.svg" alt="Perros Life - Tecnica Cinofila al guinzaglio">
+						<img class="w-60 hidden sm:block" src="<?= $config->urls->templates ?>styles/images/PERROSLIFE_logo-1.svg" alt="Perros Life - Tecnica Cinofila al guinzaglio">
+						<img class="block sm:hidden" src="<?= $config->urls->templates ?>styles/images/PERROSLIFE_logo-2.svg" alt="Perros Life - Tecnica Cinofila al guinzaglio">
 					</a>
 				</div>
-				<div id="menus" class="w-2/3">
-					<div class="grid justify-items-end content-between h-full">
+				<div id="menus" class="w-2/3 hidden sm:block">
+					<div class="grid justify-items-end content-between sm:h-full">
 
 						<!-- icone + carrello -->
-						<div class="flex items-center lg:ml-6 snipcart-summary">
+						<div class="flex items-center lg:ml-6 snipcart-summary ">
 
 
 							<!-- lingua select --start -->
-							<div class="mr-6">
+							<div class="mr-6 invisible sm:visible">
 							  <div
 							  x-data="{
 							          open: false,
@@ -75,11 +76,7 @@
 					            style="display: none;"
 
 							    class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm" tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3">
-							      <!--
-							        Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation.
-
-							        Highlighted: "text-white bg-indigo-600", Not Highlighted: "text-gray-900"
-							      -->
+							     
 							      <?php foreach ($languages as $language) {
 							      	echo '
 							      <li class="text-gray-900 cursor-default select-none relative py-1 pl-3 pr-9 text-xs" id="listbox-option-0" role="option">
@@ -115,16 +112,14 @@
 							</div>
 						</div>
 
-
-
-
 						<nav class="flex space-x-9 ">
 
 
 							<?php if($page->editable()){
 								echo "<a class='font-oswald' href='$page->editURL'>Modifica Pagina</a>";
-							} 
-							foreach ($homepage->children("template=sc-shop") as $menu) {
+							}
+							$shopMenu = $homepage->children("template=sc-shop"); 
+							foreach ( $shopMenu as $menu) {
 								$active = ($page->id == $menu->id || $page->parent->id == $menu->id) ? 'text-perros-brown' : 'text-black';
 								echo "<a class='font-oswald uppercase text-xxl $active' href='$menu->url'>$menu->title</a>";
 							}
@@ -209,6 +204,177 @@
 					</div>
 				</div>
 
+				<!-- ####################### MENU MOBILE START -->
+				<div x-data="{ open: false }">
+
+					<div 
+					x-show="open"
+					x-cloak
+					class="z-50 absolute top-0 inset-x-0 p-2 transition transform origin-top-right sm:hidden">
+
+
+					    <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+
+					    	<!-- ripeto carrello come sopra -->
+					    		<!-- icone + carrello -->
+					    		<div class="flex justify-between lg:ml-6 snipcart-summary ">
+
+					    			<!-- lingua select --start -->
+					    			<div class="">
+					    			  <div
+					    			  x-data="{
+					    			          open: false,
+					    			          toggle() {
+					    			              if (this.open) {
+					    			                  return this.close()
+					    			              }
+					    			   
+					    			              this.open = true
+					    			          },
+					    			          close(focusAfter) {
+					    			              this.open = false
+					    			   
+					    			              focusAfter && focusAfter.focus()
+					    			          }
+					    			      }"
+					    			      x-on:keydown.escape.prevent.stop="close($refs.button)"
+					    			      x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+					    			      x-id="['language-button']"
+
+					    			  class="mt-1 relative">
+					    			    <button 
+					    	    		x-ref="button"
+					    	            x-on:click="toggle()"
+					    	            :aria-expanded="open"
+					    	            :aria-controls="$id('language-button')"
+					    	            :class= "open ? 'text-perros-brown' : ''"
+
+					    	            type="button" class="bg-white relative w-full border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-perros-green focus:border-perros-green text-xxs" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+					    			      <span class="block">
+					    			        <?php echo $user->language->title  ?>
+					    			      </span>
+					    			      <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+					    			        <!-- Heroicon name: solid/selector -->
+					    			        <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+					    			          <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+					    			        </svg>
+					    			      </span>
+					    			    </button>
+
+					    			    <!-- Select popover, show/hide based on select state. -->
+					    			    <ul 
+					    	    		x-ref="panel"
+					    	            x-show="open"
+					    	            x-transition:enter="transition ease-out duration-200"
+					    	            x-transition:enter-start="opacity-0 translate-y-1"
+					    	            x-transition:enter-end="opacity-100 translate-y-0"
+					    	            x-transition:leave="transition ease-in duration-300"
+					    	            x-transition:leave-start="opacity-100 translate-y-0"
+					    	            x-transition:leave-end="opacity-0 translate-y-1"
+					    	            x-on:click.outside="close($refs.button)"
+					    	            :id="$id('language-button')"
+					    	            style="display: none;"
+
+					    			    class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm" tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3">
+					    			     
+					    			      <?php foreach ($languages as $language) {
+					    			      	echo '
+					    			      <li class="text-gray-900 cursor-default select-none relative py-1 pl-3 pr-9 text-xs" id="listbox-option-0" role="option">
+					    			        <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
+					    			        <a href="'.$page->localUrl($language).'" class="font-normal block hover:text-perros-green">
+					    			          '.$language->title.'
+					    			        </a>
+					    			      </li>';
+					    			      } ?>
+
+					    			    </ul>
+					    			  </div>
+					    			</div>
+					    			<!-- lingua select --end  -->
+
+					    			<div class="flex space-x-6">
+					    				<div class="flex">
+					    					<a
+					    					@click="open = ! open"
+					    					 href="#" class="snipcart-customer-signin -m-2 p-2 text-gray-400 hover:text-gray-500"> <span class="sr-only">Account</span>
+					    						<svg class="h-5 w-5" x-description="Heroicon name: outline/user" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 33 33" stroke="currentColor" aria-hidden="true">
+					    							<path d="m23.17 22.83-3.63-1.33a5.4 5.4 0 0 1 -6.47 0l-3.64 1.33a6.5 6.5 0 0 0 -4.26 6.11v.66a.23.23 0 0 0 .23.23h21.81a.23.23 0 0 0 .23-.23v-.66a6.5 6.5 0 0 0 -4.27-6.11zm-13.47-12.4a7.08 7.08 0 0 0 3.37-2.83.09.09 0 0 1 .13 0 18.48 18.48 0 0 0 9.71 2.37m-3.34 11.53v-2.33a1.55 1.55 0 0 1 .5-1.17 9.75 9.75 0 0 0 2.88-7.21c0-4.83-3-6.86-6.62-6.86s-6.63 2.07-6.63 6.88a9.75 9.75 0 0 0 2.87 7.19 1.55 1.55 0 0 1 .49 1.15v2.35" fill="none" stroke="#8e7d6d" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.34"></path>
+					    						</svg>
+					    					</a>
+					    				</div>
+					    			</div> 
+					    			<span class="mx-4 h-6 w-px bg-gray-200 lg:mx-6" aria-hidden="true"></span>
+					    			<div class="flow-root">
+					    				<a
+					    				@click="open = ! open" href="#" class="snipcart-checkout group -m-2 p-2 flex items-center">
+					    					<svg class="flex-shrink-0 h-5 w-5 text-gray-400 group-hover:text-gray-500" x-description="Heroicon name: outline/shopping-cart" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 33 33" stroke="currentColor" aria-hidden="true">
+					    						<path d="M8.41,14.28H29.72m-18-6.06,2.15,12.12m3.09-12,.51,12.12M22.11,8.32,21.06,20.44M26.91,8.32,24.58,20.44m3.78,8.26a2.16,2.16,0,1,1-2.16-2.16A2.16,2.16,0,0,1,28.36,28.7ZM15,28.7a2.16,2.16,0,1,1-2.16-2.16A2.16,2.16,0,0,1,15,28.7Zm-4.73-8.26H27.15a.84.84,0,0,0,.79-.56L31.77,9.19a.63.63,0,0,0-.58-.84L6.78,8.12m21.65,16.3H12.09A1.13,1.13,0,0,1,11,23.6L6,5.7a1.11,1.11,0,0,0-.86-.8l-4.1-.8"></path>
+					    					</svg> 
+					    					<span class="snipcart-items-count ml-2 text-sm font-medium text-perros-green group-hover:text-gray-800"></span> 
+					    					<span class="sr-only">Carrello</span> </a>
+					    			</div>
+						          <div class="">
+						            <button 
+						            @click="open = ! open"
+						            type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+						              <span class="sr-only">Close menu</span>
+						              <!-- Heroicon name: outline/x -->
+						              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+						                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+						              </svg>
+						            </button>
+						          </div>
+					    		</div>
+					    	<!-- come sopra end -->
+
+
+					      <div class="pt-5 pb-6 px-5">
+					        <div class="flex items-center justify-between">
+					          <div>
+					            <img class="h-8 w-auto" src="<?= $config->urls->templates ?>styles/images/PERROSLIFE_logo-2.svg" alt="Perros Life - Tecnica Cinofila al guinzaglio">
+					          </div>
+					        </div>
+					        <div class="mt-6">
+					          <nav class="grid gap-6">
+					          	<?php 
+					          	foreach ($shopMenu as $mobileMenu) {
+					          	echo '
+					            <a href="'.$mobileMenu->url.'" class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
+					              <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-perros-brown-50 text-white">
+					                <!-- Heroicon name: outline/chart-bar -->
+					                <img src="'.$mobileMenu->images->first->url.'">
+					              </div>
+					              <div class="ml-4 text-base font-medium text-gray-900">'.$mobileMenu->title.'</div>
+					            </a>';
+						         } ?>
+					          </nav>
+					        </div>
+					      </div>
+					      <div class="py-6 px-5">
+					        <div class="grid grid-cols-1 gap-4">
+					        	<?php foreach ($perrosMenu->children as $mobilePerros) {
+					        		echo "
+					        		<a href='$mobilePerros->url' class='text-base font-medium text-gray-900 hover:text-gray-700'>$mobilePerros->title</a>";
+					        	} ?>
+					        </div>
+					      </div>
+					    </div>
+					</div>
+					<!-- l'hamburger menu ################### -->
+					<div class="-mr-2 -my-2 sm:hidden">
+						<button 
+						@click="open = !open"
+						type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+							<span class="sr-only">Open menu</span>
+							<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+							</svg>
+						</button>
+					</div>
+				</div>
+				<!-- ####################### MENU MOBILE end -->
+
+
 			</div>
 
 			<!--
@@ -221,26 +387,12 @@
 					From: "opacity-100 scale-100"
 					To: "opacity-0 scale-95"
 			-->
-			<!--
-			####################### l'ho segato, e incollato in un altro file menu-mobile.php
-			 -->
-
-
-			 <!-- qui c'e' l'hamburge menu ################### 
-			<div class="-mr-2 -my-2 md:hidden">
-					<button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
-						<span class="sr-only">Open menu</span>
-						<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-						</svg>
-					</button>
-				</div>
 
 
 
 
 
-			 -->
+
 		</div>
 	</div>
 </div>

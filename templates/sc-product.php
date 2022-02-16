@@ -10,7 +10,7 @@
 		$tagliaOK = ($input->get->taglia) ? $sanitizer->name($input->get->taglia) : '';
 		$coloreOK = ($input->get->colore) ? $sanitizer->name($input->get->colore) : '';
 		$minuteriaOK = ($input->get->minuteria) ? $sanitizer->name($input->get->minuteria) : '';
-		$checkoutOK = ($input->get->minuteria);
+		// mi serve? $checkoutOK = ($input->get->minuteria);
 
 		// taglia selezionata
 		if ($tagliaOK) {
@@ -404,7 +404,7 @@
 
 
 									<!-- opzioni colore & minuteria -->
-									<?php if ($page->product_options->colours && !$checkoutOK) { ?>
+									<?php if ($page->product_options->colours && !$coloreOK) { ?>
 									<div class="fase2 border border-perros-green-700 rounded rounded-2xl border-2 relative pl-16 pr-4 mt-4">
 										<!-- cerchiolino 22 -->
 											<div class="absolute top-2 left-2">
@@ -472,7 +472,11 @@
 
 													<?php 
 													$nItem = $nColors + 1;
-													foreach ($pages->findOne("template=variabili, name=minuteria")->children("sort=-name") as $itm) { 
+													$minuSelector = "sort=-name";
+													if ($page->product_options->solo_bronzo) {
+														$minuSelector .= ", name!=acciaio";
+													}
+													foreach ($pages->findOne("template=variabili, name=minuteria")->children($minuSelector) as $itm) { 
 														//calcola prezzo minuteria
 														$prezzoMinu = ($itm->name == "tradizionale") ? "incluso" : '+ &euro; ' . (number_format($page->product_options->price_extra, 2, ',', ''));
 														?>
@@ -592,7 +596,7 @@
 													<!-- Colors (selezionato) -->
 													<?php $colordotSelected = $colorspage->children->findOne("name=$coloreOK") ?>
 														<div>
-															<fieldset id="colordots" class="mt-2" >
+															<fieldset id="colordots" class="my-2" >
 																<div class="flex items-center space-x-3">
 																	<div>
 																		<label 

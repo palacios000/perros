@@ -14,25 +14,28 @@
               <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
                 <div class="lg:py-24">
                   <?php if ($slider1->subtitle): ?>
-                  <span class="inline-flex items-center text-white bg-zinc-700 p-1 pr-2 text-sm px-2">
+                  <span class="inline-flex items-center text-white bg-perros-green p-1 pr-2 text-xs md:text-sm px-2 mt-4 md:mt-0">
                     <?php echo $slider1->subtitle ?> 
                   </span>
                   <?php endif ?>
-                  <p class="mt-4 tracking-tight font-bold text-black font-oswald sm:mt-5 lg:mt-6 text-5xl">
+                  <p class="mt-4 tracking-tight font-bold text-black font-oswald sm:mt-5 lg:mt-6  text-3xl md:text-4xl xl:text-5xl">
                     <?php echo $slider1->title ?>
                   </p>
-                  <div class="mt-3 text-3xl text-neutral-700 sm:mt-5 sm:text-xl font-oswald font-light">
+                  <!-- mobile only -->
+                  <img class="w-full block md:hidden my-4" src="<?= $slider1->images->last->url ?>" alt="<?= $slider1->images->last->description ?>">
+
+                  <div class="mt-3 text-neutral-700 sm:mt-5 sm:text-xl lg:text-2xl xl:text-3xl font-oswald font-light">
                     <?php echo $slider1->body ?>
                   </div>
                   <div class="mt-10 sm:mt-12">
                     
-                    <button type="submit" class="block w-1/2 py-3 px-4 rounded-md shadow bg-perros-brown text-white font-medium hover:bg-perros-green-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700 focus:ring-offset-gray-900"><?= $slider1->titleH1 ?></button>
+                    <button type="submit" class="block w-full md:w-1/2 py-3 px-4 rounded-md shadow bg-perros-brown text-white font-medium hover:bg-perros-green-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700 focus:ring-offset-gray-900"><?= $slider1->titleH1 ?></button>
                   </div>
                 </div>
               </div>
               <div class="mt-12 -mb-16 sm:-mb-48 lg:m-0 lg:relative h-720">
                 <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
-                  <img class="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none lg:object-cover" src="<?php echo  $slider1->images->first->url ?>" alt="">
+                  <img class="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none lg:object-cover hidden md:block" src="<?= $slider1->images->first->url ?>" alt="<?= $slider1->images->first->description ?>">
                 </div>
               </div>
             </div>
@@ -49,21 +52,23 @@
 <!-- categorie  -->
   <div class="container mx-auto">
     <div class="text-center">
-      <h1 class="font-bold text-black font-oswald sm:mt-5 lg:mt-6 text-5xl mx-56 mt-16"><?php echo $page->titleH1 ?></h1>
-      <p class="text-3xl text-perros-green sm:mt-5 sm:text-xl font-oswald font-light mx-56 my-9"><?php echo $page->subtitleH1 ?></p>
+      <h1 class="font-bold text-black font-oswald sm:mt-5 lg:mt-6 text-3xl md:text-4xl xl:text-5xl mx-8 lg:mx-56 mt-16"><?php echo $page->titleH1 ?></h1>
+      <p class="text-2xl md:text-3xl text-perros-green sm:mt-5 font-oswald font-light mx-8 lg:mx-56 my-9"><?php echo $page->subtitleH1 ?></p>
     </div>
     <div class="bg-ossi-pattern">
-      <div class="p-16 flex flex-row">
+      <div class="p-4 md:p-16 grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-0">
         <?php 
         foreach ($page->children("template=sc-shop") as $cat) {
           echo "
-          <div class='w-1/3'>
-            <div class='rounded-full bg-white w-32 h-32 mx-auto'>
-              <a href='$cat->url'>
-              <img src='{$cat->images->last->url}'' class='w-32 h-32' alt='$cat->title'>
-              </a>
+          <div class=''>
+            <a class='group' href='$cat->url'>
+            <div class='rounded-full bg-white w-full md:w-32 h-32 mx-auto '>
+              
+              <img src='{$cat->images->last->url}' class='w-32 h-32 mx-auto group-hover:invert' alt='$cat->title'>
+              
             </div>
-            <a href='$cat->url' class='bg-perros-brown font-oswald text-3ll text-white uppercase w-full py-2 block text-center'>$cat->title</a>
+            <span class='bg-perros-brown group-hover:bg-perros-green font-oswald text-xxl md:text-3ll text-white uppercase w-full py-2 block text-center'>$cat->title</span>
+            </a>
           </div>
           ";
         } ?>
@@ -96,7 +101,7 @@
 
     $tile .= '
     <div class="'. $box->codice .'">
-      <div class="container mx-auto px-4 grid justyfy-between grid-cols-2 gap-y-16 pt-24 pb-36">';
+      <div class="container mx-auto px-4 grid justyfy-between grid-cols-1 md:grid-cols-2 gap-y-16 pt-24 pb-36">';
 
         //<!-- testo -->
         $colonnaTesto = '
@@ -106,14 +111,14 @@
           <p class="font-oswald text-2xl leading-tight '.$colorP.'">'. $box->subtitleH1 .'</p>
 
           <!-- body -->
-          <div class="mt-20  '.$colorP.'">
+          <div class="mt-10 mx-4'.$colorP.'">
             '. $box->body .'
           </div>
         </div>';
 
         // <!-- immagine -->
         $colonnaImmagine = '
-        <div>
+        <div class="hidden md:block">
           <div class="h-full flex '.$colOsso.'">
             <div class="h-full w-96 bg-white bg-ossi-pattern rounded-full mt-8 relative">
               <!-- 1st image circle-->
@@ -124,7 +129,7 @@
               <!-- testo -->
               <div class="colonnina text-center mx-4">
                 <h3 class="mt-16 mb-12 text-4xl font-oswald ">'. $box->homebox_aside->title .'</h3>
-                <p class="">'. $box->homebox_aside->title_extra .'</p>
+                '. $box->homebox_aside->title_extra .'
                 '.  $box->homebox_aside->body .'
               </div>
 
@@ -172,7 +177,7 @@
       <img src='{$page->images->eq(4)->size(422,307)->url}' alt='{$page->images->eq(4)->description}'>
       <div class='relative'>
         <img src='{$page->images->eq(5)->size(422,307)->url}' alt='{$page->images->eq(5)->description}'>
-        <img class='absolute top-0 left-0' src='{$config->urls->templates}styles/images/linguetta-perros.png' alt='etichetta Perros Life'>
+        <img class='absolute top-0 left-0 hidden md:block' src='{$config->urls->templates}styles/images/linguetta-perros.png' alt='etichetta Perros Life'>
       </div>
     </div>    
     ";

@@ -10,23 +10,23 @@
 		</div>
 	  <div class="relative container mx-auto py-6 px-4 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:py-12 text-white">
 	    <div>
-	      <h1 class="font-bold font-oswald text-6xl"><?= $page->titleH1 ?></h1>
-		      <p class="mt-6 text-2ll  font-oswald font-light leading-tight"><?php echo $page->subtitleH1 ?></p>
+	      <h1 class="font-bold font-oswald text-4xl md:text-5xl xl:text-6xl"><?= $page->titleH1 ?></h1>
+		      <p class="mt-6 text-xl md:text-xxl xl:text-2ll  font-oswald font-light leading-tight"><?php echo $page->subtitleH1 ?></p>
 	    </div>
 	    <div>
-	      <dl class="space-y-5 sm:space-y-0 sm:grid sm:grid-cols-1 sm:grid-rows-3 sm:grid-flow-col sm:gap-x-6 sm:gap-y-4 lg:gap-x-8">
+	      <dl class="space-y-5 sm:space-y-0 sm:grid sm:grid-cols-1 sm:grid-rows-3 sm:grid-flow-col sm:gap-x-6 sm:gap-y-4 lg:gap-x-8 mt-8 lg:mt-0">
 	  			<?php 
 	  			$circle = 1;
 	  			foreach ($page->description_list as $list){ ?>
-	        <div class="relative ">
+	        <div class="relative hidden md:block">
 	          <dt>
 	            <!-- Heroicon name: outline/check -->
 	            <span class="absolute top-1 flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 rounded-full">
-								<span class="text-xl"><?php echo $circle ?></span>
-							</span>
+					<span class="text-xl"><?php echo $circle ?></span>
+				</span>
 	            <!-- <p class="ml-9 text-lg leading-6 font-medium font-oswald"><?php echo $list->title ?></p> -->
 	          </dt>
-	          <dd class="ml-14 font-oswald font-light leading-tight">
+	          <dd class="ml-14 font-oswald font-light leading-tight text-base xl:text-lg">
 	          	<?php echo $list->infotext ?>
 	          </dd>
 	        </div>
@@ -68,7 +68,7 @@
 						</a>
 					</div>
 					<div class="w-full mx-5">
-						<h3 class="font-oswald font-bold text-4xl"><?php echo "<a class='' href='$item->url'>$item->title</a>" ?></h3>
+						<h3 class="font-oswald font-bold text-2xl md:text-3xl xl:text-4xl"><?php echo "<a class='' href='$item->url'>$item->title</a>" ?></h3>
 						<p class="mt-2 mb-6 text-perros-green text-xl font-oswald leading-tight"><?php echo $item->subtitleH1 ?></p>
 						  <div>
 						  	<!-- lista -->

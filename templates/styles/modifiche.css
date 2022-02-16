@@ -13,10 +13,13 @@
 
 @layer components {
 	.bottone-green{
-		@apply font-oswald font-bold bg-perros-green border border-transparent rounded-md py-3 px-5 flex items-center justify-center text-base font-medium text-white hover:bg-perros-green-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-perros-green-500 sm:w-full;
+		@apply font-oswald font-bold bg-perros-green border border-transparent rounded-md py-3 px-5 flex items-center justify-center text-base font-medium text-white hover:bg-perros-green-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-perros-green-500;
 	}
 	.bottone-white{
 		@apply font-oswald font-bold bg-white border border-perros-green rounded-md py-3 px-5 flex items-center justify-center text-base font-medium text-perros-green  sm:w-full;
+	}
+	.bottone-green-neg{
+		@apply font-oswald bg-white border border-2 border-perros-green py-2 px-4 text-base font-medium text-perros-green uppercase hover:bg-perros-green hover:text-white;
 	}
 }
 
@@ -55,7 +58,16 @@
 	    @apply text-5xl font-oswald mb-8;
 	  }
 	  a{
-	  	@apply mt-7 block;
+	  	@apply mt-7 block w-fit;
+	  	&.bottone-green-neg.bottone-green-neg_bggray{
+	  		background-color: rgb(229 229 229);
+	  		&:hover{
+		  		background-color: rgb(78, 162, 138);
+	  		}
+	  	}
+	  	&.bottone-green-neg.bottone-green-neg_bggreen{
+	  		background-color: rgb(78, 162, 138);
+	  	}
 	  }
 	  hr{
 	  	@apply mt-12 border-dotted border-t-8 border-neutral-300;

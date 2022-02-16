@@ -140,7 +140,7 @@
 				<h3 class='font-oswald text-3ll pb-2'>$tipo->title</h3>
 				<p class='font-oswald font-light text-perros-green text-2xl leading-tight pb-4'>$tipo->subtitle</p>
 				$tipo->body
-				<a class='bottone-green w-28' href='$tipoUrl'>$tipo->titleH1</a>";
+				<a class='bottone-green-neg w-28' href='$tipoUrl'>$tipo->titleH1</a>";
 				?>
 			</div>
 		</div>
