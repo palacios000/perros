@@ -170,7 +170,7 @@
 									<div class="fase1 border border-perros-green-700 rounded rounded-2xl border-2 relative pl-16 pr-4">
 										<!-- cerchiolino 1 -->
 											<div class="absolute top-2 left-2">
-											<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600"><span>1</span></span>
+											<span class="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 rounded-full font-oswald font-light text-neutral-600"><span>1</span></span>
 											</div>
 
 										<div x-data="{ open: false }">

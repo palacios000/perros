@@ -29,7 +29,7 @@
                   </div>
                   <div class="mt-10 sm:mt-12">
                     
-                    <button type="submit" class="block w-full md:w-1/2 py-3 px-4 rounded-md shadow bg-perros-brown text-white font-medium hover:bg-perros-green-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700 focus:ring-offset-gray-900"><?= $slider1->titleH1 ?></button>
+                    <a href="<?= $pages->get($slider1->codice)->url ?>" class="block w-full md:w-1/2 py-3 px-4 rounded-md shadow bg-perros-brown text-white font-medium text-center border-transparent hover:bg-perros-green-400 hover:bg-perros-green-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-perros-green-500"><?= $slider1->titleH1 ?></a>
                   </div>
                 </div>
               </div>
@@ -189,7 +189,7 @@
   <div id="prefooter" class="bg-white">
     <div class="container mx-auto grid grid-cols-2 gap-x-24 pt-32 pb-28">
       <div class="text-center px-12">
-        <h5 class="font-oswald text-perros-brown text-5xl mb-9">Che titolo?</h5>
+        <h5 class="font-oswald text-perros-brown text-5xl mb-9">Recensioni</h5>
         <p>Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Quibusdam velit recusandae sed reiciendis voluptatum incidunt earum</p>
       </div>
       <div class="text-center border-dotted border-l-8 border-neutral-300">
@@ -248,9 +248,9 @@
           prevEl: ".swiper-button-prev",
         },
         loop: true,
-        // autoplay: {
-        //   delay: 5000,
-        // },
+        autoplay: {
+          delay: 6000,
+        },
       });
     </script>
 

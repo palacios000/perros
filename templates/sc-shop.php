@@ -59,16 +59,17 @@
 			<div class="w-auto">
 				<!-- prodotto start -->
 				<?php foreach ($page->children as $item): ?>
-				<div class="flex flex-row my-12">
+				<div class="flex flex-row my-12 group rounded hover:shadow-lg">
 					<div class="w-1/3">
 						<!-- img + colori -->
-						<a class="hover:opacity-95" href="<?php echo $item->url ?>">
-						<?php if (count($item->snipcart_item_image)) echo "<img src='{$item->snipcart_item_image->first->url}' alt='$item->title'>";
+						<a href="<?php echo $item->url ?>">
+						<?php if (count($item->snipcart_item_image)) echo "<img class='brightness-95' src='{$item->snipcart_item_image->first->url}' alt='$item->title'>";
 						echo $dots ?>
 						</a>
 					</div>
 					<div class="w-full mx-5">
-						<h3 class="font-oswald font-bold text-2xl md:text-3xl xl:text-4xl"><?php echo "<a class='' href='$item->url'>$item->title</a>" ?></h3>
+						<a class="" href="<?php echo $item->url ?>">
+						<h3 class="font-oswald font-bold text-2xl md:text-3xl xl:text-4xl"><?php echo "$item->title" ?></h3>
 						<p class="mt-2 mb-6 text-perros-green text-xl font-oswald leading-tight"><?php echo $item->subtitleH1 ?></p>
 						  <div>
 						  	<!-- lista -->
@@ -86,13 +87,14 @@
 									<?php endforeach ?>
 						    </dl>
 						    <!-- prezzo -->
-						    <div class="w-full flex flex-row-reverse">
-						    	<div class="w-28 flex flex-col text-center font-oswald">
+						    <div class="w-full mt-12 mb-4">
+						    	<div class="flex flex-row justify-between text-center font-oswald">
 						    		<div class="prezzo text-2ll text-perros-brown">da &euro; <?= (number_format($item->product_options->price_min, 2, ',', '')) ?></div>
 						    		<a href="<?php echo $item->url ?>" class="button block max-w-xs bottone-green uppercase">Visualizza</a>
 						    	</div>
 						    </div>
 						  </div>
+						</a>
 					</div>
 				</div>
 				<hr class="dottedLineBig">
@@ -113,7 +115,7 @@
 						$sibC = 1;
 						foreach ($page->siblings("template=sc-shop, id!=$page->id") as $sibling) {
 							$dottedLine = ($sibC != 1) ? 'dottedLineSmall' : '';
-							echo "<li class='py-2 $dottedLine'><a href='$sibling->url'>$sibling->title</a></li>";
+							echo "<li class='py-2 $dottedLine'><a class='hover:underline' href='$sibling->url'>$sibling->title</a></li>";
 							$sibC++;
 						} ?>
 						
@@ -134,7 +136,7 @@
 				        <h3 class="mt-36 mb-6 text-4xl font-oswald "><?php echo $qualitapage->title ?></h3>
 				        <ul>
 				        	<?php foreach ($qualitapage->children->find("title%^=tutto") as $tutto){
-				        		echo "<li><a class='uppercase font-oswald font-light text-xl' href='$tutto->url'>&gt; $tutto->title</a></li>";	
+				        		echo "<li><a class='uppercase font-oswald font-light text-xl hover:underline' href='$tutto->url'>&gt; $tutto->title</a></li>";	
 				        	} ?>
 				        </ul>
 				      </div>

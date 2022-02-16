@@ -20,6 +20,34 @@
 		letter-spacing: 0.3px	;
 	}
 
-	#snipcart{
-		--bgColor-buttonPrimary: rgb(100 181 158);
+	.snipcart__box--badge{
+		border: 1px solid;
 	}
+
+	#snipcart{
+		--bgColor-buttonPrimary: #4EA28A;
+		/*--color-buttonPrimary-hover: ;*/
+		/*--borderColor-buttonPrimary-hover*/
+		--bgColor-buttonPrimary-hover: #64B59E;
+		--shadow-buttonPrimary-hover:  none;
+		/* Active */
+		/*--color-buttonPrimary-active*/
+		/*--borderColor-buttonPrimary-active*/
+		--bgColor-buttonPrimary-active: #64B59E;
+		--shadow-buttonPrimary-active: 0px 0px 4px 2px #4EA28A;
+		/* BADGES */
+		/* Default (completed) */
+		--color-badge:  white;
+		--borderColor-badge: #64B59E;
+		--bgColor-badge:  #64B59E;
+
+		/* Active */
+		--color-badge-active: #525252;
+		--borderColor-badge-active: #D4D4D4 ;
+		--bgColor-badge-active:  white;
+
+		/* Disabled */
+/*		--color-badge-disabled
+		--borderColor-badge-disabled
+		--bgColor-badge-disabled
+*/	}
