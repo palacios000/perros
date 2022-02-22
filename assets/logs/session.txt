@@ -54,3 +54,8 @@
 2022-02-09 17:55:08	giulio	http://localhost/perros2/public/edit/login/	Successful login for 'giulio'
 2022-02-16 08:20:14	giulio	http://localhost/perros2/public/edit/login/	Successful login for 'giulio'
 2022-02-16 09:24:34	giulio	http://localhost/perros2/public/edit/login/	Successful login for 'giulio'
+2022-02-21 11:39:54	guest	http://localhost/perros2/public/edit/login/	Error: Failed login for 'admin' - Unknown user
+2022-02-21 11:40:00	guest	http://localhost/perros2/public/edit/login/	Error: Failed login for 'giulio' - Invalid password
+2022-02-21 11:40:04	giulio	http://localhost/perros2/public/edit/login/	Successful login for 'giulio'
+2022-02-21 14:59:25	giulio	http://localhost/perros2/public/edit/login/	Successful login for 'giulio'
+2022-02-21 16:22:15	giulio	http://localhost/perros2/public/edit/login/	Successful login for 'giulio'

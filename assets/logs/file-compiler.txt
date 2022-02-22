@@ -2071,3 +2071,47 @@
 2022-02-16 17:54:46	guest	http://localhost/perros2/public/	Compiled file: /site/templates/home.php
 2022-02-16 17:54:46	guest	http://localhost/perros2/public/	Compiled file: /site/templates/home.php
 2022-02-16 17:55:08	guest	http://localhost/perros2/public/	Compiled file: /site/templates/home.php
+2022-02-21 11:37:29	guest	http://localhost/perros2/public/	Maintenance/Copy new version of source file to target file: /site/templates/sc-product.php => /site/assets/cache/FileCompiler/site/templates/sc-product.php
+2022-02-21 11:37:29	guest	http://localhost/perros2/public/	Maintenance/Copy new version of source file to target file: /site/templates/home.php => /site/assets/cache/FileCompiler/site/templates/home.php
+2022-02-21 11:37:29	guest	http://localhost/perros2/public/	Maintenance/Copy new version of source file to target file: /site/templates/sc-shop.php => /site/assets/cache/FileCompiler/site/templates/sc-shop.php
+2022-02-21 11:37:29	guest	http://localhost/perros2/public/	Maintenance/Copy new version of source file to target file: /site/templates/basic-page.php => /site/assets/cache/FileCompiler/site/templates/basic-page.php
+2022-02-21 11:37:50	guest	http://localhost/perros2/public/pettorine/	Compiled file: /site/templates/sc-shop.php
+2022-02-21 11:38:46	guest	http://localhost/perros2/public/	Compiled file: /site/templates/home.php
+2022-02-21 11:40:58	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 11:41:20	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 11:41:20	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/swell-php/lib/Swell.php
+2022-02-21 11:42:49	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 11:43:30	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 11:48:43	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 11:51:12	giulio	http://localhost/perros2/public/pettorine/guinzaglio-test/	Compiled file: /site/templates/sc-product.php
+2022-02-21 12:17:00	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 12:17:33	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 12:18:32	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 14:59:14	guest	http://localhost/perros2/public/	Compiled file: /site/ready.php
+2022-02-21 15:07:26	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 15:24:04	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 15:33:48	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 15:34:48	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 15:37:05	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 15:43:52	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 16:14:06	guest	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 16:17:06	guest	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 16:17:50	guest	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 16:21:21	guest	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 16:21:46	guest	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 16:28:04	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 16:29:49	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 16:31:36	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 16:32:03	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 16:32:55	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 16:33:08	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 16:34:10	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 16:35:25	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 16:35:46	giulio	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 16:43:50	guest	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 16:44:02	guest	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 16:44:25	guest	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 16:45:03	guest	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 16:47:01	guest	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 16:47:32	guest	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-21 16:47:52	guest	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php

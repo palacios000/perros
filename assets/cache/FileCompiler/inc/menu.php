@@ -1,6 +1,4 @@
 
-<div hidden id="snipcart" data-api-key="ZGMzZTk0YmItMmU2OC00OGRjLTg3OTItYWY5ODBhZjRkNDM4NjM3Nzc0MDE2OTE4MzA0NzA2" data-config-modal-style="side"></div>
-
 <div id="navigation" class="w-full bg-white shadow-md">
 	<div class="container mx-auto px-4">
 		<div class="relative bg-white">

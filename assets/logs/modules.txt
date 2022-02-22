@@ -83,3 +83,11 @@
 2022-02-09 12:47:28	giulio	http://localhost/perros2/public/edit/module/	Installed module 'InputfieldFunctional'
 2022-02-09 12:47:28	giulio	http://localhost/perros2/public/edit/module/	Installed module 'FieldtypeFunctional'
 2022-02-09 12:47:28	giulio	http://localhost/perros2/public/edit/module/	Saved module info caches
+2022-02-21 16:26:03	giulio	http://localhost/perros2/public/edit/module/edit?name=SnipWire&collapse_info=1	Uninstalled module 'ProcessSnipWire'
+2022-02-21 16:26:03	giulio	http://localhost/perros2/public/edit/module/edit?name=SnipWire&collapse_info=1	Saved module info caches
+2022-02-21 16:26:03	giulio	http://localhost/perros2/public/edit/module/edit?name=SnipWire&collapse_info=1	Uninstalled module 'MarkupSnipWire'
+2022-02-21 16:26:03	giulio	http://localhost/perros2/public/edit/module/edit?name=SnipWire&collapse_info=1	Saved module info caches
+2022-02-21 16:26:03	giulio	http://localhost/perros2/public/edit/module/edit?name=SnipWire&collapse_info=1	Uninstalled module 'FieldtypeSnipWireTaxSelector'
+2022-02-21 16:26:03	giulio	http://localhost/perros2/public/edit/module/edit?name=SnipWire&collapse_info=1	Saved module info caches
+2022-02-21 16:26:03	giulio	http://localhost/perros2/public/edit/module/edit?name=SnipWire&collapse_info=1	Uninstalled module 'SnipWire'
+2022-02-21 16:26:03	giulio	http://localhost/perros2/public/edit/module/edit?name=SnipWire&collapse_info=1	Saved module info caches

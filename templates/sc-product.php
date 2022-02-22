@@ -1,4 +1,5 @@
 <?php include 'inc/head.php'; ?>
+</head>
 <body>
 	
 <?php include 'inc/menu.php'; ?>

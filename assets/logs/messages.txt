@@ -28,3 +28,4 @@
 2022-02-03 15:56:28	giulio	http://localhost/perros2/public/edit/setup/template/removeFields	Deleted field "codice" data in 0 row(s) from 0 page(s) using template "traduzioni". [page-by-page]
 2022-02-03 15:57:28	giulio	http://localhost/perros2/public/edit/module/	Populated initial created/modified dates for 'language_files_site'
 2022-02-03 15:57:28	giulio	http://localhost/perros2/public/edit/module/	Populated initial created/modified dates for 'language_files'
+2022-02-21 16:26:03	giulio	http://localhost/perros2/public/edit/module/edit?name=SnipWire&collapse_info=1	Deleted field "snipcart_cart_custom_fields" data in 0 row(s) from 0 page(s) using template "snipcart-cart". [page-by-page]
