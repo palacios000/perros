@@ -92,7 +92,8 @@
 
 							<div class="flex space-x-6">
 								<div class="flex">
-									<a href="#" class="snipcart-customer-signin -m-2 p-2 text-gray-400 hover:text-gray-500"> <span class="sr-only">Account</span>
+									<!-- icona account -->
+									<a href="#" class=" -m-2 p-2 text-gray-400 hover:text-gray-500"> <span class="sr-only">Account</span>
 										<svg class="h-5 w-5" x-description="Heroicon name: outline/user" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 33 33" stroke="currentColor" aria-hidden="true">
 											<path d="m23.17 22.83-3.63-1.33a5.4 5.4 0 0 1 -6.47 0l-3.64 1.33a6.5 6.5 0 0 0 -4.26 6.11v.66a.23.23 0 0 0 .23.23h21.81a.23.23 0 0 0 .23-.23v-.66a6.5 6.5 0 0 0 -4.27-6.11zm-13.47-12.4a7.08 7.08 0 0 0 3.37-2.83.09.09 0 0 1 .13 0 18.48 18.48 0 0 0 9.71 2.37m-3.34 11.53v-2.33a1.55 1.55 0 0 1 .5-1.17 9.75 9.75 0 0 0 2.88-7.21c0-4.83-3-6.86-6.62-6.86s-6.63 2.07-6.63 6.88a9.75 9.75 0 0 0 2.87 7.19 1.55 1.55 0 0 1 .49 1.15v2.35" fill="none" stroke="#8e7d6d" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.34"></path>
 										</svg>
@@ -101,7 +102,8 @@
 							</div> 
 							<span class="mx-4 h-6 w-px bg-gray-200 lg:mx-6" aria-hidden="true"></span>
 							<div class="flow-root">
-								<a href="#" class="snipcart-checkout group -m-2 p-2 flex items-center">
+								<!-- icona carrello -->
+								<a href="#" class=" group -m-2 p-2 flex items-center">
 									<svg class="flex-shrink-0 h-5 w-5 text-gray-400 group-hover:text-gray-500" x-description="Heroicon name: outline/shopping-cart" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 33 33" stroke="currentColor" aria-hidden="true">
 										<path d="M8.41,14.28H29.72m-18-6.06,2.15,12.12m3.09-12,.51,12.12M22.11,8.32,21.06,20.44M26.91,8.32,24.58,20.44m3.78,8.26a2.16,2.16,0,1,1-2.16-2.16A2.16,2.16,0,0,1,28.36,28.7ZM15,28.7a2.16,2.16,0,1,1-2.16-2.16A2.16,2.16,0,0,1,15,28.7Zm-4.73-8.26H27.15a.84.84,0,0,0,.79-.56L31.77,9.19a.63.63,0,0,0-.58-.84L6.78,8.12m21.65,16.3H12.09A1.13,1.13,0,0,1,11,23.6L6,5.7a1.11,1.11,0,0,0-.86-.8l-4.1-.8"></path>
 									</svg> 
