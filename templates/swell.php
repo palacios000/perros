@@ -54,11 +54,11 @@ $products = $swell->get('/products', [
 
       window.Alpine = Alpine;
       
-      Alpine.alpineStore({
-      	return{
-	      	alpTotal: totale,
-      	)}
-      };
+      function alpineStore(){
+        return{
+          alpTotal: totale,
+        }
+      }
        
       Alpine.start()
       //

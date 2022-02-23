@@ -6,7 +6,11 @@
 	$tagliaOK = ($input->get->taglia) ? $sanitizer->name($input->get->taglia) : '';
 	$coloreOK = ($input->get->colore) ? $sanitizer->name($input->get->colore) : '';
 	$minuteriaOK = ($input->get->minuteria) ? $sanitizer->name($input->get->minuteria) : '';
-	// mi serve? $checkoutOK = ($input->get->minuteria);
+	if ($minuteriaOK) {
+		$sceltaMinuteria = ($minuteriaOK == "tradizionale") ? '' : $minuteriaOK;
+	}else{
+		$sceltaMinuteria = '';
+	}
 
 	// taglia selezionata
 	if ($tagliaOK) {
@@ -37,10 +41,8 @@
 	if ($tagliaOK) {
 		//prezzo giusto
 		$prezzo = $itemOK->product_variations->price;
-		if ($minuteriaOK) {
-			if ($minuteriaOK != "tradizionale") {
-				$prezzo = $prezzo + $page->product_options->price_extra;
-			}
+		if ($minuteriaOK && $sceltaMinuteria) {
+			$prezzo = $prezzo + $page->product_options->price_extra;
 		}
 		$totale = $prezzo;
 		$prezzo = '&euro;'. (number_format($prezzo, 2, ',', ''));
@@ -68,15 +70,16 @@
     });
 
     window.addToSwellCart = function addToSwellCart() {
-    	// swell.cart.addItem({
-    	//   product_id: '<?= $page->codice ?>',
-    	//   quantity: 1,
-    	//   options: {
-    	//     Taglia: '<?= $tagliaOK ?>',
-    	//     Colore: '<?= $coloreOK ?>'
-    	//   }
-    	// });
-    	console.log('ciao');
+    	swell.cart.addItem({
+    	  product_id: '<?= $page->codice ?>',
+    	  quantity: 1,
+    	  options: {
+    	    Taglia: '<?= $tagliaOK ?>',
+    	    Colore: '<?= $coloreOK ?>',
+    	    Minuteria: '<?= $sceltaMinuteria ?>'
+    	  }
+    	});
+    	// console.log('ciao');
     }
 
     // swell.products
