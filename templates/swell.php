@@ -10,7 +10,7 @@ $products = $swell->get('/products', [
 	'id' => "$pettorina->codice",
 ]);
 
-// print_r($products);
+
 ?>
 
 <?php include 'inc/head.php'; ?>
@@ -31,10 +31,6 @@ $products = $swell->get('/products', [
       	swell.cart.addItem({
       	  product_id: '<?= $pettorina->codice ?>',
       	  quantity: 1,
-      	  // options: {
-      	  //   Taglia: 'EP25-m',
-      	  //   Colore: 'rosso'
-      	  // }
       	});
       };
 
@@ -45,12 +41,6 @@ $products = $swell->get('/products', [
       console.log(myCart.item_quantity);
       console.log(totale);
       console.log(myCart.id);
-
-      // await swell.cart.get()
-      //   .then((response) => {
-      //     const el = document.getElementById('products');
-      //     el.innerHTML = JSON.stringify(response.results, null, '  ');
-      //   });
 
       window.Alpine = Alpine;
       
@@ -71,21 +61,15 @@ $products = $swell->get('/products', [
   </head>
   <body>
     		
-    		<button onclick="addToSwellCart()">add <?= $pettorina->title ?></button>
+    	<button onclick="addToSwellCart()">add <?= $pettorina->title ?></button>
 
     	<!-- copy from nuxt -->
-
         <div x-data="alpineStore()" >
           <template x-if="myCart">
-            
-            <!-- <span x-text="myCart.items[0].id"></span> -->
-            <!-- <div x-data="{items:myCart.items}"> -->
-                
               <template x-for="item in myCart.items">
                 <span x-text="item.quantity"></span>
                 </template>
               </template>
-            <!-- </div> -->
         </div>
 
     	<!-- copy end -->
