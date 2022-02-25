@@ -1,7 +1,7 @@
-<?php include 'inc/head.php'; ?>
+<?php include(\ProcessWire\wire('files')->compile('inc/head.php',array('includes'=>true,'namespace'=>true,'modules'=>true,'skipIfNamespace'=>true))); ?>
 <body>
 	
-<?php include 'inc/menu.php'; ?>
+<?php include(\ProcessWire\wire('files')->compile('inc/menu.php',array('includes'=>true,'namespace'=>true,'modules'=>true,'skipIfNamespace'=>true))); ?>
 
 <!-- intro banner -->
 	<div class="h-81 relative">
@@ -208,7 +208,7 @@
 		</div>
 	</section>
 
-<?php include 'inc/footer.php' ?>
+<?php include(\ProcessWire\wire('files')->compile('inc/footer.php',array('includes'=>true,'namespace'=>true,'modules'=>true,'skipIfNamespace'=>true)))?>
 
 </body>
 </html>

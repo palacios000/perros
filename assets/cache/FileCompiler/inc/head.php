@@ -16,7 +16,7 @@
 
 	
 		<!-- Alpine + Swell -->
-		<script type="module">
+		<script type="module" src="<?= $config->urls->templates ?>/scripts/swell-alpine.js">
 		    import swell from 'https://cdn.skypack.dev/swell-js';
 		    import Alpine from 'https://cdn.skypack.dev/alpinejs';
 		     
@@ -30,7 +30,7 @@
 
 		    window.addToSwellCart = function addToSwellCart() {
 		    	swell.cart.addItem({
-		    	  product_id: '<?= $page->codice ?>',
+		    	  product_id: '<?= $swellProductId ?>',
 		    	  quantity: 1,
 		    	  options: {
 		    	    Taglia: '<?= $tagliaOK ?>',

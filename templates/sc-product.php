@@ -1,8 +1,6 @@
-<?php include 'inc/head.php'; ?>
-
 <?php
-
 // Get values
+	$swellProductId = $page->codice;
 	$tagliaOK = ($input->get->taglia) ? $sanitizer->name($input->get->taglia) : '';
 	$coloreOK = ($input->get->colore) ? $sanitizer->name($input->get->colore) : '';
 	$minuteriaOK = ($input->get->minuteria) ? $sanitizer->name($input->get->minuteria) : '';
@@ -56,7 +54,9 @@
 		$priceMax = max($minmaxPrice);
 		$prezzo = '&euro;'. number_format($priceMin, 2, ',', ''). ' - &euro;'. number_format($priceMax, 2, ',', '');
 	}
-	?>
+?>
+
+<?php include 'inc/head.php'; ?>
 
 
 
@@ -65,7 +65,7 @@
 	
 <?php include 'inc/menu.php'; ?>
 
-<div id="content" class="relative" x-data="{ added2cart: false }">
+<div id="content" class="relative" x-data="{ cartReady: false }">
 <!-- ### PRODUCT DETAILS inizio  -->
 	<main class="max-w-7xl mx-auto sm:pt-16 sm:px-6 lg:px-8 z-10" x-data="{imageUrl: '<?php echo $image->url ?>'}">
 		<div class="max-w-2xl mx-auto lg:max-w-none">
@@ -643,11 +643,11 @@
 										<!-- cerchiolino 333 -->
 											<!-- un-clicked -->
 											<div class="absolute top-2 left-2">
-												<span x-show="!added2cart" class="flex-shrink-0 w-5 h-5 sm:w-10 sm:h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600">
+												<span x-show="!cartReady" class="flex-shrink-0 w-5 h-5 sm:w-10 sm:h-10 flex items-center justify-center border-2  rounded-full font-oswald font-light text-neutral-600">
 													<span>3</span>
 												</span>
 											<!-- clicked -->
-												<span x-show="added2cart" class="flex-shrink-0 w-5 h-5 sm:w-10 sm:h-10 flex items-center justify-center bg-perros-green rounded-full">
+												<span x-show="cartReady" class="flex-shrink-0 w-5 h-5 sm:w-10 sm:h-10 flex items-center justify-center bg-perros-green rounded-full">
 													<svg class="w-6 h-6 text-white " x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
 												  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
 												</svg>
@@ -657,7 +657,7 @@
 											<!-- Swell BUTTON ==================================================== -->
 												<button
 												onclick="addToSwellCart()"
-												@click="added2cart = !added2cart"
+												@click="cartReady = !cartReady"
 												 type="button" class="bottone-green ring-2 ring-offset-2 ring-offset-gray-50 ring-perros-green-500 snipcart-add-item w-full sm:w-fit my-8 mx-auto" >
 													<!-- icona carrella -->
 													<svg class="flex-shrink-0 h-5 w-5 text-white group-hover:text-gray-500" x-description="Heroicon name: outline/shopping-cart" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 33 33" stroke="currentColor" aria-hidden="true">
@@ -699,178 +699,9 @@
 	<!-- ### PRODUCT DETAILS fine -->
 
 
-	<!-- copy from nuxt -->
-	<div  >
-	  <!-- <div x-data="alpineStore()" > -->
-	  <div x-data="alpineStore()" x-show="added2cart" >
-	    <div class="fixed inset-0 z-50">
-	      <!-- Overlay -->
-	      <div
-	        class="overlay absolute hidden h-full w-full bg-neutral-500 opacity-90 md:block"
-	        
-	      >
-
-	      <!-- Panel -->
-	      <div class="panel absolute right-0 h-full w-full max-w-md">
-	      	<button @click="added2cart = !added2cart">chiudi</button>
-	        <div class="h-full w-full overflow-y-scroll bg-white">
-	          <!-- Header -->
-	          <div class="container relative border-b border-primary-med py-5">
-	            <div class="flex items-center justify-between">
-	              <h3 >
-	                Carrello
-	                <template x-if="myCart">
-	                	<span x-text="myCart.item_quantity"></span>
-	                </template
-	                >
-	              </h3>
-	              <button @click.prevent="closeCart">
-	                <BaseIcon icon="uil:multiply" size="lg" />
-	              </button>
-	            </div>
-
-	            <div
-	              v-if="$te('cart.infoText')"
-	              class="mt-4 text-sm"
-	              v-html="$t('cart.infoText')"
-	            >
-	          </div>
-
-	          <!-- Items -->
-	          <template x-if="myCart">
-	              <template x-for="item in myCart.items">
-	                <span x-text="item.product.name"></span>
-	              </template>
-	          </template>
-
-	          <!-- <div v-if="cart && cart.items && cart.items.length">
-	            <CartItem
-	              v-for="(item, index) in cart.items"
-	              :key="`cartItem_${item.id}`"
-	              :item="item"
-	              :index="index"
-	            />
-	          </div>
-	          <div v-else class="container py-10">
-	            <span class="mb-4 block">{{ $t('cart.empty') }}</span>
-	            <BaseButton
-	              :link="shopLink"
-	              :label="$t('cart.backToProducts')"
-	              fit="static"
-	            />
-	          </div> -->
-
-	          <!-- Footer -->
-	          <div
-	            v-if="cart && cart.items && cart.items.length"
-	            class="border-t border-primary-med bg-primary-lighter"
-	          >
-
-	            <!-- Summary -->
-	            <div class="container border-b border-primary-med py-6">
-	              <div class="mb-1 flex justify-between">
-	                <span>Totale</span>
-	                <span x-text="myCart.currency + ' ' +  myCart.sub_total"></span>
-	              </div>
-	              <div class="mb-1 flex justify-between">
-	                <span>{{ $t('cart.shipping') }}</span>
-	                <span>{{ formatMoney(cart.shipmentTotal, currency) }}</span>
-	              </div>
-	              <div
-	                v-show="cart.discountTotal"
-	                class="mb-1 flex justify-between"
-	              >
-	                <span>{{ $t('cart.discounts') }}</span>
-	                <span>–{{ formatMoney(cart.discountTotal, currency) }}</span>
-	              </div>
-	              <div v-show="cart.taxTotal" class="mb-1 flex justify-between">
-	                <span>{{ $t('cart.taxes') }}</span>
-	                <span>{{ formatMoney(cart.taxTotal, currency) }}</span>
-	              </div>
-	              <h3 class="mt-3 flex justify-between text-xl font-semibold">
-	                <span>{{ $t('cart.total') }}</span>
-	                <span>{{ formatMoney(cart.grandTotal, currency) }}</span>
-	              </h3>
-	              <div
-	                v-if="account && account.balance && account.balance > 0"
-	                class="mt-4 mb-1 flex justify-between border-t border-primary-med pt-4"
-	              >
-	                <span>{{ $t('cart.accountBalance') }}</span>
-	                <span>{{ formatMoney(account.balance, currency) }}</span>
-	              </div>
-
-	              <BaseButton
-	                class="mt-4 mb-1 block"
-	                size="lg"
-	                :label="$t('cart.checkout')"
-	                :is-loading="cartIsUpdating"
-	                :loading-label="$t('cart.updating')"
-	                :link="cart.checkoutUrl"
-	                target="_self"
-	              />
-	            </div>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-	  </div>
-	</div>
-
-	<script>
-		// Helpers
-		/*import { mapState } from 'vuex'
-
-		export default {
-		  name: 'TheCart',
-
-		  data() {
-		    return {
-		      couponCode: null,
-		      shopLink: null,
-		    }
-		  },
-
-		  async fetch() {
-		    // Set component data
-		    const { $swell } = this
-		    this.shopLink = await $swell.settings.get('cart.shopLink', '/categories/')
-		  },
-
-		  computed: {
-		    ...mapState(['cart', 'cartIsUpdating', 'currency']),
-
-		    account() {
-		      if (!this.cart.account) return
-		      return this.cart.account
-		    },
-		  },
-
-		  mounted() {
-		    // Pass a checkout ID as a query string param to recover a specific cart
-		    const { checkout: checkoutId } = this.$route.query
-		    this.$store.dispatch('initializeCart', { checkoutId })
-		  },
-
-		  methods: {
-		    closeCart() {
-		      this.$store.commit('setState', { key: 'cartIsActive', value: false })
-		    },
-
-		    async applyDiscount() {
-		      // Try to apply a coupon or gift card code
-		      await this.$store.dispatch('applyDiscount', this.couponCode)
-		      // Reset the coupon input
-		      this.couponCode = null
-		    },
-
-		    removeDiscount(id) {
-		      this.$store.dispatch('removeDiscount', id)
-		    },
-		  },
-		}*/
-	</script>
-
-	<!-- copy end -->
+	<!-- the CART (copy from nuxt) -->
+	<?php include 'inc/cart.php' ?>
+	<!-- CART end -->
 
 
 
