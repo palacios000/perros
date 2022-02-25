@@ -58,46 +58,14 @@
 	}
 	?>
 
-<!-- SWELL SCRIPT -->
-  <script type="module">
-    import swell from 'https://cdn.skypack.dev/swell-js';
 
-    window.swell = swell;
 
-    swell.init('perros', 'pk_ZdR0rU8LGHdbvfs80ZZAT9u4RCeGbUE1', {
-      useCamelCase: true,
-      url: 'https://perros.swell.store/',
-    });
 
-    window.addToSwellCart = function addToSwellCart() {
-    	swell.cart.addItem({
-    	  product_id: '<?= $page->codice ?>',
-    	  quantity: 1,
-    	  options: {
-    	    Taglia: '<?= $tagliaOK ?>',
-    	    Colore: '<?= $coloreOK ?>',
-    	    Minuteria: '<?= $sceltaMinuteria ?>'
-    	  }
-    	});
-    	// console.log('ciao');
-    }
-
-    // swell.products
-    //   .list({
-    //     limit: 1,
-    //   })
-    //   .then((response) => {
-    //     const el = document.getElementById('products');
-    //     el.innerHTML = JSON.stringify(response.results, null, '  ');
-    //   });
-  </script>
-
-</head>
 <body>
 	
 <?php include 'inc/menu.php'; ?>
 
-<div id="content">
+<div id="content" class="relative" x-data="{ added2cart: false }">
 <!-- ### PRODUCT DETAILS inizio  -->
 	<main class="max-w-7xl mx-auto sm:pt-16 sm:px-6 lg:px-8 z-10" x-data="{imageUrl: '<?php echo $image->url ?>'}">
 		<div class="max-w-2xl mx-auto lg:max-w-none">
@@ -671,7 +639,7 @@
 
 										</div>
 
-										<div x-data="{ added2cart: false }" class="fase3 border border-perros-green-700 rounded rounded-2xl border-2 relative pl-8 sm:pl-16 pt-4 sm:pt-0 pr-4 mt-4">
+										<div x-data="" class="fase3 border border-perros-green-700 rounded rounded-2xl border-2 relative pl-8 sm:pl-16 pt-4 sm:pt-0 pr-4 mt-4">
 										<!-- cerchiolino 333 -->
 											<!-- un-clicked -->
 											<div class="absolute top-2 left-2">
@@ -686,7 +654,7 @@
 												</span>
 											</div>
 
-											<!-- SNIPCART BUTTON ==================================================== -->
+											<!-- Swell BUTTON ==================================================== -->
 												<button
 												onclick="addToSwellCart()"
 												@click="added2cart = !added2cart"
@@ -731,11 +699,178 @@
 	<!-- ### PRODUCT DETAILS fine -->
 
 
+	<!-- copy from nuxt -->
+	<div  >
+	  <!-- <div x-data="alpineStore()" > -->
+	  <div x-data="alpineStore()" x-show="added2cart" >
+	    <div class="fixed inset-0 z-50">
+	      <!-- Overlay -->
+	      <div
+	        class="overlay absolute hidden h-full w-full bg-neutral-500 opacity-90 md:block"
+	        
+	      >
 
+	      <!-- Panel -->
+	      <div class="panel absolute right-0 h-full w-full max-w-md">
+	      	<button @click="added2cart = !added2cart">chiudi</button>
+	        <div class="h-full w-full overflow-y-scroll bg-white">
+	          <!-- Header -->
+	          <div class="container relative border-b border-primary-med py-5">
+	            <div class="flex items-center justify-between">
+	              <h3 >
+	                Carrello
+	                <template x-if="myCart">
+	                	<span x-text="myCart.item_quantity"></span>
+	                </template
+	                >
+	              </h3>
+	              <button @click.prevent="closeCart">
+	                <BaseIcon icon="uil:multiply" size="lg" />
+	              </button>
+	            </div>
 
+	            <div
+	              v-if="$te('cart.infoText')"
+	              class="mt-4 text-sm"
+	              v-html="$t('cart.infoText')"
+	            >
+	          </div>
 
+	          <!-- Items -->
+	          <template x-if="myCart">
+	              <template x-for="item in myCart.items">
+	                <span x-text="item.product.name"></span>
+	              </template>
+	          </template>
 
+	          <!-- <div v-if="cart && cart.items && cart.items.length">
+	            <CartItem
+	              v-for="(item, index) in cart.items"
+	              :key="`cartItem_${item.id}`"
+	              :item="item"
+	              :index="index"
+	            />
+	          </div>
+	          <div v-else class="container py-10">
+	            <span class="mb-4 block">{{ $t('cart.empty') }}</span>
+	            <BaseButton
+	              :link="shopLink"
+	              :label="$t('cart.backToProducts')"
+	              fit="static"
+	            />
+	          </div> -->
 
+	          <!-- Footer -->
+	          <div
+	            v-if="cart && cart.items && cart.items.length"
+	            class="border-t border-primary-med bg-primary-lighter"
+	          >
+
+	            <!-- Summary -->
+	            <div class="container border-b border-primary-med py-6">
+	              <div class="mb-1 flex justify-between">
+	                <span>Totale</span>
+	                <span x-text="myCart.currency + ' ' +  myCart.sub_total"></span>
+	              </div>
+	              <div class="mb-1 flex justify-between">
+	                <span>{{ $t('cart.shipping') }}</span>
+	                <span>{{ formatMoney(cart.shipmentTotal, currency) }}</span>
+	              </div>
+	              <div
+	                v-show="cart.discountTotal"
+	                class="mb-1 flex justify-between"
+	              >
+	                <span>{{ $t('cart.discounts') }}</span>
+	                <span>–{{ formatMoney(cart.discountTotal, currency) }}</span>
+	              </div>
+	              <div v-show="cart.taxTotal" class="mb-1 flex justify-between">
+	                <span>{{ $t('cart.taxes') }}</span>
+	                <span>{{ formatMoney(cart.taxTotal, currency) }}</span>
+	              </div>
+	              <h3 class="mt-3 flex justify-between text-xl font-semibold">
+	                <span>{{ $t('cart.total') }}</span>
+	                <span>{{ formatMoney(cart.grandTotal, currency) }}</span>
+	              </h3>
+	              <div
+	                v-if="account && account.balance && account.balance > 0"
+	                class="mt-4 mb-1 flex justify-between border-t border-primary-med pt-4"
+	              >
+	                <span>{{ $t('cart.accountBalance') }}</span>
+	                <span>{{ formatMoney(account.balance, currency) }}</span>
+	              </div>
+
+	              <BaseButton
+	                class="mt-4 mb-1 block"
+	                size="lg"
+	                :label="$t('cart.checkout')"
+	                :is-loading="cartIsUpdating"
+	                :loading-label="$t('cart.updating')"
+	                :link="cart.checkoutUrl"
+	                target="_self"
+	              />
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<script>
+		// Helpers
+		/*import { mapState } from 'vuex'
+
+		export default {
+		  name: 'TheCart',
+
+		  data() {
+		    return {
+		      couponCode: null,
+		      shopLink: null,
+		    }
+		  },
+
+		  async fetch() {
+		    // Set component data
+		    const { $swell } = this
+		    this.shopLink = await $swell.settings.get('cart.shopLink', '/categories/')
+		  },
+
+		  computed: {
+		    ...mapState(['cart', 'cartIsUpdating', 'currency']),
+
+		    account() {
+		      if (!this.cart.account) return
+		      return this.cart.account
+		    },
+		  },
+
+		  mounted() {
+		    // Pass a checkout ID as a query string param to recover a specific cart
+		    const { checkout: checkoutId } = this.$route.query
+		    this.$store.dispatch('initializeCart', { checkoutId })
+		  },
+
+		  methods: {
+		    closeCart() {
+		      this.$store.commit('setState', { key: 'cartIsActive', value: false })
+		    },
+
+		    async applyDiscount() {
+		      // Try to apply a coupon or gift card code
+		      await this.$store.dispatch('applyDiscount', this.couponCode)
+		      // Reset the coupon input
+		      this.couponCode = null
+		    },
+
+		    removeDiscount(id) {
+		      this.$store.dispatch('removeDiscount', id)
+		    },
+		  },
+		}*/
+	</script>
+
+	<!-- copy end -->
 
 
 
@@ -794,7 +929,7 @@
 
 
 	<!-- 2 images bottom -->
-		<?php include 'inc/images_2bottom.php' ?>
+		<?php // include 'inc/images_2bottom.php' ?>
 </div>
 
 <!-- questi mi servono a taildind per generare il codice colore nel css , altrimenti non si attivano tramite php  -->

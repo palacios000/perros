@@ -14,4 +14,54 @@
 		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"
 		    />
 
-	<!-- </head> -->
+	
+		<!-- Alpine + Swell -->
+		<script type="module">
+		    import swell from 'https://cdn.skypack.dev/swell-js';
+		    import Alpine from 'https://cdn.skypack.dev/alpinejs';
+		     
+
+		    window.swell = swell;
+
+		    swell.init('perros', 'pk_ZdR0rU8LGHdbvfs80ZZAT9u4RCeGbUE1', {
+		      useCamelCase: false,
+		      url: 'https://perros.swell.store/',
+		    });
+
+		    window.addToSwellCart = function addToSwellCart() {
+		    	swell.cart.addItem({
+		    	  product_id: '<?= $page->codice ?>',
+		    	  quantity: 1,
+		    	  options: {
+		    	    Taglia: '<?= $tagliaOK ?>',
+		    	    Colore: '<?= $coloreOK ?>',
+		    	    Minuteria: '<?= $sceltaMinuteria ?>'
+		    	  }
+		    	});
+		    };
+
+		    const myCart = await swell.cart.get();
+		    console.log(myCart);
+		    var totale = myCart.sub_total;
+
+		    console.log(myCart.item_quantity);
+		    console.log(totale);
+		    console.log(myCart.id);
+
+		    window.Alpine = Alpine;
+		    
+		    window.alpineStore = function alpineStore(){
+		      return{
+		        myCart,
+		        fetchCart(){
+		          swell.cart.get().then(cart => {
+		            myCart = cart
+		          })
+		        }
+		      }
+		    }
+		     
+		    Alpine.start()
+		    //
+	  </script>
+	</head>

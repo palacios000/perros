@@ -1,0 +1,1807 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pr",
+				"product"
+			],
+			[
+				"array",
+				"array()"
+			],
+			[
+				"productO",
+				"productOut"
+			],
+			[
+				"va",
+				"value"
+			],
+			[
+				"var",
+				"variant"
+			],
+			[
+				"prod",
+				"productOK"
+			],
+			[
+				"t",
+				"totale"
+			],
+			[
+				"as",
+				"async"
+			],
+			[
+				"g",
+				"grid-cols-2 "
+			],
+			[
+				"col",
+				"coloreOK"
+			],
+			[
+				"pe",
+				"pettorina"
+			],
+			[
+				"rounde",
+				"rounded-2xl "
+			],
+			[
+				"flex",
+				"flex-col "
+			],
+			[
+				"text",
+				"text-2xl "
+			],
+			[
+				"h",
+				"h-24 "
+			],
+			[
+				"fle",
+				"flex-col "
+			],
+			[
+				"grid",
+				"grid-cols-1 "
+			],
+			[
+				"flex-r",
+				"lg:flex-row-reverse "
+			],
+			[
+				"border",
+				"border-t "
+			],
+			[
+				"mx-",
+				"mx-auto "
+			],
+			[
+				"w",
+				"w-full "
+			],
+			[
+				"ho",
+				"hover:underline "
+			],
+			[
+				"jus",
+				"justify-evenly "
+			],
+			[
+				"gro",
+				"group-hover"
+			],
+			[
+				"bg-per",
+				"bg-perros-green"
+			],
+			[
+				"focus",
+				"focus-within:ring "
+			],
+			[
+				"gap",
+				"gap-0 "
+			],
+			[
+				"gir",
+				"grid-rows-2 "
+			],
+			[
+				"bg-perr",
+				"bg-perros-green-400"
+			],
+			[
+				"text-perr",
+				"text-perros-green"
+			],
+			[
+				"colo",
+				"coloreOK"
+			],
+			[
+				"md",
+				"md:invisible "
+			],
+			[
+				"inv",
+				"invisible "
+			],
+			[
+				"minu",
+				"minuSelector"
+			],
+			[
+				"le",
+				"letter-spacing"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"op",
+				"opacity-95 "
+			],
+			[
+				"langua",
+				"languages"
+			],
+			[
+				"for",
+				"foreach"
+			],
+			[
+				"prezz",
+				"prezzo"
+			],
+			[
+				"opa",
+				"opacity-5 "
+			],
+			[
+				"pro",
+				"productMyId"
+			],
+			[
+				"spe",
+				"speditoArray"
+			],
+			[
+				"in",
+				"in_array"
+			],
+			[
+				"Dis",
+				"Dispatched"
+			],
+			[
+				"Deli",
+				"Delivered"
+			],
+			[
+				"ad",
+				"added"
+			],
+			[
+				"border-perr",
+				"border-perros-green-700"
+			],
+			[
+				"sele",
+				"selectedMinu"
+			],
+			[
+				"mi",
+				"minuteriaOK"
+			],
+			[
+				"fin",
+				"findOne"
+			],
+			[
+				"color",
+				"coloreOK"
+			],
+			[
+				"pl-",
+				"pl-16 "
+			],
+			[
+				"bg-",
+				"hover:bg-gray-100 "
+			],
+			[
+				"border-pere",
+				"border-perros-green-700"
+			],
+			[
+				"z",
+				"z-50 "
+			],
+			[
+				"border-per",
+				"border-perros-green-700"
+			],
+			[
+				"text-",
+				"text-xxl"
+			],
+			[
+				"round",
+				"rounded-2xl "
+			],
+			[
+				"bordeod",
+				"border-dotted "
+			],
+			[
+				"mt",
+				"mt-3 "
+			],
+			[
+				"a",
+				"absolute "
+			],
+			[
+				"ch",
+				"child"
+			],
+			[
+				"sib",
+				"sibC"
+			],
+			[
+				"font-",
+				"font-bold "
+			],
+			[
+				"tex",
+				"text-center "
+			],
+			[
+				"just",
+				"justify-center "
+			],
+			[
+				"align",
+				"align-middle "
+			],
+			[
+				"s",
+				"subtitleH1"
+			],
+			[
+				"con",
+				"continue"
+			],
+			[
+				"co",
+				"counter"
+			],
+			[
+				"border-gra",
+				"border-gray-200 "
+			],
+			[
+				"bg-gra",
+				"bg-gray-200 "
+			],
+			[
+				"incl",
+				"include"
+			],
+			[
+				"text-perros",
+				"text-perros-green"
+			],
+			[
+				"tutt",
+				"tuttoLink"
+			],
+			[
+				"bg-blend",
+				"bg-blend-darken "
+			],
+			[
+				"im",
+				"images_bg"
+			],
+			[
+				"lea",
+				"leading-snug "
+			],
+			[
+				"text-red",
+				"text-red-700"
+			],
+			[
+				"text-p",
+				"text-perros-brown"
+			],
+			[
+				"cur",
+				"cursor-pointer "
+			],
+			[
+				"justif",
+				"justify-center "
+			],
+			[
+				"tit",
+				"titleH1"
+			],
+			[
+				"col-span",
+				"col-span-2 "
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"perro",
+				"bg-perros-green"
+			],
+			[
+				"pre",
+				"prezzoExtra"
+			],
+			[
+				"j",
+				"json_encode"
+			],
+			[
+				"json",
+				"jsonItem"
+			],
+			[
+				"product",
+				"product_variations"
+			],
+			[
+				"str_re",
+				"str_replace()"
+			],
+			[
+				"alig",
+				"align-middle "
+			],
+			[
+				"gapx",
+				"gap-x-1 "
+			],
+			[
+				"mx",
+				"mx-12 "
+			],
+			[
+				"dro",
+				"drop-shadow-2xl "
+			],
+			[
+				"p",
+				"py-6 "
+			],
+			[
+				"f",
+				"font-bold "
+			],
+			[
+				"leadin",
+				"leading-relaxed "
+			],
+			[
+				"opac",
+				"hover:opacity-95 "
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"flex-c",
+				"flex-col "
+			],
+			[
+				"fon",
+				"font-light "
+			],
+			[
+				"sub",
+				"subtitleH1"
+			],
+			[
+				"tex-b",
+				"text-black "
+			],
+			[
+				"sl",
+				"slider"
+			],
+			[
+				"-lef",
+				"-left-12 "
+			],
+			[
+				"chi",
+				"children"
+			],
+			[
+				"colonna",
+				"colonnaTesto"
+			],
+			[
+				"tr",
+				"true"
+			],
+			[
+				"bo",
+				"border-8 "
+			],
+			[
+				"tag",
+				"tagliaOK"
+			],
+			[
+				"c",
+				"coloreOK"
+			],
+			[
+				"snipca",
+				"snipcart_item_description"
+			],
+			[
+				"tagl",
+				"tagliaOK"
+			],
+			[
+				"snipcart_item_",
+				"snipcart_item_image"
+			],
+			[
+				"imag",
+				"image"
+			],
+			[
+				"ring",
+				"ring-2 "
+			],
+			[
+				"pric",
+				"priceMax"
+			],
+			[
+				"price",
+				"priceMin"
+			],
+			[
+				"item",
+				"itemOK"
+			],
+			[
+				"ret",
+				"return"
+			],
+			[
+				"w-",
+				"w-full "
+			],
+			[
+				"text-re",
+				"text-red-500 "
+			],
+			[
+				"ima",
+				"imageDesc"
+			],
+			[
+				"chil",
+				"children"
+			],
+			[
+				"justify-i",
+				"justify-items-end "
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"table",
+				"Table Editor: Enable for current view"
+			],
+			[
+				"beaut",
+				"HTMLBeautify"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"BOOKMARK",
+				"SublimeBookmarks: Add Bookmark"
+			],
+			[
+				"book",
+				"SublimeBookmarks: Show Bookmarks Only In Current Project "
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"footer",
+				"File: Open In Browser - Testing Server"
+			],
+			[
+				"TABLE",
+				"Table Editor: Enable for current view"
+			],
+			[
+				"reindent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"syntax: scss",
+				"Set Syntax: SCSS"
+			],
+			[
+				"syntax",
+				"Set Syntax: Sass"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"indent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"isntall",
+				"Package Control: Install Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: list",
+				"Package Control: List Packages"
+			],
+			[
+				"list pa",
+				"Package Control: List Packages"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"pac",
+				"Package Control: List Packages"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"inde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"in",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"inden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"ind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"rei",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"Snippet: ",
+				"Snippet: html"
+			],
+			[
+				"ht",
+				"Set Syntax: HTML"
+			],
+			[
+				"packagere",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"Snippet: if",
+				"Snippet: if …"
+			],
+			[
+				"htm",
+				"Set Syntax: HTML"
+			],
+			[
+				"re",
+				"Package Control: Remove Package"
+			],
+			[
+				"claea",
+				"CleanCSS: Clean current file"
+			],
+			[
+				"quote",
+				"ChangeQuotes"
+			],
+			[
+				"form",
+				"CodeFormatter: Format Code"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"REM",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package insta",
+				"Package Control: Install Package"
+			],
+			[
+				"intall",
+				"Package Control: Install Package"
+			],
+			[
+				"intsa",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			],
+			[
+				"synta html",
+				"Set Syntax: HTML"
+			],
+			[
+				"language",
+				"LanguageTool: Change Language"
+			],
+			[
+				"page",
+				"Package Control: Remove Package"
+			],
+			[
+				"spell",
+				"Google Spell Check"
+			],
+			[
+				"quo",
+				"ChangeQuotes"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"quot",
+				"ChangeQuotes"
+			],
+			[
+				"quoe",
+				"ChangeQuotes"
+			],
+			[
+				"chane",
+				"ChangeQuotes"
+			],
+			[
+				"PHP",
+				"Set Syntax: PHP"
+			],
+			[
+				"diff",
+				"Diffy Compare"
+			],
+			[
+				"htmk",
+				"Snippet: HTML - Input:checkbox"
+			],
+			[
+				"ph",
+				"Set Syntax: PHP"
+			],
+			[
+				"update",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"lore",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"lorem",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"Snippet: text",
+				"Snippet: HTML - Input:text"
+			],
+			[
+				"intsll",
+				"Package Control: Install Package"
+			],
+			[
+				"foundat",
+				"Snippet: HTML - HTML foundation"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings"
+			],
+			[
+				"trimm",
+				"Trimmer: Delete empty lines."
+			],
+			[
+				"remove pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"origa",
+				"Origami: Destroy Current Pane"
+			],
+			[
+				"origa destr",
+				"Origami: Destroy Pane Above"
+			],
+			[
+				"origame zoo",
+				"Origami: Zoom/Unzoom Current Pane (Toggle Zoom)"
+			],
+			[
+				"origame",
+				"Origami: Focus on Pane Above"
+			],
+			[
+				"trimmer",
+				"Trimmer: Trim leading AND trailing whitespace."
+			],
+			[
+				"pagack",
+				"Package Control: List Packages"
+			],
+			[
+				"tab",
+				"View: Toggle Tabs"
+			],
+			[
+				"view",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"",
+				"Bookmarks: Select Next"
+			],
+			[
+				"Package Control: i",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: meta",
+				"Snippet: HTML - Meta tags"
+			]
+		],
+		"width": 548.0
+	},
+	"console":
+	{
+		"height": 319.0,
+		"history":
+		[
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"ls",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/var/www/html/perros3/perros"
+	],
+	"file_history":
+	[
+		"/var/www/html/perros2/public/site/templates/swell-alpine.php",
+		"/var/www/html/perros2/public/site/templates/inc/menu.php",
+		"/var/www/html/perros2/public/site/templates/styles/snipcart.css",
+		"/var/www/html/perros2/tailwind.config.js",
+		"/var/www/html/perros2/public/site/templates/styles/main.css",
+		"/var/www/html/perros2/public/site/templates/styles/modifiche.css",
+		"/var/www/html/perros2/public/site/templates/export-products.php",
+		"/var/www/html/perros2/public/ftpsync.settings",
+		"/media/giulio/800cf19f-0030-4601-a9c7-4e3c39efa2fa/_server/_server.txt",
+		"/var/www/html/perros2/public/site/templates/swell.php",
+		"/var/www/html/perros2/public/site/ready.php",
+		"/var/www/html/perros2/public/site/templates/swell-alpine.php-eng.txt",
+		"/var/www/html/perros2/public/site/templates/inc/head.php",
+		"/var/www/html/perros2/public/site/templates/sc-shop.php",
+		"/var/www/html/perros2/public/site/templates/basic-page.php",
+		"/var/www/html/perros2/public/site/init.php",
+		"/var/www/html/perros2/public/site/templates/inc/footer.php",
+		"/var/www/html/perros2/public/site/templates/inc/menu-mobile.php",
+		"/var/www/html/perros2/crb_code/alpine/tabs-folding.php",
+		"/var/www/html/perros2/public/site/modules/SnipWire/ProcessSnipWire/ProcessSnipWire.scss",
+		"/var/www/html/perros2/public/site/modules/SnipWire/ProcessSnipWire/ProcessSnipWire.module.php",
+		"/var/www/html/perros2/tailwind.css",
+		"/var/www/html/perros2/public/site/templates/sc-product_01.php",
+		"/var/www/html/perros2/crb_code/language select.txt",
+		"/var/www/html/perros2/public/site/modules/SnipWire/ProcessSnipWire/sections/Orders.php",
+		"/var/www/html/perros2/public/site/modules/SnipWire/ProcessSnipWire/sections/Products.php",
+		"/var/www/html/perros2/public/site/templates/terms-page.php",
+		"/var/www/html/perros2/public/site/templates/_defaultPages.php",
+		"/var/www/html/perros2/public/site/templates/inc/images_2bottom.php",
+		"/var/www/html/perros2/public/site/assets/files/1068/snipcart.json",
+		"/var/www/html/perros2/_docs/swiper-quantopesa.txt",
+		"/var/www/html/perros2/public/site/templates/snipcart-product.php",
+		"/var/www/html/perros2/public/site/modules/SnipWire/MarkupSnipWire/MarkupSnipWire.module.php",
+		"/var/www/html/perros2/public/site/templates/test_productpage.html",
+		"/var/www/html/perros2/public/site/modules/SnipWire/SnipWire.module.php",
+		"/var/www/html/perros2/public/site/config.php",
+		"/var/www/html/perros2/perros2.sublime-project",
+		"/var/www/html/perros2/public/site/templates/snipcart-shop.php",
+		"/var/www/html/perros2/crb_code/installation_bulma/templates folder/home.php",
+		"/home/giulio/.config/sublime-text/Packages/Table Editor/README.md",
+		"/var/www/html/perros/public/site/templates/styles/modifiche.css",
+		"/var/www/html/perros/public/site/config.php",
+		"/home/giulio/Documents/invitati festa.txt",
+		"/var/www/html/perros/perros.sublime-project",
+		"/var/www/html/perros/crb_code/installation_tailwind/impostazioni-tailwind-npm/postcss.config.js",
+		"/var/www/html/perros/postcss.config.js",
+		"/var/www/html/perros/package.json",
+		"/var/www/html/_processwire/useful_code/installation_tailwind/installweb_tailwind.sh",
+		"/var/www/html/siamoalpi/public/site/templates/admin.less",
+		"/var/www/html/siamoalpi/public/site/templates/landing.php",
+		"/var/www/html/siamoalpi/public/site/templates/inc/landing_footer-mobile.php",
+		"/var/www/html/siamoalpi/public/site/templates/inc/landing_footer.php",
+		"/var/www/html/siamoalpi/public/site/templates/inc/landing_menu.php",
+		"/var/www/html/siamoalpi/public/site/templates/inc/landing_head.php",
+		"/var/www/html/siamoalpi/public/site/templates/inc/guida/menu.php",
+		"/var/www/html/siamoalpi/public/site/templates/inc/head.php",
+		"/var/www/html/siamoalpi/public/site/templates/js/main.js",
+		"/var/www/html/siamoalpi/_docs/Thesaurus.csv",
+		"/var/www/html/siamoalpi/public/site/templates/inc/landing/fasi_colonna-c.php",
+		"/var/www/html/siamoalpi/public/site/templates/inc/landing/fasi_colonna-b.php",
+		"/var/www/html/siamoalpi/public/site/templates/inc/landing/fasi_colonna-a.php",
+		"/var/www/html/siamoalpi/public/site/templates/inc/footer.php",
+		"/var/www/html/siamoalpi/package.json",
+		"/var/www/html/siamoalpi/public/site/templates/basic-page.php",
+		"/var/www/html/siamoalpi/public/site/ready.php",
+		"/var/www/html/siamoalpi/_docs/link to siamo alpi - graphic/sito landing/shuffle temp/shuffle/public/index.html",
+		"/var/www/html/siamoalpi/public/site/templates/styles/main.css",
+		"/var/www/html/siamoalpi/public/site/templates/styles/modifiche.css",
+		"/var/www/html/siamoalpi/public/site/ftpsync.settings",
+		"/var/www/html/siamoalpi/tailwind.config.js",
+		"/var/www/html/siamoalpi/public/site/templates/inc/scripts.php",
+		"/var/www/html/siamoalpi/public/site/templates/styles/simone.css",
+		"/var/www/html/siamoalpi/public/scss/uikit.scss",
+		"/var/www/html/siamoalpi/postcss.config.js",
+		"/var/www/html/siamoalpi/public/site/templates/gestionale_guida.php",
+		"/var/www/html/siamoalpi/public/site/templates/inc/guida/footer.php",
+		"/var/www/html/siamoalpi/public/site/templates/gestionale_guida-pagina-downloads.php",
+		"/var/www/html/siamoalpi/public/site/templates/styles/uikit.css",
+		"/var/www/html/siamoalpi/public/site/templates/login-register.php",
+		"/var/www/html/siamoalpi/public/site/modules/HookAfterPagesSave/HookAfterPagesSave.module",
+		"/var/www/html/siamoalpi/public/wire/core/Wire.php",
+		"/var/www/html/siamoalpi/public/wire/modules/AdminTheme/AdminThemeUikit/_sidenav-masthead.php",
+		"/var/www/html/siamoalpi/public/wire/modules/AdminTheme/AdminThemeReno/AdminThemeRenoHelpers.php",
+		"/var/www/html/siamoalpi/public/wire/modules/AdminTheme/AdminThemeReno/AdminThemeReno.module",
+		"/var/www/html/siamoalpi/public/site/templates/inc/menu.php",
+		"/var/www/html/siamoalpi/public/site/templates/questionario.php",
+		"/var/www/html/siamoalpi/_docs/emailfooter/siamoalpi_mail-footer2.html",
+		"/var/www/html/siamoalpi/public/site/templates/gestionale_scheda.php",
+		"/home/giulio/Downloads/email footer.html",
+		"/var/www/html/siamoalpi/_docs/emailfooter/siamoalpi_footer.html",
+		"/var/www/html/siamoalpi/public/site/init.php",
+		"/var/www/html/siamoalpi/public/site/templates/home.php",
+		"/var/www/html/siamoalpi/public/site/modules/AdminOnSteroids/CKE/plugins/codesnippet/lib/highlight/styles/tomorrow.css",
+		"/var/www/html/siamoalpi/public/site/templates/pictures/logo/siamo-alpi-nero-verde.svg",
+		"/var/www/html/siamoalpi/public/wire/modules/AdminTheme/AdminThemeDefault/default.php",
+		"/var/www/html/siamoalpi/public/wire/modules/AdminTheme/AdminThemeDefault/AdminThemeDefaultHelpers.php",
+		"/var/www/html/siamoalpi/public/wire/core/Fieldtype.php",
+		"/var/www/html/siamoalpi/public/site/templates/styles/fonts/fontsForAdminLess.css",
+		"/var/www/html/siamoalpi/public/site/assets/admin.css",
+		"/var/www/html/siamoalpi/public/site/templates/inc/guida/bread.php",
+		"/var/www/html/siamoalpi/public/site/templates/inc/guida/head.php",
+		"/var/www/html/siamoalpi/gruntfile.js",
+		"/var/www/html/siamoalpi/public/site/templates/pictures/siamo-alpi-bianco-verde.png",
+		"/var/www/html/siamoalpi/public/site/modules/ProcessPageListerPro/ProcessPageListerPro.module",
+		"/var/www/html/siamoalpi/public/site/templates/inc/guida_menu.php",
+		"/var/www/html/siamoalpi/public/site/templates/inc/guida_head.php",
+		"/var/www/html/siamoalpi/public/site/templates/inc/gestionale_bread.php",
+		"/var/www/html/siamoalpi/_docs/pezzi di codice/default_guida con ProcessDocumentation.php",
+		"/var/www/html/siamoalpi/public/site/templates/gestionale-guida.php",
+		"/var/www/html/siamoalpi/public/wire/templates-admin/controller.php",
+		"/var/www/html/siamoalpi/public/site/templates/admin.php",
+		"/var/www/html/siamoalpi/siamoalpi.sublime-project",
+		"/var/www/html/smv_madre/_docs/index.html",
+		"/var/www/html/siamoalpi/public/site/templates/login-register_esperimento.php",
+		"/var/www/html/siamoalpi/public/site/modules/LoginWithEmail/LoginWithEmail.module",
+		"/var/www/html/siamoalpi/public/site/templates/ftpsync.settings",
+		"/var/www/html/siamoalpi/public/wire/modules/AdminTheme/AdminThemeUikit/_main.php",
+		"/var/www/html/siamoalpi/public/site/config.php",
+		"/var/www/html/siamoalpi/public/wire/templates-admin/default.php",
+		"/var/www/html/siamoalpi/public/wire/modules/AdminTheme/AdminThemeUikit/default.php",
+		"/var/www/html/siamoalpi/public/site/templates/guida/default.php",
+		"/var/www/html/siamoalpi/public/wire/core/ModuleConfig.php",
+		"/var/www/html/siamoalpi/public/wire/modules/Inputfield/InputfieldForm.module",
+		"/var/www/html/siamoalpi/public/wire/modules/Process/ProcessLogin/ProcessLogin.module",
+		"/var/www/html/imprimis3/public/site/templates/contact.php",
+		"/var/www/html/imprimis3/public/site/templates/inc/formProcess.php",
+		"/var/www/html/imprimis3/public/site/templates/home.php",
+		"/var/www/html/imprimis3/old-imprimis/site/templates/_old/contact_crb.php"
+	],
+	"find":
+	{
+		"height": 53.0
+	},
+	"find_in_files":
+	{
+		"height": 153.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": true,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": false,
+		"use_buffer2": false,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 53.0
+	},
+	"input":
+	{
+		"height": 53.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.CSS Extended Completions":
+	{
+		"height": 0.0
+	},
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.find_results":
+	{
+		"height": 724.0
+	},
+	"output.languagetool":
+	{
+		"height": 139.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "perros3-nuxt.sublime-project",
+	"replace":
+	{
+		"height": 78.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"server",
+				"psw_server/_server.txt"
+			],
+			[
+				"ftp",
+				"perros2/public/ftpsync.settings"
+			],
+			[
+				"swell",
+				"PW templates/swell.php"
+			],
+			[
+				"ready",
+				"perros2/public/site/ready.php"
+			],
+			[
+				"head",
+				"PW templates/inc/head.php"
+			],
+			[
+				"menu",
+				"PW templates/inc/menu.php"
+			],
+			[
+				"footer",
+				"PW templates/inc/footer.php"
+			],
+			[
+				"inc/menu",
+				"PW templates/inc/menu.php"
+			],
+			[
+				"ftps",
+				"perros2/public/ftpsync.settings"
+			],
+			[
+				"bas",
+				"PW templates/basic-page.php"
+			],
+			[
+				"sc-s",
+				"PW templates/sc-shop.php"
+			],
+			[
+				"read",
+				"perros2/public/site/ready.php"
+			],
+			[
+				"tailwind",
+				"perros2/tailwind.config.js"
+			],
+			[
+				"snipcart",
+				"PW templates/styles/snipcart.css"
+			],
+			[
+				"defaultp",
+				"PW templates/_defaultPages.php"
+			],
+			[
+				"tailwindc",
+				"perros2/tailwind.config.js"
+			],
+			[
+				"modi",
+				"PW templates/styles/modifiche.css"
+			],
+			[
+				"defaultPages",
+				"PW templates/_defaultPages.php"
+			],
+			[
+				"init",
+				"perros2/public/site/init.php"
+			],
+			[
+				"config",
+				"perros2/public/site/config.php"
+			],
+			[
+				"modic",
+				"PW templates/styles/modifiche.css"
+			],
+			[
+				"home",
+				"PW templates/home.php"
+			],
+			[
+				"modifi",
+				"PW /site/templates/styles/modifiche.css"
+			],
+			[
+				"main.css",
+				"PW /site/templates/styles/main.css"
+			],
+			[
+				"landing",
+				"PW/inc/landing_head.php"
+			],
+			[
+				"landin",
+				"PW/inc/landing_menu.php"
+			],
+			[
+				"landing_me",
+				"PW/inc/landing_menu.php"
+			],
+			[
+				"tailwind.cong",
+				"siamoalpi/tailwind.config.js"
+			],
+			[
+				"inc/head",
+				"siamoalpi/public/site/templates/inc/head.php"
+			],
+			[
+				"inc/",
+				"PW/inc/menu.php"
+			],
+			[
+				"modifiche",
+				"PW/styles/modifiche.css"
+			],
+			[
+				"guida",
+				"PW/inc/guida/footer.php"
+			],
+			[
+				"",
+				"siamoalpi/public/site/ready.php"
+			],
+			[
+				"login",
+				"PW/login-register.php"
+			],
+			[
+				"gestiona",
+				"PW/gestionale_guida.php"
+			],
+			[
+				"login-",
+				"PW/login-register.php"
+			],
+			[
+				"quest",
+				"PW/questionario.php"
+			],
+			[
+				"homw",
+				"siamoalpi/public/site/modules/AdminOnSteroids/CKE/plugins/codesnippet/lib/highlight/styles/tomorrow.css"
+			],
+			[
+				"/guida/head",
+				"PW/inc/guida/head.php"
+			],
+			[
+				"GRU",
+				"siamoalpi/gruntfile.js"
+			],
+			[
+				"bread",
+				"PW/inc/bread.php"
+			],
+			[
+				"controller",
+				"siamoalpi/public/wire/templates-admin/controller.php"
+			],
+			[
+				"admin",
+				"PW/admin.php"
+			],
+			[
+				"siamo",
+				"siamoalpi/siamoalpi.sublime-project"
+			],
+			[
+				"register",
+				"PW/login-register.php"
+			],
+			[
+				"form",
+				"PW/inc/formProcess.php"
+			],
+			[
+				"crb",
+				"_old/contact_crb.php"
+			],
+			[
+				"contact",
+				"PW/contact.php"
+			],
+			[
+				"news",
+				"PW/news_container.php"
+			],
+			[
+				"printer",
+				"PW/printer.php"
+			],
+			[
+				"contac",
+				"_old/contact.php"
+			],
+			[
+				"grunt",
+				"Imprimis3/gruntfile.js"
+			],
+			[
+				"conta",
+				"PW/contact.php"
+			],
+			[
+				"password",
+				"Imprimis3/public/wire/core/Password.php"
+			],
+			[
+				"BAS",
+				"PW/basic-page.php"
+			],
+			[
+				"BASIC",
+				"_old/basic-page.php"
+			],
+			[
+				"printers",
+				"PW/printers.php"
+			],
+			[
+				"contat",
+				"PW/contact.php"
+			],
+			[
+				"page-",
+				"PW/page-other.php"
+			],
+			[
+				"page",
+				"_old/page-other.php"
+			],
+			[
+				"lavoro",
+				"Imprimis3/_docs/link to imprimis - grafic/immagini sito/_bistock photo/bigstock-Vector-concept-or-conceptual-a-56172209.eps"
+			],
+			[
+				"var",
+				"UIkit/src/scss/variables.scss"
+			],
+			[
+				"basic",
+				"PW/basic-page.php"
+			],
+			[
+				"container",
+				"PW/container-page.php"
+			],
+			[
+				"defaultpages",
+				"PW/_defaultPages.php"
+			],
+			[
+				"new",
+				"_old/news.php"
+			],
+			[
+				"pritner",
+				"Imprimis3/node_modules/lodash/toNumber.js"
+			],
+			[
+				"printe",
+				"PW/printer.php"
+			],
+			[
+				"offee",
+				"_old/offer_container.php"
+			],
+			[
+				"scss",
+				"Imprimis3/old-imprimis/scss/uikit.scss"
+			],
+			[
+				"basi",
+				"PW/basic-page.php"
+			],
+			[
+				"card-pr",
+				"Imprimis3/node_modules/clean-css/lib/options/rounding-precision.js"
+			],
+			[
+				"brea",
+				"PW/inc/bread.php"
+			],
+			[
+				"foote",
+				"PW/inc/footer.php"
+			],
+			[
+				"giulio",
+				"Imprimis3/public/scss/giulio.scss"
+			],
+			[
+				"uikit",
+				"Imprimis3/old-imprimis/scss/uikit.scss"
+			],
+			[
+				"pro",
+				"PW/produttori.php"
+			],
+			[
+				"goto",
+				"PW/gotourl-page.php"
+			],
+			[
+				"prod",
+				"PW/produttori.php"
+			],
+			[
+				"prem",
+				"PW/premi.php"
+			],
+			[
+				"premi",
+				"PW/premi.php"
+			],
+			[
+				"produ",
+				"PW/produttori.php"
+			],
+			[
+				"intro",
+				"PW/inc/block_introTopBanner-container.php"
+			],
+			[
+				"cont",
+				"PW/container-page.php"
+			],
+			[
+				"contain",
+				"PW/container-page.php"
+			],
+			[
+				"p19",
+				"vini/node_modules/tar/.nyc_output/processinfo/12bca2bc-6a2b-4f45-abc7-8483922a524d.json"
+			],
+			[
+				"menustick",
+				"PW/inc/menu-sticky.php"
+			],
+			[
+				"ini",
+				"vini/public/site/init.php"
+			],
+			[
+				"men",
+				"PW/inc/menu.php"
+			],
+			[
+				"produt",
+				"PW/produttori.php"
+			],
+			[
+				"inc/stick",
+				"PW/inc/menu-sticky.php"
+			],
+			[
+				"hom",
+				"PW/home.php"
+			],
+			[
+				"blog",
+				"vini/node_modules/psl/browserstack-logo.svg"
+			],
+			[
+				"topbanner",
+				"PW/inc/block_introTopBanner-container.php"
+			],
+			[
+				"introba",
+				"PW/inc/block_introTopBanner.php"
+			],
+			[
+				"fotoer",
+				"vini/public/site/assets/cache/FileCompiler/inc/block_introTopBanner.php"
+			],
+			[
+				"got",
+				"PW/gotourl-page.php"
+			],
+			[
+				"psr",
+				"vini/public/wire/modules/Process/ProcessRole/ProcessRole.css"
+			],
+			[
+				"uikit.js",
+				"PW/js/uikit.js"
+			],
+			[
+				"container-",
+				"PW/container-page.php"
+			],
+			[
+				"introTop",
+				"PW/inc/block_introTopBanner.php"
+			],
+			[
+				"pre",
+				"PW/premi.php"
+			],
+			[
+				"homr",
+				"vini/node_modules/homedir-polyfill/README.md"
+			],
+			[
+				"arch",
+				"PW/archivio.php"
+			],
+			[
+				"il",
+				"PW/ilmuseo.php"
+			],
+			[
+				"arti",
+				"PW/articolo.php"
+			],
+			[
+				"appunt",
+				"PW/appuntamento.php"
+			],
+			[
+				"flick",
+				"SMV/scss/flickity.scss"
+			],
+			[
+				"articolo",
+				"PW/articolo.php"
+			],
+			[
+				"app",
+				"PW/appuntamento.php"
+			],
+			[
+				"archivi",
+				"PW/archivio.php"
+			],
+			[
+				"condi",
+				"PW/inc/condividi.php"
+			],
+			[
+				"ilm",
+				"PW/ilmuseo.php"
+			],
+			[
+				"artic",
+				"PW/articolo.php"
+			],
+			[
+				"server.t",
+				"psw_server/_server.txt"
+			],
+			[
+				"contatt",
+				"PW/contatti.php"
+			],
+			[
+				"archi",
+				"PW/archivio.php"
+			],
+			[
+				"artico",
+				"PW/articolo.php"
+			],
+			[
+				"museo",
+				"PW/_museoVars.php"
+			],
+			[
+				"appunta",
+				"PW/appuntamento.php"
+			],
+			[
+				"git",
+				"SMV/.gitignore"
+			],
+			[
+				"archiv",
+				"PW/archivio.php"
+			],
+			[
+				"coll",
+				"PW/collezione.php"
+			],
+			[
+				"art",
+				"PW/articolo.php"
+			],
+			[
+				"memu",
+				"SMV/node_modules/node-gyp/gyp/pylib/gyp/msvs_emulation.py"
+			],
+			[
+				"ilme",
+				"PW/ilmuseo.php"
+			],
+			[
+				"gitign",
+				"SMV/.gitignore"
+			],
+			[
+				"gitigno",
+				"SMV/public/.gitignore"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"/var/www/html/perros2/perros2.sublime-project"
+			],
+			[
+				"guid",
+				"/var/www/html/guidi/guidi.sublime-project"
+			],
+			[
+				"guidi",
+				"/var/www/html/guidi/guidi.sublime-project"
+			],
+			[
+				"rent",
+				"/var/www/html/mobilitystore/rentmobility.sublime-project"
+			],
+			[
+				"re",
+				"/var/www/html/mobilitystore/rentmobility.sublime-project"
+			],
+			[
+				"smv",
+				"/var/www/html/smv/smv.sublime-project"
+			],
+			[
+				"g",
+				"/var/www/html/guidi/guidi.sublime-project"
+			],
+			[
+				"f",
+				"/var/www/html/fleet/fleet.sublime-project"
+			],
+			[
+				"F",
+				"/var/www/html/fleet/fleet.sublime-project"
+			],
+			[
+				"fl",
+				"/var/www/html/fleet/fleet.sublime-project"
+			],
+			[
+				"smb",
+				"/var/www/html/smv/smv.sublime-project"
+			],
+			[
+				"fure",
+				"/var/www/html/fureco/fureco.sublime-project"
+			],
+			[
+				"mauro",
+				"/var/www/html/maurodellorco/mauro.sublime-project"
+			],
+			[
+				"visu",
+				"/var/www/html/ivisual/ivisual.sublime-project"
+			],
+			[
+				"amb",
+				"/var/www/html/amb/amb.sublime-project"
+			],
+			[
+				"mole",
+				"/var/www/html/molecast/molecast.sublime-project"
+			],
+			[
+				"mol",
+				"/var/www/html/molecast/molecast.sublime-project"
+			],
+			[
+				"copi",
+				"/var/www/html/copie/copie.sublime-project"
+			],
+			[
+				"fle",
+				"/var/www/html/fleet/fleet.sublime-project"
+			],
+			[
+				"omnia",
+				"/var/www/html/omniastyle/omniasstyle.sublime-project"
+			],
+			[
+				"omni",
+				"/var/www/html/omniastyle/omniasstyle.sublime-project"
+			],
+			[
+				"moda",
+				"/var/www/html/moda/moda.sublime-project"
+			],
+			[
+				"fleet",
+				"/var/www/html/fleet/fleet.sublime-project"
+			],
+			[
+				"spluga",
+				"/var/www/html/spluga/spluga.sublime-project"
+			],
+			[
+				"splu",
+				"/var/www/html/spluga/spluga.sublime-project"
+			],
+			[
+				"back",
+				"/var/www/html/backup-dati/sublime.sublime-project"
+			],
+			[
+				"da",
+				"/var/www/html/backup-dati/sublime.sublime-project"
+			],
+			[
+				"dat",
+				"/var/www/html/backup-dati/sublime.sublime-project"
+			],
+			[
+				"spl",
+				"/var/www/html/spluga/spluga.sublime-project"
+			],
+			[
+				"splug",
+				"/var/www/html/spluga/spluga.sublime-project"
+			],
+			[
+				"bac",
+				"/var/www/html/backup-dati/sublime.sublime-project"
+			],
+			[
+				"sumn",
+				"/var/www/html/sumensadecurius/orto.sublime-project"
+			],
+			[
+				"html",
+				"/var/www/html/molecast/molecast.sublime-project"
+			],
+			[
+				"sp",
+				"/var/www/html/spluga/spluga.sublime-project"
+			],
+			[
+				"c",
+				"/var/www/html/club/club1.sublime-project"
+			],
+			[
+				"asa",
+				"/var/www/html/asako/site/templates/asako.sublime-project"
+			],
+			[
+				"matt",
+				"/var/www/html/mattanini/mattanini.sublime-project"
+			],
+			[
+				"impr",
+				"/var/www/html/imprimis2/imprimis2.sublime-project"
+			],
+			[
+				"ma",
+				"/var/www/html/mattanini/mattanini.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 297.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
