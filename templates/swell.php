@@ -19,7 +19,7 @@ $sceltaMinuteria = "acciaio";
 
     	<button @click="cartReady = !cartReady" onclick="addToSwellCart()"> add <?= $pettorina->title ?></button>
 
-    	<!-- Alpine -->
+    	<!-- Alpine test script-->
         <div x-data="alpineStore()" >
           <template x-if="myCart">
               <template x-for="item in myCart.items">

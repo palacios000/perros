@@ -1,3 +1,15 @@
+<!-- 
+	@ Mikita: I've copied this cart from a template found on Vue + Nuxt,
+	that's why you still see some tags from Vue.
+	It's the first time I deal with Vue, so I don't know what a BaseIcon
+	or BaseButton is.
+	
+	At the bottom of this file you see the scripts copied from the Nuxt template, they are probably useful for the interaction with SwellJS
+	 -->
+
+
+
+
 <div>
   <!-- <div x-data="alpineStore()" > -->
   <div x-data="alpineStore()" x-show="cartReady" >

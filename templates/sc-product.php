@@ -65,7 +65,7 @@
 	
 <?php include 'inc/menu.php'; ?>
 
-<div id="content" class="relative" x-data="{ cartReady: false }">
+<div id="content" class="relative" x-data="{ cartReady: true }">
 <!-- ### PRODUCT DETAILS inizio  -->
 	<main class="max-w-7xl mx-auto sm:pt-16 sm:px-6 lg:px-8 z-10" x-data="{imageUrl: '<?php echo $image->url ?>'}">
 		<div class="max-w-2xl mx-auto lg:max-w-none">

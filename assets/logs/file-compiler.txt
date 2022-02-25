@@ -2302,3 +2302,5 @@
 2022-02-25 14:04:28	guest	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
 2022-02-25 14:08:12	guest	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
 2022-02-25 14:10:06	guest	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-25 14:25:55	guest	http://localhost/perros2/public/swell/	Compiled file: /site/templates/swell.php
+2022-02-25 14:27:55	guest	http://localhost/perros2/public/pettorine/pettorina-easy-play/?taglia=G15m&checkout=go&colore=verde&minuteria=bronzo	Compiled file: /site/templates/sc-product.php
